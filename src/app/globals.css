@@ -1,0 +1,135 @@
+
+@import "tailwindcss";
+
+/* ---------- Brand tokens (CSS variables) ---------- */
+:root {
+  /* backgrounds */
+  --base-white: #ffffff;
+  --base-alt: #F7F9FB;
+  --base-soft: #F5F5F5;
+
+  /* brand */
+  --brand-green: #1F6D4A;
+
+  /* black as rgb for flexible alpha */
+  --brand-black-rgb: 11 15 19;            /* #0B0F13 */
+
+  /* text tokens derived from black with opacity */
+  --text-strong: rgb(var(--brand-black-rgb) / 0.87); /* ~#0B0F13 @ 87% */
+  --text-normal: rgb(var(--brand-black-rgb) / 0.67); /* ~#0B0F13 @ 67% */
+
+  /* font stacks provided by next/font (see layout.tsx) */
+  --font-sans-main: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-sans-alt: Urbanist, var(--font-sans-main);
+}
+
+/* ---------- Map tokens to Tailwind theme ---------- */
+@theme {
+  /* colors */
+  --color-brand-green: var(--brand-green);
+  --color-brand-black: rgb(var(--brand-black-rgb) / 1);
+  --color-base-white: var(--base-white);
+  --color-base-alt: var(--base-alt);
+  --color-base-soft: var(--base-soft);
+  --color-text-strong: var(--text-strong);
+  --color-text-normal: var(--text-normal);
+
+  /* fonts */
+  --font-sans: var(--font-sans-main);
+  --font-alt: var(--font-sans-alt);
+
+  /* radii (optional) */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  /* spacing scale additions (optional) */
+  --spacing-18: 4.5rem;  /* 72px */
+  --spacing-22: 5.5rem;  /* 88px */
+}
+
+/* ---------- Base resets & defaults ---------- */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background-color: var(--base-white);
+    color: var(--text-normal);
+    font-family: var(--font-sans-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a { text-underline-offset: 2px; }
+  a:hover { text-decoration: underline; }
+
+  /* visible focus outline */
+  :where(a, button, input, select, textarea, [role="button"]) {
+    outline-color: color-mix(in srgb, var(--brand-green) 50%, black);
+    outline-offset: 2px;
+  }
+}
+
+/* ---------- Handy layout helpers ---------- */
+@layer components {
+  /* centered content container */
+  .container-app {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* section shell */
+  .section {
+    @apply py-12 md:py-18;
+  }
+  .section-title {
+    @apply text-2xl md:text-3xl font-semibold text-text-strong;
+  }
+  .section-sub {
+    @apply mt-2 max-w-prose text-text-normal text-lg;
+  }
+
+  /* buttons */
+  /* buttons */
+  .btn,
+  .btn-primary,
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors;
+  }
+  .btn-primary {
+    @apply bg-brand-green text-white hover:opacity-90;
+  }
+  .btn-secondary {
+    @apply border border-brand-green bg-base-white text-text-strong hover:bg-base-alt text-brand-green;
+  }
+  .btn-link {
+    @apply text-brand-green underline underline-offset-4 hover:opacity-90;
+  }
+
+  /* inputs */
+  .field {
+    @apply space-y-1;
+  }
+  .label {
+    @apply block text-sm font-medium text-text-strong;
+  }
+  .input, .select, .textarea {
+    @apply w-full rounded-md border border-[color:var(--color-brand-green)]/30 bg-base-white
+           px-3 py-2 text-text-strong placeholder:text-text-normal/70
+           focus:outline-none focus:ring-2 focus:ring-brand-green/50;
+  }
+  .textarea { @apply min-h-[120px]; }
+
+  /* cards */
+  .card {
+    @apply rounded-lg border border-black/5 bg-base-white p-4 shadow-sm;
+  }
+  .card-muted {
+    @apply rounded-lg bg-base-alt p-4;
+  }
+}
+
+/* ---------- Utility tweaks (optional) ---------- */
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .prose-muted :where(p, li) { color: var(--text-normal); }
+}
+
