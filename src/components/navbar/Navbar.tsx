@@ -4,13 +4,13 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const NAV = [
-  { href: '/about', label: 'About' },
-  { href: '/why-and-how', label: 'Why & How' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/news', label: 'News & Events' },
-  { href: '/engagement', label: 'Engagement' },
-  { href: '/resources', label: 'Resources' },
-  { href: '/contact', label: 'Contact' },
+  { href: '#', label: 'About' },
+  { href: '#', label: 'Why & How' },
+  { href: '#', label: 'Projects' },
+  { href: '#', label: 'News & Events' },
+  { href: '#', label: 'Engagement' },
+  { href: '#', label: 'Resources' },
+  { href: '#', label: 'Contact' },
 ]
 
 export default function Navbar() {
@@ -28,7 +28,7 @@ export default function Navbar() {
 
       <div className="container-app flex items-center justify-between gap-4 py-3">
         {/* Logo / Brand */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="#" className="flex items-center gap-2">
           {/* Replace with your logo */}
           <span className="text-lg font-semibold text-text-strong">OBEC</span>
         </Link>
@@ -48,8 +48,8 @@ export default function Navbar() {
 
         {/* Actions (desktop) */}
         <div className="hidden items-center gap-2 md:flex">
-          <Link href="/donate" className="btn btn-secondary">Donate</Link>
-          <Link href="/volunteer" className="btn btn-primary">Volunteer</Link>
+          <Link href="#" className="btn btn-secondary">Donate</Link>
+          <Link href="#" className="btn btn-primary">Volunteer</Link>
         </div>
 
         {/* Mobile menu button */}
@@ -84,10 +84,10 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="mt-2 flex gap-2">
-            <Link href="/donate" onClick={() => setOpen(false)} className="btn btn-primary w-full">
+            <Link href="#" onClick={() => setOpen(false)} className="btn btn-primary w-full">
               Donate
             </Link>
-            <Link href="/volunteer" onClick={() => setOpen(false)} className="btn btn-secondary w-full">
+            <Link href="#" onClick={() => setOpen(false)} className="btn btn-secondary w-full">
               Volunteer
             </Link>
           </div>
