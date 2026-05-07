@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const NAV = [
-  { href: '#', label: 'About' },
+  { href: '/about', label: 'About' },
   { href: '#', label: 'Why & How' },
   { href: '#', label: 'Projects' },
   { href: '#', label: 'News & Events' },

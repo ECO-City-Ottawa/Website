@@ -78,7 +78,7 @@
 
   /* section shell */
   .section {
-    @apply py-12 md:py-18;
+    @apply px-[20px] py-[64px] md:px-[64px] md:py-[112px];
   }
   .section-title {
     @apply text-2xl md:text-3xl font-semibold text-text-strong;

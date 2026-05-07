@@ -38,7 +38,7 @@ export default function Footer() {
         <div>
           <div className="section-title text-xl">Learn</div>
           <ul className="mt-3 space-y-2 text-text-normal">
-            <li><Link href="#" className="hover:text-text-strong">About OBEC</Link></li>
+            <li><Link href="/about" className="hover:text-text-strong">About OBEC</Link></li>
             <li><Link href="#" className="hover:text-text-strong">Why & How</Link></li>
             <li><Link href="#" className="hover:text-text-strong">Projects</Link></li>
             <li><Link href="#" className="hover:text-text-strong">News & Events</Link></li>

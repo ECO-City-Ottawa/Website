@@ -1,63 +1,58 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function ComingSoon() {
+export default function HeroSection() {
   return (
-    <section className="section min-h-[70vh] flex items-center">
-      <div className="w-full mx-auto max-w-7xl">
-        <div className="mx-auto  flex gap-12 items-center">
-          <div className="flex flex-col gap-4  w-1/2 ">
-            <div className="inline-flex items-center gap-2 rounded-full bg-brand-green/10 px-4 py-1.5 text-sm font-medium text-brand-green w-max">
-              <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-brand-green" />
-              <span>Coming Soon</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight text-text-strong max-w-[550px]  ">
-              Something Green is Growing...
-            </h1>
-            
-            <div className="flex flex-col gap-4 ">
-              <p className="text-text-normal leading-relaxed  max-w-[550px]">
-                We're currently cultivating a new digital space for the Ottawa Biosphere Eco-City. 
-                Our team is working hard to bring you a better way to engage with sustainability in our community.
-              </p>
-              
-              <p className=" text-text-normal font-medium ">
-                We'll be back shortly!
-              </p>
-            </div>
+    <section className="bg-base-alt w-full min-h-screen flex flex-col items-center justify-center section">
+      
+      {/* Top Text Content */}
+      <div className="max-w-4xl mx-auto text-center space-y-6">
+        <h1 className="font-alt font-bold text-[56px] leading-[1.1] text-text-strong tracking-tight">
+          Building a sustainable future<br />for Ottawa.
+        </h1>
+        
+        <p className="text-[18px] leading-[1.5] text-text-normal max-w-2xl mx-auto">
+          Bringing together people, ideas, and projects to improve a sustainable Ottawa.
+        </p>
+        
+        {/* Call to Action Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <Link href="#" className="btn btn-primary px-6 py-3 rounded-lg font-medium transition-colors duration-200 text-sm">Donate</Link>
+          <Link href="#" className="btn btn-secondary px-6 py-3 rounded-lg font-medium transition-colors duration-200 text-sm">Volunteer</Link>
+          <Link href="#" className="border border-black/20 text-text-strong hover:bg-black/5 px-6 py-3 rounded-lg font-medium transition-colors duration-200 text-sm flex items-center gap-2">
+            Join Us <span>→</span>
+          </Link>
+        </div>
 
-            <div className="flex flex-col gap-4 ">
-              <span className="text-sm font-semibold uppercase tracking-wider text-text-normal/60">Want to help?</span>
-              <div className="flex flex-wrap  gap-4">
-                <Link href="#" className="btn btn-primary px-8">Volunteer</Link>
-                <Link href="#" className="btn btn-secondary px-8">Donate</Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative w-1/2 h-[400px] aspect-square overflow-hidden rounded-2xl shadow-2xl shadow-brand-green/20 p-8 border border-brand-green/10 hover:shadow-brand-green/40 transition-all duration-300">
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-green/40 to-transparent " />
-          <div className= 'w-full h-full relative  rounded-2xl overflow-hidden'>
-            <Image
-                src="/homepage/hero.png"
-                alt="Ottawa Greenery"
-                fill
-                priority
-                className="object-cover"
-              />
-               <div className="absolute inset-0 bg-gradient-to-t from-brand-black/40 to-transparent" />
-              <div className="absolute bottom-1 left-1 right-1">
-                <div className="rounded-lg bg-green-300/10 backdrop-blur-md p-4 border border-green-300/10 text-white text-center">
-                    <p className="text-sm italic font-light">"Nurturing sustainability across Ottawa's communities since 2009."</p>
-                </div>
-              </div>
-          </div>
-             
-             
-          </div>
+        {/* Non-profit Badge / Info */}
+        <div className="flex items-center justify-center gap-2 pt-6 text-sm font-medium text-text-normal">
+          <svg className="w-5 h-5 text-brand-green" fill="currentColor" viewBox="0 0 20 20">
+            {/* Using a generic leaf/sprout icon to match the UI */}
+            <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd" />
+          </svg>
+          <span>Non-profit. Community-led. Ottawa-focused.</span>
         </div>
       </div>
+
+      {/* Image Placeholder */}
+      <div className="w-full relative  max-w-6xl mx-auto mt-16 rounded-[24px] overflow-hidden shadow-sm bg-black/5 aspect-[21/9] relative">
+          <Image
+            src="/homepage/hero.png"
+            alt="Ottawa riverfront and green space"
+            width={1600}
+            height={900}
+            priority
+            className="aspect-[16/9] w-full rounded-xl object-cover"
+          />
+      </div>
+
+      {/* Bottom Subtext */}
+      <div className="w-full max-w-6xl mx-auto mt-3 text-right">
+        <p className="text-sm text-text-normal font-medium">
+          A community charity working across Ottawa since 2009.
+        </p>
+      </div>
+
     </section>
   )
 }

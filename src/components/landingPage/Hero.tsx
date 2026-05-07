@@ -29,14 +29,7 @@ export default function Hero() {
 
         <div className="mt-8">
           {/* Put a file at /public/hero.jpg (or update src) */}
-          <Image
-            src="/homepage/hero.png"
-            alt="Ottawa riverfront and green space"
-            width={1600}
-            height={900}
-            priority
-            className="aspect-[16/9] w-full rounded-xl object-cover"
-          />
+       
         </div>
       </div>
     </section>
