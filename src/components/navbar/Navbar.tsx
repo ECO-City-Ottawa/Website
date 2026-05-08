@@ -5,8 +5,8 @@ import Link from 'next/link'
 
 const NAV = [
   { href: '/about', label: 'About' },
-  { href: '#', label: 'Why & How' },
-  { href: '#', label: 'Projects' },
+  { href: '/why-how', label: 'Why & How' },
+  { href: '/projects', label: 'Projects' },
   { href: '#', label: 'News & Events' },
   { href: '#', label: 'Engagement' },
   { href: '#', label: 'Resources' },
