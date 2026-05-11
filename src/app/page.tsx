@@ -1,6 +1,5 @@
 import Footer from "@/components/footer/Footer";
 import AboutSection from "@/components/landingPage/AboutSection";
-import HeroSection from "@/components/landingPage/ComingSoon";
 import CommunityLedSection from "@/components/landingPage/CommunityLedSection";
 import CommunityActionSection from "@/components/landingPage/CommunityActionSection";
 import ProjectsSection from "@/components/landingPage/ProjectsSection";
@@ -13,6 +12,7 @@ import NewsletterSection from "@/components/landingPage/NewsletterSection";
 import QuestionsIdeasSection from "@/components/landingPage/QuestionsIdeasSection";
 
 import Navbar from "@/components/navbar/Navbar";
+import HeroSection from "@/components/landingPage/Hero";
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
         <PartnersSection />
         <SupportCtaSection />
         <JoinMissionSection />
-        <NewsletterSection />
+        {/* <NewsletterSection /> */}
         <QuestionsIdeasSection />
       </main>
       <Footer />

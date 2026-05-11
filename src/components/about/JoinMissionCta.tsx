@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { ArrowRightIcon } from 'lucide-react';
 
 export default function JoinMissionCta() {
   return (
@@ -19,7 +20,7 @@ export default function JoinMissionCta() {
             Volunteer
           </Link>
           <Link href="#" className="text-white hover:text-gray-200 flex items-center gap-1 text-sm border-b border-white pb-0.5 ml-2 transition-colors">
-            Partner with us <span>&rarr;</span>
+            Partner with us <ArrowRightIcon className="w-4 h-4" />
           </Link>
         </div>
       </div>

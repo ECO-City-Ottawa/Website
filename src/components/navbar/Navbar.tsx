@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 const NAV = [
@@ -16,8 +16,22 @@ const NAV = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
+  // Prevent background scrolling when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
+
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-base-white/90 backdrop-blur">
+    <header className={`sticky top-0 z-50 transition-colors duration-500 ${
+      open ? 'bg-transparent border-transparent backdrop-blur-none' : 'border-b border-black/5 bg-base-white/90 backdrop-blur'
+    }`}>
       {/* Skip link */}
       <a
         href="#main"
@@ -28,7 +42,7 @@ export default function Navbar() {
 
       <div className="container-app flex items-center justify-between gap-4 py-3">
         {/* Logo / Brand */}
-        <Link href="#" className="flex items-center gap-2">
+        <Link href="#" className="relative z-50 flex items-center gap-2">
           {/* Replace with your logo */}
           <span className="text-lg font-semibold text-text-strong">OBEC</span>
         </Link>
@@ -37,7 +51,7 @@ export default function Navbar() {
         <nav className="hidden items-center gap-6 md:flex">
           {NAV.map((item) => (
             <Link
-              key={item.href}
+              key={item.label}
               href={item.href}
               className="text-sm text-text-normal hover:text-text-strong"
             >
@@ -58,36 +72,60 @@ export default function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 md:hidden"
+          className="relative z-50 inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-base-white transition-colors hover:bg-black/5 md:hidden"
         >
           <span className="sr-only">Toggle menu</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="1.5" />
-          </svg>
+          <div className="flex h-4 w-5 flex-col justify-between overflow-hidden">
+            <span
+              className={`h-0.5 w-full bg-current transition-all duration-300 ease-in-out ${
+                open ? 'translate-y-[7px] rotate-45' : ''
+              }`}
+            />
+            <span
+              className={`h-0.5 w-full bg-current transition-all duration-300 ease-in-out ${
+                open ? 'translate-x-full opacity-0' : ''
+              }`}
+            />
+            <span
+              className={`h-0.5 w-full bg-current transition-all duration-300 ease-in-out ${
+                open ? '-translate-y-[7px] -rotate-45' : ''
+              }`}
+            />
+          </div>
         </button>
       </div>
 
-      {/* Mobile panel */}
+      {/* Full-screen animated mobile menu */}
       <div
         id="mobile-menu"
-        className={`md:hidden ${open ? 'block' : 'hidden'} border-t border-black/5 bg-base-white`}
+        className={`fixed z-40 flex flex-col overflow-hidden bg-base-white transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden ${
+          open
+            ? 'right-0 top-0 h-[100dvh] w-screen rounded-none opacity-100 pointer-events-auto'
+            : 'right-4 top-3 h-10 w-10 rounded-full opacity-0 pointer-events-none'
+        }`}
       >
-        <div className="container-app flex flex-col gap-3 py-4">
-          {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="text-base font-semibold text-text-strong"
-            >
-              {item.label}
-            </Link>
-          ))}
-          <div className="mt-2 flex gap-2">
-            <Link href="#" onClick={() => setOpen(false)} className="btn btn-primary w-full">
+        <div
+          className={`flex h-full flex-col px-6 pb-8 pt-24 transition-opacity duration-300 ${
+            open ? 'opacity-100 delay-200' : 'opacity-0'
+          }`}
+        >
+          <div className="flex flex-col gap-2">
+            {NAV.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="rounded-lg py-3 text-3xl font-semibold text-text-strong transition-colors hover:text-brand-green"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+          <div className="mt-auto flex flex-col gap-4">
+            <Link href="#" onClick={() => setOpen(false)} className="btn btn-primary w-full justify-center py-4 text-lg">
               Donate
             </Link>
-            <Link href="#" onClick={() => setOpen(false)} className="btn btn-secondary w-full">
+            <Link href="#" onClick={() => setOpen(false)} className="btn btn-secondary w-full justify-center py-4 text-lg">
               Volunteer
             </Link>
           </div>

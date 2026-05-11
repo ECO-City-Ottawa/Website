@@ -1,8 +1,11 @@
+import Image from 'next/image';
 import React from 'react';
 
 export default function NewsletterSection() {
   return (
-    <section className="section bg-base-white w-full flex flex-col items-center text-center">
+    <section className="relative section  w-full flex flex-col items-center text-center">
+      <Image src="/homepage/CTA.png" alt="Ottawa background" fill className="object-cover -z-10 opacity-50  " />
+      <div className=" absolute top-0 bottom-0 left-0 right-0 w-full h-full -z-5 bg-gradient-to-b from-white via-white/80 to-transparent"></div>
       <div className="max-w-xl mx-auto w-full">
         <h2 className="font-alt font-bold text-[36px] md:text-[40px] leading-[1.1] text-text-strong tracking-tight mb-4">
           Stay connected with our work

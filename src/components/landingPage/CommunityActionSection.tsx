@@ -1,11 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import { FeatureCard } from '../ui/FeatureCard';
+import { ArrowRightIcon } from 'lucide-react';
+import Image from 'next/image';
 
 export default function CommunityActionSection() {
   return (
-    <section className="section bg-base-alt w-full">
-      <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
+    <section className="section w-full relative">
+      <Image src="/homepage/whyHow.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-5" />
+      
+      <div className="max-w-7xl mx-auto w-full flex flex-col items-center bg-white/5 backdrop-blur-2xl rounded-full px-6 py-6">
         
         {/* Header */}
         <div className="text-center max-w-3xl mb-16">
@@ -78,7 +82,7 @@ export default function CommunityActionSection() {
             See how it works
           </Link>
           <Link href="#" className="font-medium text-brand-green hover:underline flex items-center gap-1">
-            Get involved <span>&gt;</span>
+            Get involved <ArrowRightIcon className="w-4 h-4" />
           </Link>
         </div>
 

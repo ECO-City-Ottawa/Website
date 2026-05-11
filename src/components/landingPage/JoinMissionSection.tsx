@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowRightIcon } from 'lucide-react';
 
 export default function JoinMissionSection() {
   return (
@@ -36,8 +37,8 @@ export default function JoinMissionSection() {
             <Link href="#" className="btn-secondary rounded-lg px-8 py-3 font-medium">
               Join OBEC
             </Link>
-            <Link href="#" className="font-semibold text-[#1B4B6B] hover:text-[#113247] flex items-center gap-1 text-sm border-b-2 border-[#1B4B6B] pb-0.5 ml-2 transition-colors">
-              Partner with us <span>&rarr;</span>
+            <Link href="#" className="border border-black/20 text-text-strong hover:bg-black/5 px-6 py-3 rounded-lg font-medium transition-colors duration-200 text-sm flex items-center gap-2">
+              Partner with us <ArrowRightIcon className="w-4 h-4" />
             </Link>
           </div>
         </div>

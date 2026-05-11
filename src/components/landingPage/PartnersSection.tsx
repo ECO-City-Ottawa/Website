@@ -1,13 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 
+import { Leaf, Globe, Building2, Users, Sprout } from 'lucide-react';
+
 export default function PartnersSection() {
   const partners = [
-    "CAFES Ottawa",
-    "Biosphere Eco-Cities Canada",
-    "Schools / hospitals / small business partners",
-    "Local community associations (e.g., Manor Park)",
-    "Biosphere Eco-Cities Canada"
+    { name: "CAFES Ottawa", icon: Leaf },
+    { name: "Biosphere Eco-Cities Canada", icon: Globe },
+    { name: "Schools / hospitals / small business partners", icon: Building2 },
+    { name: "Local community associations (e.g., Manor Park)", icon: Users },
+    { name: "Local Government & Policy Makers", icon: Sprout } // Replaced duplicate with a new example
   ];
 
   return (
@@ -33,14 +35,13 @@ export default function PartnersSection() {
         </div>
 
         {/* Right Side Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
           {partners.map((partner, i) => (
-            <div key={i} className="flex items-start gap-4">
-              <svg className="w-8 h-8 text-brand-green shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="currentColor" />
-                 <path d="M10.5 15.5l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7z" fill="white" />
-              </svg>
-              <span className="text-text-strong font-semibold text-sm pt-1.5 leading-snug">{partner}</span>
+            <div key={i} className="flex flex-col items-start gap-4 p-4 group rounded-2xl border border-black/5  hover:bg-brand-green hover:text-white transition-all duration-300 ease-in-out">
+              <div className="bg-white p-2 rounded-xl  border border-black/5 group-hover:bg-brand-green transition-all duration-300 ease-in-out">
+                <partner.icon className="w-6 h-6 text-brand-green shrink-0 group-hover:text-white transition-all duration-300 ease-in-out" />
+              </div>
+              <span className="text-text-normal font-semibold text-sm pt-2 leading-snug group-hover:text-white transition-all duration-300 ease-in-out">{partner.name}</span>
             </div>
           ))}
         </div>

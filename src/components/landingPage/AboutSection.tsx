@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { ArrowRightIcon } from 'lucide-react';
 
 export default function AboutSection() {
   return (
@@ -27,18 +28,18 @@ export default function AboutSection() {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 lg:mt-24">
-          <div className="flex flex-col items-center justify-center p-10 rounded-2xl border border-black/10 bg-base-white shadow-sm">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 lg:mt-24">
+          <div className="flex flex-col items-center justify-center p-10 rounded-2xl border border-black/10 bg-base-white">
             <span className="text-[64px] leading-none font-bold text-brand-green font-alt tracking-tight mb-3">25</span>
             <span className="text-text-strong text-center font-medium">Community projects completed</span>
           </div>
 
-          <div className="flex flex-col items-center justify-center p-10 rounded-2xl border border-black/10 bg-base-white shadow-sm">
+          <div className="flex flex-col items-center justify-center p-10 rounded-2xl border border-black/10 bg-base-white">
             <span className="text-[64px] leading-none font-bold text-brand-green font-alt tracking-tight mb-3">500+</span>
             <span className="text-text-strong text-center font-medium">Volunteers engaged</span>
           </div>
 
-          <div className="flex flex-col items-center justify-center p-10 rounded-2xl border border-black/10 bg-base-white shadow-sm">
+          <div className="flex flex-col items-center justify-center p-10 rounded-2xl border border-black/10 bg-base-white">
             <span className="text-[64px] leading-none font-bold text-brand-green font-alt tracking-tight mb-3">10</span>
             <span className="text-text-strong text-center font-medium">Neighborhoods transformed</span>
           </div>
@@ -50,7 +51,7 @@ export default function AboutSection() {
             href="#" 
             className="inline-flex items-center gap-2 border border-brand-green text-brand-green rounded-lg px-6 py-3 font-medium hover:bg-brand-green hover:text-white transition-colors duration-200 text-sm"
           >
-            Learn About Us <span>→</span>
+            Learn About Us <ArrowRightIcon className="w-4 h-4" />
           </Link>
         </div>
       </div>

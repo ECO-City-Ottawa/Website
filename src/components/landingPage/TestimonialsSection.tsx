@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { Sprout } from 'lucide-react';
 
 export default function TestimonialsSection() {
   const testimonials = [
@@ -24,20 +25,25 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="section bg-brand-green w-full">
-      <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
-        <div className="text-center mb-16">
-          <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-white tracking-tight mb-4">
+    <section className="section bg-green-dark w-full text-white relative overflow-hidden">
+     <Sprout className="w-96 h-96 text-[#012515] absolute -bottom-16 -left-20 z-0" />
+     <Sprout className="w-96 h-96 text-[#055D36] absolute top-0 -right-20 rotate-270 z-0" />
+      <div className="max-w-7xl mx-auto w-full flex flex-col items-center z-10 relative">
+        <div className="text-center mb-16 relative z-10">
+          <span className="text-sm font-semibold text-white/80 mb-4 tracking-wide block">
+            Testimonials
+          </span>
+          <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-white/90 tracking-tight mb-4">
             Community voices
           </h2>
-          <p className="text-white/90 md:text-[18px]">
+          <p className="text-white/80 md:text-[18px]">
             Volunteers, residents, and partners on OBEC's impact
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
           {testimonials.map((t, i) => (
-            <div key={i} className="flex flex-col p-8 rounded-2xl bg-black/20 text-white shadow-sm border border-white/5">
+            <div key={i} className="flex flex-col p-8 rounded-3xl bg-brand-green/20 text-white border border-white/10">
               <div className="flex gap-1 mb-6 text-yellow-400">
                 {/* 5 Stars */}
                 {[...Array(5)].map((_, j) => (
@@ -46,15 +52,15 @@ export default function TestimonialsSection() {
                   </svg>
                 ))}
               </div>
-              <p className="mb-8 leading-relaxed font-medium">"{t.quote}"</p>
+              <p className="mb-8 leading-relaxed font-medium text-white/90 text-lg">"{t.quote}"</p>
               
               <div className="flex items-center gap-4 mt-auto">
-                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-black/10 shrink-0 border border-white/20">
+                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-black/5 shrink-0 border border-black/10">
                   <Image src={t.avatar} alt={t.name} fill className="object-cover" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-bold text-sm">{t.name}</span>
-                  <span className="text-white/80 text-xs">{t.role}</span>
+                  <span className="font-bold text-sm text-white/80">{t.name}</span>
+                  <span className="text-white/60 text-xs">{t.role}</span>
                 </div>
               </div>
             </div>

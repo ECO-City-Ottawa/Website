@@ -1,11 +1,92 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowRightIcon, CalendarDays, Dot, MapPin } from 'lucide-react';
+import CalendarComponent from '../ui/CalendarComponent';
+
+const ITEMS = [
+  {
+    id: 1,
+    type: 'news',
+    tags: ['News', 'Community'],
+    readTime: '5 min read',
+    date: 'May 5, 2026',
+    title: 'Neighbourhood seed swap launches',
+    description: 'A community seed exchange to kick-start spring gardens.',
+    imageSrc: 'https://plus.unsplash.com/premium_photo-1742418231346-0d796253c5b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
+    link: '#',
+  },
+  {
+    id: 2,
+    type: 'event',
+    date: 'May 15, 2026',
+    location: 'Lansdowne Park',
+    title: 'Public Action Lab: Energy',
+    description: 'Co-design local projects across Energy, Food, and Waste.',
+    imageSrc: 'https://plus.unsplash.com/premium_photo-1670182502090-a5d58b24f25b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
+    link: '#',
+  },
+  {
+    id: 3,
+    type: 'news',
+    tags: ['Update', 'Policy'],
+    readTime: '3 min read',
+    date: 'May 2, 2026',
+    title: 'New grants available for solar initiatives',
+    description: 'City council approves a new round of micro-grants for community solar projects.',
+    imageSrc: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
+    link: '#',
+  },
+  {
+    id: 4,
+    type: 'event',
+    date: 'May 22, 2026',
+    location: 'Ottawa City Hall',
+    title: 'Urban Forestry Workshop',
+    description: 'Learn about tree canopy preservation and how to advocate for greener streets.',
+    imageSrc: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
+    link: '#',
+  },
+  {
+    id: 5,
+    type: 'event',
+    date: 'June 4, 2026',
+    location: 'Community Center',
+    title: 'Zero Waste Living Panel',
+    description: 'Experts share practical tips on reducing household waste.',
+    imageSrc: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
+    link: '#',
+  }
+];
 
 export default function NewsEventsSection() {
+  const [activeTab, setActiveTab] = useState<'All' | 'News' | 'Events' | 'Calendar'>('All');
+
+  const filteredItems = ITEMS.filter(item => {
+    if (activeTab === 'All') return true;
+    if (activeTab === 'News' && item.type === 'news') return true;
+    if (activeTab === 'Events' && item.type === 'event') return true;
+    return false;
+  });
+
+  const calendarEvents = ITEMS.filter(item => item.type === 'event').map(event => {
+    // Basic date parsing for calendar. You might want to add explicit start/end times to the ITEMS array later!
+    const startDate = new Date(event.date);
+    return {
+      title: event.title,
+      start: startDate,
+      end: new Date(startDate.getTime() + 2 * 60 * 60 * 1000), // Default 2 hours duration
+      allDay: false,
+      link: event.link
+    };
+  });
+
   return (
-    <section className="section bg-base-alt w-full">
-      <div className="max-w-7xl mx-auto w-full flex flex-col">
+    <section className="section w-full relative">
+      <Image src="/homepage/whyHow.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-5" />
+      <div className="max-w-7xl mx-auto w-full flex flex-col bg-white/10 backdrop-blur-lg  ">
         
         {/* Header & Tabs */}
         <div className="mb-12">
@@ -20,87 +101,94 @@ export default function NewsEventsSection() {
           </p>
           
           <div className="flex gap-6 border-b border-black/10">
-            <button className="pb-3 border-b-2 border-brand-green text-brand-green font-medium text-sm">All</button>
-            <button className="pb-3 text-text-normal hover:text-text-strong font-medium text-sm transition-colors">News</button>
-            <button className="pb-3 text-text-normal hover:text-text-strong font-medium text-sm transition-colors">Events</button>
-            <button className="pb-3 text-text-normal hover:text-text-strong font-medium text-sm transition-colors">Calendar</button>
+            {['All', 'News', 'Events', 'Calendar'].map(tab => (
+              <button 
+                key={tab}
+                onClick={() => setActiveTab(tab as any)}
+                className={`pb-3 font-medium text-sm transition-colors ${
+                  activeTab === tab 
+                    ? 'border-b-2 border-brand-green text-brand-green' 
+                    : 'text-text-normal hover:text-text-strong'
+                }`}
+              >
+                {tab} 
+                {(tab === 'News' || tab === 'Events') && (
+                  <span className="text-text-normal text-xs font-semibold py-1 px-2 rounded-full bg-black/5 ml-1">
+                    {ITEMS.filter(item => item.type === tab.toLowerCase()).length}
+                  </span>
+                )}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-12">
-          
-          {/* News Card */}
-          <div className="flex flex-col rounded-2xl border border-black/10 overflow-hidden shadow-sm bg-base-white h-full">
-            {/* Top Content */}
-            <div className="p-8 flex flex-col flex-grow">
-              <div className="flex flex-wrap items-center gap-3 mb-6">
-                <span className="bg-black/5 text-text-strong text-xs font-semibold px-3 py-1.5 rounded-md">News</span>
-                <span className="bg-black/5 text-text-strong text-xs font-semibold px-3 py-1.5 rounded-md">Community</span>
-                <span className="text-text-normal text-xs font-semibold">5 min read — Feb 14, 2025</span>
-              </div>
-              <h3 className="font-alt font-bold text-[28px] leading-tight text-text-strong mb-3">
-                Neighbourhood seed swap launches
-              </h3>
-              <p className="text-text-normal text-sm leading-relaxed mb-6">
-                A community seed exchange to kick-start spring gardens.
-              </p>
-              <div className="mt-auto">
-                <Link href="#" className="inline-flex items-center gap-1 text-brand-green font-medium text-sm hover:underline">
-                  Read more <span>&gt;</span>
-                </Link>
-              </div>
-            </div>
-            {/* Bottom Image */}
-            <div className="w-full aspect-[16/9] relative bg-black/5">
-               <Image 
-                  src="/homepage/hero.png" 
-                  alt="Flower pots on fence"
-                  fill
-                  className="object-cover"
-                />
-            </div>
-          </div>
+        {/* Dynamic Grid / Calendar View */}
+        {activeTab !== 'Calendar' ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-12">
+            {filteredItems.map(item => (
+              <div key={item.id} className='p-2 bg-white border border-black/10 rounded-3xl'>
+                <div className={`flex flex-col rounded-2xl border border-black/10 overflow-hidden bg-base-white h-full ${item.type === 'news' ? 'pt-4' : ''}`}>
+                  
+                  {/* Top Image for Event */}
+                  {item.type === 'event' && (
+                    <div className="w-full aspect-[16/9] bg-black/5 relative">
+                      <Image src={item.imageSrc} alt={item.title} fill className="object-cover" />
+                    </div>
+                  )}
 
-          {/* Event Card */}
-          <div className="flex flex-col rounded-2xl border border-black/10 overflow-hidden shadow-sm bg-base-white h-full">
-            {/* Top Image Placeholder */}
-            <div className="w-full aspect-[16/9] bg-black/5 relative">
-              {/* Empty state representing missing image */}
-            </div>
-            
-            {/* Bottom Content */}
-            <div className="p-8 flex flex-col flex-grow">
-              <div className="flex items-center gap-4 mb-6 text-xs text-text-strong font-semibold">
-                <div className="flex items-center gap-1.5">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span>Sat 10 Feb 2024</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span>Location</span>
-                </div>
-              </div>
-              <h3 className="font-alt font-bold text-[28px] leading-tight text-text-strong mb-3">
-                Public Action Lab: Ward 4
-              </h3>
-              <p className="text-text-normal text-sm leading-relaxed mb-6">
-                Co-design local projects across Energy, Food, and Waste.
-              </p>
-              <div className="mt-auto">
-                <Link href="#" className="inline-flex items-center gap-1 text-brand-green font-medium text-sm hover:underline">
-                  Read more <span>&gt;</span>
-                </Link>
-              </div>
-            </div>
-          </div>
+                  <div className="lg:p-8 p-4 flex flex-col flex-grow">
+                    {/* Header: News tags vs Event info */}
+                    {item.type === 'news' ? (
+                      <div className="flex flex-wrap items-center gap-3 mb-4">
+                        {item.tags?.map(tag => (
+                          <span key={tag} className="bg-black/5 text-text-strong text-xs font-semibold px-3 py-1.5 rounded-md">{tag}</span>
+                        ))}
+                        <span className="text-text-normal text-xs font-semibold flex items-center">{item.readTime} <Dot/> {item.date}</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-4 mb-6 text-xs text-text-strong font-semibold">
+                        <div className="flex items-center gap-1.5">
+                          <CalendarDays className='w-4 h-4'/>
+                          <span>{item.date}</span>
+                        </div>
+                        {item.location && (
+                          <div className="flex items-center gap-1.5">
+                            <MapPin className='w-4 h-4'/>
+                            <span>{item.location}</span>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    
+                    <h3 className="font-alt font-bold text-[28px] leading-tight text-text-strong mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-text-normal text-sm leading-relaxed mb-4">
+                      {item.description}
+                    </p>
+                    <div className="mt-auto">
+                      <Link href={item.link} className="inline-flex items-center gap-1 text-brand-green font-medium text-sm hover:underline">
+                        Read more <ArrowRightIcon className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
 
-        </div>
+                  {/* Bottom Image for News */}
+                  {item.type === 'news' && (
+                    <div className="w-full aspect-[16/9] relative bg-black/5">
+                      <Image src={item.imageSrc} alt={item.title} fill className="object-cover" />
+                    </div>
+                  )}
+
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="mb-12 w-full animate-in fade-in duration-500">
+            <CalendarComponent events={calendarEvents} />
+          </div>
+        )}
 
         {/* Bottom CTA */}
         <div className="flex justify-end">

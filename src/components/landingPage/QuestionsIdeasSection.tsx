@@ -1,20 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function QuestionsIdeasSection() {
   return (
     <section className="relative w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       {/* Background Image Placeholder */}
-      <div className="absolute inset-0 z-0 bg-gray-200">
-        {/* 
-          Add a full-width background image here if desired:
-          <Image src="/homepage/ottawa-bg.jpg" fill className="object-cover" alt="Ottawa background" /> 
-        */}
+      <div className="absolute inset-0 z-0  bg-white">
+        
+          {/* Add a full-width background image here if desired: */}
+         <Image src="/homepage/questions.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-10 " />
+      
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
+      <div className="relative z-10 max-w-7xl mx-auto w-full ">
         {/* Dark Inner Container */}
-        <div className="bg-[#141C24] rounded-[24px] md:rounded-[32px] p-8 md:p-16 lg:p-20 shadow-xl w-full">
+        <div className="bg-green-dark rounded-[24px] md:rounded-[32px] p-8 md:p-16 lg:p-20 shadow-xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             {/* Left Column */}
@@ -37,7 +38,7 @@ export default function QuestionsIdeasSection() {
               </p>
               
               <div className="flex flex-wrap items-center gap-6">
-                <Link href="#" className="bg-[#155581] hover:bg-[#114264] text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                <Link href="#" className="bg-white text-[#0B1521] hover:opacity-90 t px-8 py-3 rounded-lg font-medium transition-colors">
                   Contact us
                 </Link>
                 <Link href="#" className="text-white hover:underline flex items-center gap-1 font-medium">
