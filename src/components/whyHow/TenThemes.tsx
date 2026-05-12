@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export default function TenThemes() {
@@ -15,10 +16,11 @@ export default function TenThemes() {
   ];
 
   return (
-    <section className="section bg-base-soft w-full border-t border-black/5">
-      <div className="max-w-7xl mx-auto w-full">
-        
-        <div className="text-center mb-16 max-w-2xl mx-auto">
+    <section className="section  w-full border-t border-black/5 relative">
+      <Image src="/homepage/heroBG.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-5" />
+        <div className="max-w-7xl mx-auto w-full bg-white/90 backdrop-blur-xs rounded-full">
+
+        <div className="text-center mb-16 max-w-2xl mx-auto ">
           <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
             &#123;#themes&#125;
           </span>
@@ -30,11 +32,11 @@ export default function TenThemes() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
           {themes.map((t, i) => (
-            <div key={i} className="flex flex-col bg-white p-6 rounded-2xl border border-black/10 shadow-sm h-full">
-              <h3 className="font-alt font-bold text-[18px] text-[#1E7444] mb-6">{t.title}</h3>
-              <p className="text-text-strong text-xs leading-relaxed mt-auto mb-auto">{t.desc}</p>
+            <div key={i} className="flex flex-col bg-white p-6 rounded-2xl group border border-black/10 shadow-sm h-full hover:bg-brand-green hover:text-white transition-colors duration-300 cursor-pointer">
+              <h3 className="font-alt font-bold text-xl text-[#1E7444] mb-6 group-hover:text-white transition-colors duration-300">{t.title}</h3>
+              <p className="text-text-normal leading-relaxed mt-auto mb-auto group-hover:text-white transition-colors duration-300">{t.desc}</p>
             </div>
           ))}
         </div>

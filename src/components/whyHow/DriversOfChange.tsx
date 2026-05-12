@@ -1,3 +1,4 @@
+import { Sprout } from 'lucide-react';
 import React from 'react';
 
 export default function DriversOfChange() {
@@ -17,8 +18,10 @@ export default function DriversOfChange() {
   ];
 
   return (
-    <section className="section bg-[#073F25] w-full">
-      <div className="max-w-7xl mx-auto w-full">
+    <section className="section bg-green-dark w-full relative overflow-hidden">
+           <Sprout className="w-96 h-96 text-[#012515] absolute -bottom-16 -left-20 z-0" />
+     <Sprout className="w-96 h-96 text-[#055D36] absolute top-0 -right-20 rotate-270 z-0" />
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-16">
           <div className="flex flex-col">

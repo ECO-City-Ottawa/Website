@@ -1,12 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function WhyHowHero() {
   return (
-    <section className="relative w-full py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#1B231E]">
-      <div className="absolute inset-0 z-0 opacity-40">
-         {/* Background Image Placeholder */}
-      </div>
+    <section className="relative w-full py-24 md:py-32 px-4 sm:px-6 lg:px-8  relative">
+      <Image src="/homepage/heroBG.png" alt="Ottawa background" fill className="object-cover -z-10  " />
+      <div className="absolute inset-0 z-0 bg-black/70 backdrop-blur-sm"></div>
+      
+    
       
       <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col text-white">

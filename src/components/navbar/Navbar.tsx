@@ -2,19 +2,21 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useLanguage } from '@/context/LanguageContext'
 
-const NAV = [
-  { href: '/about', label: 'About' },
-  { href: '/why-how', label: 'Why & How' },
-  { href: '/projects', label: 'Projects' },
-  { href: '#', label: 'News & Events' },
-  { href: '#', label: 'Engagement' },
-  { href: '#', label: 'Resources' },
-  { href: '#', label: 'Contact' },
+const NAV_ITEMS = [
+  { href: '/about', labelKey: 'nav.about' },
+  { href: '/why-how', labelKey: 'nav.whyHow' },
+  { href: '/projects', labelKey: 'nav.projects' },
+  { href: '#', labelKey: 'nav.newsEvents' },
+  { href: '#', labelKey: 'nav.engagement' },
+  { href: '#', labelKey: 'nav.resources' },
+  { href: '#', labelKey: 'nav.contact' },
 ]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const { language, setLanguage, t } = useLanguage()
 
   // Prevent background scrolling when mobile menu is open
   useEffect(() => {
@@ -28,6 +30,10 @@ export default function Navbar() {
     }
   }, [open])
 
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'fr' : 'en')
+  }
+
   return (
     <header className={`sticky top-0 z-50 transition-colors duration-500 ${
       open ? 'bg-transparent border-transparent backdrop-blur-none' : 'border-b border-black/5 bg-base-white/90 backdrop-blur'
@@ -37,62 +43,79 @@ export default function Navbar() {
         href="#main"
         className="absolute left-4 top-2 -translate-y-12 rounded bg-base-white px-3 py-1 text-sm text-text-strong shadow focus:translate-y-0"
       >
-        Skip to content
+        {t('skip.content')}
       </a>
 
-      <div className="container-app flex items-center justify-between gap-4 py-3">
-        {/* Logo / Brand */}
-        <Link href="#" className="relative z-50 flex items-center gap-2">
-          {/* Replace with your logo */}
-          <span className="text-lg font-semibold text-text-strong">OBEC</span>
-        </Link>
+      <div className="container-app flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-4 py-3">
+        <div className="flex items-center justify-between w-full md:w-auto">
+          {/* Logo / Brand */}
+          <Link href="#" className="relative z-50 flex items-center gap-2">
+            <span className="text-lg font-semibold text-text-strong">OBEC</span>
+          </Link>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((v) => !v)}
+            className="relative z-50 inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-base-white transition-colors hover:bg-black/5 md:hidden"
+          >
+            <span className="sr-only">{t('toggle.menu')}</span>
+            <div className="flex h-4 w-5 flex-col justify-between overflow-hidden">
+              <span
+                className={`h-0.5 w-full bg-current transition-all duration-300 ease-in-out ${
+                  open ? 'translate-y-[7px] rotate-45' : ''
+                }`}
+              />
+              <span
+                className={`h-0.5 w-full bg-current transition-all duration-300 ease-in-out ${
+                  open ? 'translate-x-full opacity-0' : ''
+                }`}
+              />
+              <span
+                className={`h-0.5 w-full bg-current transition-all duration-300 ease-in-out ${
+                  open ? '-translate-y-[7px] -rotate-45' : ''
+                }`}
+              />
+            </div>
+          </button>
+        </div>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-6 md:flex">
-          {NAV.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <Link
-              key={item.label}
+              key={item.labelKey}
               href={item.href}
-              className="text-sm text-text-normal hover:text-text-strong"
+              className="text-sm text-text-normal hover:text-text-strong whitespace-nowrap"
             >
-              {item.label}
+              {t(item.labelKey)}
             </Link>
           ))}
         </nav>
 
         {/* Actions (desktop) */}
         <div className="hidden items-center gap-2 md:flex">
-          <Link href="#" className="btn btn-secondary">Donate</Link>
-          <Link href="#" className="btn btn-primary">Volunteer</Link>
+          <button
+            onClick={toggleLanguage}
+            className="text-sm font-medium mr-2 px-2 py-1 rounded hover:bg-black/5 transition-colors"
+          >
+            {language === 'en' ? 'FR' : 'EN'}
+          </button>
+          <Link href="#" className="btn btn-secondary">{t('nav.donate')}</Link>
+          <Link href="#" className="btn btn-primary">{t('nav.volunteer')}</Link>
         </div>
-
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((v) => !v)}
-          className="relative z-50 inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-base-white transition-colors hover:bg-black/5 md:hidden"
-        >
-          <span className="sr-only">Toggle menu</span>
-          <div className="flex h-4 w-5 flex-col justify-between overflow-hidden">
-            <span
-              className={`h-0.5 w-full bg-current transition-all duration-300 ease-in-out ${
-                open ? 'translate-y-[7px] rotate-45' : ''
-              }`}
-            />
-            <span
-              className={`h-0.5 w-full bg-current transition-all duration-300 ease-in-out ${
-                open ? 'translate-x-full opacity-0' : ''
-              }`}
-            />
-            <span
-              className={`h-0.5 w-full bg-current transition-all duration-300 ease-in-out ${
-                open ? '-translate-y-[7px] -rotate-45' : ''
-              }`}
-            />
-          </div>
-        </button>
+        
+        {/* Language Toggle under nav on mobile */}
+        <div className="flex md:hidden items-center justify-end w-full px-1">
+           <button
+            onClick={toggleLanguage}
+            className="text-sm font-medium px-3 py-1 rounded bg-black/5 hover:bg-black/10 transition-colors"
+          >
+            {language === 'en' ? 'Français' : 'English'}
+          </button>
+        </div>
       </div>
 
       {/* Full-screen animated mobile menu */}
@@ -110,23 +133,23 @@ export default function Navbar() {
           }`}
         >
           <div className="flex flex-col gap-2">
-            {NAV.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <Link
-                key={item.label}
+                key={item.labelKey}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className="rounded-lg py-3 text-3xl font-semibold text-text-strong transition-colors hover:text-brand-green"
               >
-                {item.label}
+                {t(item.labelKey)}
               </Link>
             ))}
           </div>
           <div className="mt-auto flex flex-col gap-4">
             <Link href="#" onClick={() => setOpen(false)} className="btn btn-primary w-full justify-center py-4 text-lg">
-              Donate
+              {t('nav.donate')}
             </Link>
             <Link href="#" onClick={() => setOpen(false)} className="btn btn-secondary w-full justify-center py-4 text-lg">
-              Volunteer
+              {t('nav.volunteer')}
             </Link>
           </div>
         </div>

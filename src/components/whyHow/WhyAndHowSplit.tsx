@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function WhyAndHowSplit() {
   return (
-    <section className="section bg-base-white w-full border-t-4 border-[#3498DB]">
+    <section className="section bg-base-white w-full ">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16">
         
         {/* Left Column: Why we act */}
