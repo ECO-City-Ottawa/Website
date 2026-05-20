@@ -1,6 +1,7 @@
 'use client'
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { translations } from '@/data/translations';
 
 type Language = 'en' | 'fr';
 
@@ -9,35 +10,6 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
 }
-
-const translations = {
-  en: {
-    'nav.about': 'About',
-    'nav.whyHow': 'Why & How',
-    'nav.projects': 'Projects',
-    'nav.newsEvents': 'News & Events',
-    'nav.engagement': 'Engagement',
-    'nav.resources': 'Resources',
-    'nav.contact': 'Contact',
-    'nav.donate': 'Donate',
-    'nav.volunteer': 'Volunteer',
-    'skip.content': 'Skip to content',
-    'toggle.menu': 'Toggle menu',
-  },
-  fr: {
-    'nav.about': 'À propos',
-    'nav.whyHow': 'Pourquoi et Comment',
-    'nav.projects': 'Projets',
-    'nav.newsEvents': 'Nouvelles et Événements',
-    'nav.engagement': 'Engagement',
-    'nav.resources': 'Ressources',
-    'nav.contact': 'Contact',
-    'nav.donate': 'Faire un don',
-    'nav.volunteer': 'Bénévolat',
-    'skip.content': 'Passer au contenu',
-    'toggle.menu': 'Basculer le menu',
-  }
-};
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 

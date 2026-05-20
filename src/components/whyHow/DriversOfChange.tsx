@@ -1,47 +1,52 @@
+'use client'
+
 import { Sprout } from 'lucide-react';
 import React from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function DriversOfChange() {
+  const { t } = useLanguage();
+
   const drivers = [
     {
-      title: "Social Capital",
-      desc: "The people power of trust, relationships, and working together. When people know each other, share ideas, and support one another, it's easier to solve problems and take action. Proximity makes it possible. Connection makes it happen."
+      title: t('driversOfChange.driver1.title'),
+      desc: t('driversOfChange.driver1.desc')
     },
     {
-      title: "Governance",
-      desc: "How decisions are made matters. Good governance means everyone has a voice — decisions are fair, open, and made together. When people feel included, communities plan better, act faster, and create lasting change."
+      title: t('driversOfChange.driver2.title'),
+      desc: t('driversOfChange.driver2.desc')
     },
     {
-      title: "Sustainable Economy",
-      desc: "A healthy community needs an economy that works for people, local businesses, and the planet. A local, fair, and circular economy supports clean energy, local food, waste reduction, and thriving small enterprises — sharing opportunities fairly."
+      title: t('driversOfChange.driver3.title'),
+      desc: t('driversOfChange.driver3.desc')
     }
   ];
 
   return (
     <section className="section bg-green-dark w-full relative overflow-hidden">
-           <Sprout className="w-96 h-96 text-[#012515] absolute -bottom-16 -left-20 z-0" />
-     <Sprout className="w-96 h-96 text-[#055D36] absolute top-0 -right-20 rotate-270 z-0" />
+      <Sprout className="w-96 h-96 text-[#012515] absolute -bottom-16 -left-20 z-0" />
+      <Sprout className="w-96 h-96 text-[#055D36] absolute top-0 -right-20 rotate-270 z-0" />
       <div className="max-w-7xl mx-auto w-full relative z-10">
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-16">
           <div className="flex flex-col">
             <span className="text-xs font-semibold text-white/80 mb-4 uppercase tracking-wide block">
-              &#123;#Drivers of Change&#125;
+              {t('driversOfChange.subtitle')}
             </span>
             <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-white leading-tight">
-              Three Drivers of Change
+              {t('driversOfChange.title')}
             </h2>
           </div>
           <div className="flex flex-col justify-center">
              <p className="text-white/90 md:text-[18px] leading-[1.6]">
-               The drivers provide the foundation for how communities organize, collaborate, and keep efforts moving forward. Your main interest might be in one of OBEC's themes, but the drivers help turn that interest into lasting community impact.
+               {t('driversOfChange.paragraph')}
              </p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {drivers.map((d, i) => (
-            <div key={i} className="flex flex-col bg-[#0A4B2C] p-8 rounded-2xl shadow-sm border border-white/5">
+            <div key={i} className="flex flex-col bg-[#0A4B2C] p-8 rounded-2xl  border border-white/5">
               <div className="mb-6 text-[#42D28B]">
                 {/* Outlined SVG Icons */}
                 {i === 0 && (

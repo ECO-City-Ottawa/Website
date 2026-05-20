@@ -1,17 +1,22 @@
+'use client'
+
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Volunteers() {
+  const { t } = useLanguage();
+
   const volunteers = [
     {
       name: "Maxime Mizero",
-      role: "Web & Database Lead",
-      desc: "In my life, I have had 2 everlasting passions accounting and education..."
+      role: t('volunteers.member.role.web'),
+      desc: t('volunteers.member.desc.maxime')
     },
     {
       name: "Maxime Mizero",
-      role: "Web & Database Lead",
-      desc: "In my life, I have had 2 everlasting passions accounting and education..."
+      role: t('volunteers.member.role.web'),
+      desc: t('volunteers.member.desc.maxime')
     }
   ];
 
@@ -21,13 +26,13 @@ export default function Volunteers() {
         
         <div className="mb-16 max-w-4xl mx-auto">
           <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-            &#123;#Modal&#125;
+            {t('volunteers.subtitle')}
           </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-6">
-            Volunteers
+            {t('volunteers.title')}
           </h2>
           <p className="text-text-normal md:text-[18px] leading-[1.6]">
-            Volunteers are the heart of OBEC. They bring their time, skills, and energy to help turn ideas into action—whether supporting events, leading projects, or building community connections. Volunteering with OBEC is about learning, sharing, and working together to create a more sustainable Ottawa.
+            {t('volunteers.paragraph')}
           </p>
         </div>
 

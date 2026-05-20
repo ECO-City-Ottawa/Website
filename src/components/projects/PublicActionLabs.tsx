@@ -19,7 +19,7 @@ export default function PublicActionLabs() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1 */}
-          <div className="flex flex-col p-8 rounded-2xl border border-black/10 bg-white shadow-sm">
+          <div className="flex flex-col p-8 rounded-2xl border border-black/10 bg-white ">
             <div className="w-[3px] h-5 bg-brand-green mb-16 rounded-full"></div>
             <h3 className="font-alt font-bold text-[18px] text-brand-green mb-4">
               SPARK-PAL — <span className="text-[13px] font-semibold text-[#186A3E]">Small</span>
@@ -29,7 +29,7 @@ export default function PublicActionLabs() {
             </p>
           </div>
           {/* Card 2 */}
-          <div className="flex flex-col p-8 rounded-2xl border border-black/10 bg-white shadow-sm">
+          <div className="flex flex-col p-8 rounded-2xl border border-black/10 bg-white ">
             <div className="flex gap-1.5 mb-16">
               <div className="w-[3px] h-5 bg-brand-green rounded-full"></div>
               <div className="w-[3px] h-5 bg-brand-green rounded-full"></div>
@@ -42,7 +42,7 @@ export default function PublicActionLabs() {
             </p>
           </div>
           {/* Card 3 */}
-          <div className="flex flex-col p-8 rounded-2xl border border-black/10 bg-white shadow-sm">
+          <div className="flex flex-col p-8 rounded-2xl border border-black/10 bg-white ">
             <div className="flex gap-1.5 mb-16">
               <div className="w-[3px] h-5 bg-brand-green rounded-full"></div>
               <div className="w-[3px] h-5 bg-brand-green rounded-full"></div>

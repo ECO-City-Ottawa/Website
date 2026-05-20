@@ -1,48 +1,53 @@
+'use client'
+
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function OurBoard() {
+  const { t } = useLanguage();
+
   const boardMembers = [
     {
       name: "Esther Weirich",
-      role: "Chair",
-      desc: "In my life, I have had 2 everlasting passions accounting and education....",
+      role: t('ourBoard.member.role.chair'),
+      desc: t('ourBoard.member.desc.esther'),
       hasImage: false
     },
     {
       name: "Rudi Aksim",
-      role: "Secretary",
-      desc: "I'm a retired person and active in climate action and helping newcom...",
+      role: t('ourBoard.member.role.secretary'),
+      desc: t('ourBoard.member.desc.rudi'),
       hasImage: false
     },
     {
       name: "Eric Sonego",
-      role: "Treasurer",
-      desc: "I am an accountant (RPA, APA, CIA, CMA (AU) and IIA -internal auditor)...",
+      role: t('ourBoard.member.role.treasurer'),
+      desc: t('ourBoard.member.desc.eric'),
       hasImage: false
     },
     {
       name: "Muloud Gahlouz",
-      role: "Board Member at Large",
-      desc: "Pamela A. Jordan is an independent scholar based in Ottawa, Ontario. H...",
+      role: t('ourBoard.member.role.large'),
+      desc: t('ourBoard.member.desc.pamela'),
       hasImage: true
     },
     {
       name: "Muloud Gahlouz",
-      role: "Board Member at Large",
-      desc: "Pamela A. Jordan is an independent scholar based in Ottawa, Ontario. H...",
+      role: t('ourBoard.member.role.large'),
+      desc: t('ourBoard.member.desc.pamela'),
       hasImage: true
     },
     {
       name: "Guy Soulière",
-      role: "Board Member at large",
-      desc: "Guy is a semi-retired, energetic bilingual entrepreneur and communi...",
+      role: t('ourBoard.member.role.large'),
+      desc: t('ourBoard.member.desc.guy'),
       hasImage: false
     },
     {
       name: "Prasanna Siva",
-      role: "Board Member at Large",
-      desc: "Guy is a semi-retired, energetic bilingual entrepreneur and communi...",
+      role: t('ourBoard.member.role.large'),
+      desc: t('ourBoard.member.desc.guy'),
       hasImage: false
     }
   ];
@@ -53,13 +58,13 @@ export default function OurBoard() {
         
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-            &#123;#Modal&#125;
+            {t('ourBoard.subtitle')}
           </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-6">
-            Our Board
+            {t('ourBoard.title')}
           </h2>
           <p className="text-text-normal md:text-[18px]">
-            They bring experience, vision, and commitment to help shape strategy, support volunteers, and strengthen community connections — ensuring we stay focused on building a more sustainable Ottawa.
+            {t('ourBoard.paragraph')}
           </p>
         </div>
 
@@ -82,7 +87,7 @@ export default function OurBoard() {
                  </p>
                  <div className="mt-auto">
                    <button className="text-brand-green text-xs font-semibold hover:underline flex items-center">
-                     Full Description 
+                     {t('ourBoard.cta')} 
                      <svg className="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                      </svg>

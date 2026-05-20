@@ -1,10 +1,15 @@
+'use client'
+
 import React from 'react';
 import Link from 'next/link';
 import { FeatureCard } from '../ui/FeatureCard';
 import { ArrowRightIcon } from 'lucide-react';
 import Image from 'next/image';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function CommunityActionSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="section w-full relative">
       <Image src="/homepage/whyHow.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-5" />
@@ -14,13 +19,13 @@ export default function CommunityActionSection() {
         {/* Header */}
         <div className="text-center max-w-3xl mb-16">
           <span className="text-sm font-semibold text-text-strong mb-4 tracking-wide block">
-            Why &amp; How
+            {t('communityAction.title')}
           </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong tracking-tight mb-6">
-            From conversation to<br />community action
+            {t('communityAction.headline')}
           </h2>
           <p className="text-text-normal md:text-[18px] leading-[1.6]">
-            We give communities the tools and facilitation to turn good ideas into real, local sustainability projects — and share those stories so others can learn and do the same.
+            {t('communityAction.description')}
           </p>
         </div>
 
@@ -29,12 +34,12 @@ export default function CommunityActionSection() {
           {/* Left Column - Vertical Card */}
           <div className="w-full">
             <FeatureCard
-              tag="Focus Areas"
-              title="Ten Themes of Sustainability"
-              description="Ten areas to focus local action—Energy, Water, Food, Waste, Habitat, and more."
+              tag={t('communityAction.card1Tag')}
+              title={t('communityAction.card1Title')}
+              description={t('communityAction.card1Desc')}
               imageSrc="/homepage/hero.png"
-              linkText="Explore the Themes"
-              linkHref="#"
+              linkText={t('communityAction.card1Link')}
+              linkHref="/why-how"
               layout="vertical"
             />
           </div>
@@ -42,34 +47,34 @@ export default function CommunityActionSection() {
           {/* Right Column - Horizontal Cards */}
           <div className="w-full flex flex-col gap-6">
             <FeatureCard
-              tag="Core Forces"
-              title="3 Drivers of Change"
-              description="Social Capital, Governance, and Sustainable Economy that help ideas spread and efforts scale."
+              tag={t('communityAction.card2Tag')}
+              title={t('communityAction.card2Title')}
+              description={t('communityAction.card2Desc')}
               imageSrc="/homepage/hero.png"
-              linkText="Learn about the Drivers"
-              linkHref="#"
+              linkText={t('communityAction.card2Link')}
+              linkHref="/why-how"
               layout="horizontal"
             />
             
             <FeatureCard
-              tag="Action Tools"
-              title="Tools of Engagement"
-              description="Practical ways communities turn talk into action—PAL, CSP, Tours, Project Database, and more."
+              tag={t('communityAction.card3Tag')}
+              title={t('communityAction.card3Title')}
+              description={t('communityAction.card3Desc')}
               imageSrc="/homepage/hero.png"
-              linkText="See all tools"
-              linkHref="#"
+              linkText={t('communityAction.card3Link')}
+              linkHref="/engagement"
               layout="horizontal"
             >
               {/* Extra Links inside the card */}
               <div className="flex flex-wrap gap-x-4 gap-y-2 mb-6">
-                <Link href="#" className="text-sm font-medium text-text-strong underline underline-offset-2 hover:text-brand-green">
-                  Project Database
+                <Link href="/projects/browse" className="text-sm font-medium text-text-strong underline underline-offset-2 hover:text-brand-green">
+                  {t('communityAction.card3ExtraLink1')}
                 </Link>
-                <Link href="#" className="text-sm font-medium text-text-strong underline underline-offset-2 hover:text-brand-green">
-                  Public Action Labs
+                <Link href="/engagement" className="text-sm font-medium text-text-strong underline underline-offset-2 hover:text-brand-green">
+                  {t('communityAction.card3ExtraLink2')}
                 </Link>
-                <Link href="#" className="text-sm font-medium text-text-strong underline underline-offset-2 hover:text-brand-green">
-                  Community Sustainability Plans
+                <Link href="/projects/browse" className="text-sm font-medium text-text-strong underline underline-offset-2 hover:text-brand-green">
+                  {t('communityAction.card3ExtraLink3')}
                 </Link>
               </div>
             </FeatureCard>
@@ -78,11 +83,11 @@ export default function CommunityActionSection() {
 
         {/* Bottom CTA */}
         <div className="flex flex-wrap items-center justify-center gap-6 mt-16">
-          <Link href="#" className="btn-secondary rounded-lg px-6 py-3 font-medium">
-            See how it works
+          <Link href="/why-how" className="btn-secondary rounded-lg px-6 py-3 font-medium">
+            {t('communityAction.cta1')}
           </Link>
-          <Link href="#" className="font-medium text-brand-green hover:underline flex items-center gap-1">
-            Get involved <ArrowRightIcon className="w-4 h-4" />
+          <Link href="/engagement" className="font-medium text-brand-green hover:underline flex items-center gap-1">
+            {t('communityAction.cta2')} <ArrowRightIcon className="w-4 h-4" />
           </Link>
         </div>
 

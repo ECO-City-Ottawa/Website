@@ -1,27 +1,35 @@
+'use client'
+
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
 import Image from 'next/image';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ProjectsSection() {
+  const { t } = useLanguage();
+
   const projects = [
     {
       imageSrc: "https://images.unsplash.com/photo-1699163204279-9993707cbe5e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8b3R0YXdhfGVufDB8fDB8fHww",
-      title: "Adopt-a-Ditch",
-      description: "Native plantings to manage rural roadsides and support biodiversity.",
-      tags: ["Habitat", "Natural Capital", "Community impact"]
+      title: t('projects.project1.title'),
+      slug: "adopt-a-ditch",
+      description: t('projects.project1.desc'),
+      tags: [t('projects.project1.tags.0'), t('projects.project1.tags.1'), t('projects.project1.tags.2')]
     },
     {
       imageSrc: "https://images.unsplash.com/photo-1587825293361-a1c114a39e8d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG90dGF3YXxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Electrical System Simulation (ESS)",
-      description: "A hands-on energy planning game that sparks discussion and collective decisions.",
-      tags: ["Energy", "Education"]
+      title: t('projects.project2.title'),
+      slug: "electrical-system-simulation",
+      description: t('projects.project2.desc'),
+      tags: [t('projects.project2.tags.0'), t('projects.project2.tags.1')]
     },
     {
       imageSrc: "https://images.unsplash.com/photo-1513804277545-af322c6d7f44?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fG90dGF3YXxlbnwwfHwwfHx8MA%3D%3D",
-      title: "My Sustainable Business Path (MSBP)",
-      description: "Peer workshops that help small businesses plan and act on sustainability.",
-      tags: ["Sustainable Economy", "Cooperation"]
+      title: t('projects.project3.title'),
+      slug: "my-sustainable-business-path",
+      description: t('projects.project3.desc'),
+      tags: [t('projects.project3.tags.0'), t('projects.project3.tags.1')]
     }
   ];
 
@@ -32,13 +40,13 @@ export default function ProjectsSection() {
         {/* Header */}
         <div className="text-center max-w-3xl mb-12">
           <span className="text-sm font-semibold text-text-strong mb-4 tracking-wide block">
-            Projects
+            {t('projects.title')}
           </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong tracking-tight mb-6">
-            Our urban ecological initiatives
+            {t('projects.headline')}
           </h2>
           <p className="text-text-normal md:text-[18px] leading-[1.6]">
-            Innovative projects creating sustainable urban environments across Ottawa
+            {t('projects.description')}
           </p>
         </div>
 
@@ -47,8 +55,7 @@ export default function ProjectsSection() {
           {projects.map((project, i) => (
             <div key={i} className="flex flex-col rounded-2xl border border-black/10 overflow-hidden  bg-base-white">
               {/* Image Placeholder */}
-              <div className="w-full aspect-[4/3] bg-black/5 relative relative">
-                {/* You can drop an <Image /> component here when you have the project thumbnails */}
+              <div className="w-full aspect-[4/3] bg-black/5 relative">
                 <Image 
                   src={project.imageSrc} 
                   alt={project.title} 
@@ -77,8 +84,8 @@ export default function ProjectsSection() {
                 
                 {/* Link */}
                 <div className="mt-auto">
-                  <Link href="#" className="inline-flex items-center gap-1 text-brand-green font-medium text-sm hover:underline">
-                    View project <ArrowRightIcon className="w-4 h-4" />
+                  <Link href={`/projects/${project.slug}`} className="inline-flex items-center gap-1 text-brand-green font-medium text-sm hover:underline">
+                    {t('projects.viewProject')} <ArrowRightIcon className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
@@ -88,9 +95,9 @@ export default function ProjectsSection() {
 
         {/* Bottom CTA */}
         <div className="flex flex-col items-center gap-4">
-          <p className="text-text-strong font-medium text-sm">Explore 10+ community projects</p>
-          <Link href="#" className="btn-secondary rounded-lg px-6 py-3 font-medium text-sm">
-            View all projects
+          <p className="text-text-strong font-medium text-sm">{t('projects.exploreCount')}</p>
+          <Link href="/projects" className="btn-secondary rounded-lg px-6 py-3 font-medium text-sm">
+            {t('projects.viewAll')}
           </Link>
         </div>
 

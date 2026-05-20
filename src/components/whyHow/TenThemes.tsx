@@ -1,42 +1,47 @@
+'use client'
+
 import Image from 'next/image';
 import React from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function TenThemes() {
+  const { t } = useLanguage();
+
   const themes = [
-    { title: "Transportation", desc: "Travel in ways that are cleaner, safer, and better for the planet — biking, walking, and public transit." },
-    { title: "Energy", desc: "Save energy and use clean sources like solar and wind to power our homes, schools, and cities." },
-    { title: "Design", desc: "Create buildings, neighbourhoods, and cities that are good for people and the environment." },
-    { title: "Habitat", desc: "Protect and restore natural spaces where plants, animals, and people can thrive together" },
-    { title: "Recreation", desc: "Enjoy and connect with nature through play, exercise, and outdoor activities." },
-    { title: "Food", desc: "Grow, share, and eat food that is healthy for our bodies, communities, and the earth." },
-    { title: "Natural Capital", desc: "Take care of nature's gifts — forests, rivers, and soil — because they support all life." },
-    { title: "Waste", desc: "Reduce what we throw away, supporting less polluting and more effective waste management." },
-    { title: "Health", desc: "Build healthy communities through clean air, water, green spaces, and active lifestyles." },
-    { title: "Sense of Place", desc: "Feel proud of where you live — strengthen community bonds by protecting local spaces." }
+    { title: t('tenThemes.theme1.title'), desc: t('tenThemes.theme1.desc') },
+    { title: t('tenThemes.theme2.title'), desc: t('tenThemes.theme2.desc') },
+    { title: t('tenThemes.theme3.title'), desc: t('tenThemes.theme3.desc') },
+    { title: t('tenThemes.theme4.title'), desc: t('tenThemes.theme4.desc') },
+    { title: t('tenThemes.theme5.title'), desc: t('tenThemes.theme5.desc') },
+    { title: t('tenThemes.theme6.title'), desc: t('tenThemes.theme6.desc') },
+    { title: t('tenThemes.theme7.title'), desc: t('tenThemes.theme7.desc') },
+    { title: t('tenThemes.theme8.title'), desc: t('tenThemes.theme8.desc') },
+    { title: t('tenThemes.theme9.title'), desc: t('tenThemes.theme9.desc') },
+    { title: t('tenThemes.theme10.title'), desc: t('tenThemes.theme10.desc') }
   ];
 
   return (
     <section className="section  w-full border-t border-black/5 relative">
       <Image src="/homepage/heroBG.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-5" />
-        <div className="max-w-7xl mx-auto w-full bg-white/90 backdrop-blur-xs rounded-full">
+      <div className="max-w-7xl mx-auto w-full bg-white/90 backdrop-blur-xs rounded-full">
 
         <div className="text-center mb-16 max-w-2xl mx-auto ">
           <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-            &#123;#themes&#125;
+            {t('tenThemes.subtitle')}
           </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-4">
-            10 Themes of Sustainability
+            {t('tenThemes.title')}
           </h2>
           <p className="text-text-normal md:text-[18px]">
-            These Themes divide sustainability into understandable areas of action to help people work within their interest to identify issues, products and services and develop solution
+            {t('tenThemes.paragraph')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
-          {themes.map((t, i) => (
-            <div key={i} className="flex flex-col bg-white p-6 rounded-2xl group border border-black/10 shadow-sm h-full hover:bg-brand-green hover:text-white transition-colors duration-300 cursor-pointer">
-              <h3 className="font-alt font-bold text-xl text-[#1E7444] mb-6 group-hover:text-white transition-colors duration-300">{t.title}</h3>
-              <p className="text-text-normal leading-relaxed mt-auto mb-auto group-hover:text-white transition-colors duration-300">{t.desc}</p>
+          {themes.map((theme, i) => (
+            <div key={i} className="flex flex-col bg-white p-6 rounded-2xl group border border-black/10  h-full hover:bg-brand-green hover:text-white transition-colors duration-300 cursor-pointer">
+              <h3 className="font-alt font-bold text-xl text-[#1E7444] mb-6 group-hover:text-white transition-colors duration-300">{theme.title}</h3>
+              <p className="text-text-normal leading-relaxed mt-auto mb-auto group-hover:text-white transition-colors duration-300">{theme.desc}</p>
             </div>
           ))}
         </div>

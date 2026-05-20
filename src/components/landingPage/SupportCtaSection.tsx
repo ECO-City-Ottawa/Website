@@ -1,11 +1,14 @@
+'use client'
+
 import React from 'react';
 import Link from 'next/link';
 import { User } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const glass1 = "bg-[#0B1521]/20 backdrop-blur-md border border-white/[0.03] shadow-[0_4px_12px_rgba(0,0,0,0.2)]"; // Faint dark navy
 const glass2 = "bg-[#114A77]/10 backdrop-blur-sm border border-white/[0.02] shadow-[0_4px_12px_rgba(0,0,0,0.1)]"; // Faint deep blue
 const glass3 = "bg-[#061D2F]/30 backdrop-blur-md border border-black/10 shadow-[0_4px_12px_rgba(0,0,0,0.3)]"; // Very dark shadow
-const glass4 = "bg-transparent backdrop-blur-sm border border-white/[0.02] shadow-sm"; // Ghostly transparent
+const glass4 = "bg-transparent backdrop-blur-sm border border-white/[0.02] "; // Ghostly transparent
 
 const communityIcons = [
   // Left Edge
@@ -67,49 +70,52 @@ const communityIcons = [
 ];
 
 export default function SupportCtaSection() {
+  const { t } = useLanguage();
+
   return (
     <div className='p-4'>
-    <section className="section bg-[#061D2F] w-full flex flex-col items-center text-center relative overflow-hidden rounded-[64px] max-w-7xl mx-auto min-h-[400px] justify-center py-20 ">
-      <div className="absolute  z-0 bg-[#114A77] top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
-      <div className="absolute z-0 bg-[#114A77] bottom-0 left-1/2 transform -translate-x-1/2 w-[200px] h-[200px] rounded-full blur-[100px]" />
-      <div className="absolute z-0 bg-[#114A77] top-0 left-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
-      
-      {/* Community Icons Background Layer */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {communityIcons.map((icon, i) => (
-          <div 
-            key={i} 
-            className={`absolute flex items-center justify-center rounded-full ${icon.color}`}
-            style={{ 
-              top: icon.top, 
-              left: icon.left, 
-              transform: 'translate(-50%, -50%)',
-              width: `${icon.size}px`,
-              height: `${icon.size}px`
-            }}
-          >
-            <User className="text-white/10" style={{ width: `${icon.size * 0.45}px`, height: `${icon.size * 0.45}px` }} />
-          </div>
-        ))}
-      </div>
-
-      <div className="max-w-3xl mx-auto w-full  z-10 relative bg-[#061D2F]/10 backdrop-blur-md p-8 rounded-3xl ">
-        <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-white tracking-tight mb-6">
-          Your support powers local<br />action
-        </h2>
-        <p className="text-white/80 md:text-[18px] leading-[1.6] mb-10">
-          Every donation helps volunteers turn ideas into visible, practical projects.
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <Link href="#" className="bg-white text-[#0B1521] px-8 py-3 rounded-lg font-bold text-sm hover:bg-gray-100 transition-colors">
-            Donate now
-          </Link>
-          <Link href="#" className="border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-bold text-sm transition-colors">
-            See impact
-          </Link>
+      <section className="section bg-[#061D2F] w-full flex flex-col items-center text-center relative overflow-hidden rounded-[64px] max-w-7xl mx-auto min-h-[400px] justify-center py-20">
+        <div className="absolute z-0 bg-[#114A77] top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
+        <div className="absolute z-0 bg-[#114A77] bottom-0 left-1/2 transform -translate-x-1/2 w-[200px] h-[200px] rounded-full blur-[100px]" />
+        <div className="absolute z-0 bg-[#114A77] top-0 left-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
+        
+        {/* Community Icons Background Layer */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {communityIcons.map((icon, i) => (
+            <div 
+              key={i} 
+              className={`absolute flex items-center justify-center rounded-full ${icon.color}`}
+              style={{ 
+                top: icon.top, 
+                left: icon.left, 
+                transform: 'translate(-50%, -50%)',
+                width: `${icon.size}px`,
+                height: `${icon.size}px`
+              }}
+            >
+              <User className="text-white/10" style={{ width: `${icon.size * 0.45}px`, height: `${icon.size * 0.45}px` }} />
+            </div>
+          ))}
         </div>
-      </div>
-    </section>
+
+        <div className="max-w-3xl mx-auto w-full z-10 relative bg-[#061D2F]/10 backdrop-blur-md p-8 rounded-3xl">
+          <h2 
+            className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-white tracking-tight mb-6"
+            dangerouslySetInnerHTML={{ __html: t('supportCta.headline') }}
+          />
+          <p className="text-white/80 md:text-[18px] leading-[1.6] mb-10">
+            {t('supportCta.description')}
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link href="/donate" className="bg-white text-[#0B1521] px-8 py-3 rounded-lg font-bold text-sm hover:bg-gray-100 transition-colors">
+              {t('supportCta.cta1')}
+            </Link>
+            <Link href="/about" className="border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-bold text-sm transition-colors">
+              {t('supportCta.cta2')}
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

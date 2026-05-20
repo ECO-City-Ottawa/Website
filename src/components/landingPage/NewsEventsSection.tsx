@@ -5,64 +5,66 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRightIcon, CalendarDays, Dot, MapPin } from 'lucide-react';
 import CalendarComponent from '../ui/CalendarComponent';
-
-const ITEMS = [
-  {
-    id: 1,
-    type: 'news',
-    tags: ['News', 'Community'],
-    readTime: '5 min read',
-    date: 'May 5, 2026',
-    title: 'Neighbourhood seed swap launches',
-    description: 'A community seed exchange to kick-start spring gardens.',
-    imageSrc: 'https://plus.unsplash.com/premium_photo-1742418231346-0d796253c5b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
-    link: '#',
-  },
-  {
-    id: 2,
-    type: 'event',
-    date: 'May 15, 2026',
-    location: 'Lansdowne Park',
-    title: 'Public Action Lab: Energy',
-    description: 'Co-design local projects across Energy, Food, and Waste.',
-    imageSrc: 'https://plus.unsplash.com/premium_photo-1670182502090-a5d58b24f25b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
-    link: '#',
-  },
-  {
-    id: 3,
-    type: 'news',
-    tags: ['Update', 'Policy'],
-    readTime: '3 min read',
-    date: 'May 2, 2026',
-    title: 'New grants available for solar initiatives',
-    description: 'City council approves a new round of micro-grants for community solar projects.',
-    imageSrc: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
-    link: '#',
-  },
-  {
-    id: 4,
-    type: 'event',
-    date: 'May 22, 2026',
-    location: 'Ottawa City Hall',
-    title: 'Urban Forestry Workshop',
-    description: 'Learn about tree canopy preservation and how to advocate for greener streets.',
-    imageSrc: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
-    link: '#',
-  },
-  {
-    id: 5,
-    type: 'event',
-    date: 'June 4, 2026',
-    location: 'Community Center',
-    title: 'Zero Waste Living Panel',
-    description: 'Experts share practical tips on reducing household waste.',
-    imageSrc: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
-    link: '#',
-  }
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function NewsEventsSection() {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<'All' | 'News' | 'Events' | 'Calendar'>('All');
+
+  const ITEMS = [
+    {
+      id: 1,
+      type: 'news',
+      tags: [t('newsEvents.item1.tags.0'), t('newsEvents.item1.tags.1')],
+      readTime: t('newsEvents.item1.readTime'),
+      date: t('newsEvents.item1.date'),
+      title: t('newsEvents.item1.title'),
+      description: t('newsEvents.item1.desc'),
+      imageSrc: 'https://plus.unsplash.com/premium_photo-1742418231346-0d796253c5b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
+      link: '/news/community-garden-initiative-reaches-50th-location',
+    },
+    {
+      id: 2,
+      type: 'event',
+      date: t('newsEvents.item2.date'),
+      location: t('newsEvents.item2.location'),
+      title: t('newsEvents.item2.title'),
+      description: t('newsEvents.item2.desc'),
+      imageSrc: 'https://plus.unsplash.com/premium_photo-1670182502090-a5d58b24f25b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
+      link: '/events/public-action-lab-solar-installation-demo',
+    },
+    {
+      id: 3,
+      type: 'news',
+      tags: [t('newsEvents.item3.tags.0'), t('newsEvents.item3.tags.1')],
+      readTime: t('newsEvents.item3.readTime'),
+      date: t('newsEvents.item3.date'),
+      title: t('newsEvents.item3.title'),
+      description: t('newsEvents.item3.desc'),
+      imageSrc: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
+      link: '/news/local-high-schools-launch-solar-simulation-game',
+    },
+    {
+      id: 4,
+      type: 'event',
+      date: t('newsEvents.item4.date'),
+      location: t('newsEvents.item4.location'),
+      title: t('newsEvents.item4.title'),
+      description: t('newsEvents.item4.desc'),
+      imageSrc: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
+      link: '/events/guided-cycling-tour-ottawa-active-transit',
+    },
+    {
+      id: 5,
+      type: 'event',
+      date: t('newsEvents.item5.date'),
+      location: t('newsEvents.item5.location'),
+      title: t('newsEvents.item5.title'),
+      description: t('newsEvents.item5.desc'),
+      imageSrc: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
+      link: '/events/interactive-board-game-night-energy-simulator',
+    }
+  ];
 
   const filteredItems = ITEMS.filter(item => {
     if (activeTab === 'All') return true;
@@ -72,7 +74,7 @@ export default function NewsEventsSection() {
   });
 
   const calendarEvents = ITEMS.filter(item => item.type === 'event').map(event => {
-    // Basic date parsing for calendar. You might want to add explicit start/end times to the ITEMS array later!
+    // Basic date parsing for calendar.
     const startDate = new Date(event.date);
     return {
       title: event.title,
@@ -91,30 +93,35 @@ export default function NewsEventsSection() {
         {/* Header & Tabs */}
         <div className="mb-12">
           <span className="text-sm font-semibold text-text-strong mb-4 tracking-wide block">
-            News &amp; Events
+            {t('newsEvents.title')}
           </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong tracking-tight mb-6">
-            Latest updates and insights
+            {t('newsEvents.headline')}
           </h2>
           <p className="text-text-normal md:text-[18px] leading-[1.6] mb-8">
-            Stay informed about our ecological initiatives and urban transformation efforts
+            {t('newsEvents.description')}
           </p>
           
           <div className="flex gap-6 border-b border-black/10">
-            {['All', 'News', 'Events', 'Calendar'].map(tab => (
+            {[
+              { id: 'All', label: t('newsEvents.tabs.all') },
+              { id: 'News', label: t('newsEvents.tabs.news'), countType: 'news' },
+              { id: 'Events', label: t('newsEvents.tabs.events'), countType: 'event' },
+              { id: 'Calendar', label: t('newsEvents.tabs.calendar') }
+            ].map(tab => (
               <button 
-                key={tab}
-                onClick={() => setActiveTab(tab as any)}
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as any)}
                 className={`pb-3 font-medium text-sm transition-colors ${
-                  activeTab === tab 
+                  activeTab === tab.id 
                     ? 'border-b-2 border-brand-green text-brand-green' 
                     : 'text-text-normal hover:text-text-strong'
                 }`}
               >
-                {tab} 
-                {(tab === 'News' || tab === 'Events') && (
+                {tab.label} 
+                {tab.countType && (
                   <span className="text-text-normal text-xs font-semibold py-1 px-2 rounded-full bg-black/5 ml-1">
-                    {ITEMS.filter(item => item.type === tab.toLowerCase()).length}
+                    {ITEMS.filter(item => item.type === tab.countType).length}
                   </span>
                 )}
               </button>
@@ -168,7 +175,7 @@ export default function NewsEventsSection() {
                     </p>
                     <div className="mt-auto">
                       <Link href={item.link} className="inline-flex items-center gap-1 text-brand-green font-medium text-sm hover:underline">
-                        Read more <ArrowRightIcon className="w-4 h-4" />
+                        {t('newsEvents.readMore')} <ArrowRightIcon className="w-4 h-4" />
                       </Link>
                     </div>
                   </div>
@@ -192,8 +199,8 @@ export default function NewsEventsSection() {
 
         {/* Bottom CTA */}
         <div className="flex justify-end">
-          <Link href="#" className="btn-secondary rounded-lg px-6 py-3 font-medium text-sm">
-            See all news &amp; events
+          <Link href="/news-events" className="btn-secondary rounded-lg px-6 py-3 font-medium text-sm">
+            {t('newsEvents.seeAll')}
           </Link>
         </div>
 

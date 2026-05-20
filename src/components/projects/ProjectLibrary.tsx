@@ -6,18 +6,21 @@ export default function ProjectLibrary() {
   const projects = [
     {
       title: "Adopt-a-Ditch",
+      slug: "adopt-a-ditch",
       desc: "Native plantings to manage rural roadsides and support biodiversity.",
       tags: ["Habitat", "Natural Capital", "Community impact"],
       image: "/homepage/hero.png"
     },
     {
       title: "Electrical System Simulation (ESS)",
+      slug: "electrical-system-simulation",
       desc: "A hands-on energy planning game that sparks discussion and collective decisions.",
       tags: ["Energy", "Education"],
       image: "/homepage/hero.png"
     },
     {
       title: "My Sustainable Business Path (MSBP)",
+      slug: "my-sustainable-business-path",
       desc: "Peer workshops that help small businesses plan and act on sustainability.",
       tags: ["Sustainable Economy", "Cooperation"],
       image: "/homepage/hero.png"
@@ -44,9 +47,9 @@ export default function ProjectLibrary() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {projects.map((p, i) => (
-            <div key={i} className="flex flex-col rounded-2xl border border-black/10 bg-white overflow-hidden shadow-sm h-full">
+            <div key={i} className="flex flex-col rounded-2xl border border-black/10 bg-white overflow-hidden  h-full">
               <div className="relative w-full aspect-[16/10] bg-black/5">
                 <Image src={p.image} alt={p.title} fill className="object-cover" />
               </div>
@@ -62,7 +65,7 @@ export default function ProjectLibrary() {
                   ))}
                 </div>
                 
-                <Link href="#" className="text-brand-green text-[13px] font-semibold flex items-center hover:underline mt-auto">
+                <Link href={`/projects/${p.slug}`} className="text-brand-green text-[13px] font-semibold flex items-center hover:underline mt-auto">
                   View project
                   <svg className="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -74,7 +77,7 @@ export default function ProjectLibrary() {
         </div>
 
         <div className="flex justify-center mt-12">
-          <Link href="#" className="border border-brand-green text-brand-green hover:bg-brand-green/5 px-6 py-2 rounded-lg font-medium transition-colors text-sm">
+          <Link href="/projects" className="border border-brand-green text-brand-green hover:bg-brand-green/5 px-6 py-2 rounded-lg font-medium transition-colors text-sm">
             View all projects
           </Link>
         </div>

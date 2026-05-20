@@ -27,14 +27,14 @@ export default function DemonstrationEvents() {
         <div className="flex flex-col gap-10">
           
           <div className="flex flex-col">
-            <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden bg-black/5 mb-4 shadow-sm">
+            <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden bg-black/5 mb-4 ">
               <Image src="/homepage/hero.png" alt="Electrical System" fill className="object-cover" />
             </div>
             <h3 className="font-alt font-bold text-[18px] text-text-strong mb-2">
               Electrical System Simulation
             </h3>
             <p className="text-text-normal text-[13px] mb-3">hands-on energy planning game.</p>
-            <Link href="#" className="text-text-strong text-[13px] font-semibold hover:underline flex items-center">
+            <Link href="/projects/electrical-system-simulation" className="text-text-strong text-[13px] font-semibold hover:underline flex items-center">
               Learn more
               <svg className="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -43,14 +43,14 @@ export default function DemonstrationEvents() {
           </div>
 
           <div className="flex flex-col">
-            <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden bg-black/5 mb-4 shadow-sm">
+            <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden bg-black/5 mb-4 ">
               <Image src="/homepage/hero.png" alt="Agricultural Biodiversity" fill className="object-cover" />
             </div>
             <h3 className="font-alt font-bold text-[18px] text-text-strong mb-2">
               Agricultural Biodiversity
             </h3>
             <p className="text-text-normal text-[13px] mb-3">hands-on energy planning game.</p>
-            <Link href="#" className="text-text-strong text-[13px] font-semibold hover:underline flex items-center">
+            <Link href="/projects/adopt-a-ditch" className="text-text-strong text-[13px] font-semibold hover:underline flex items-center">
               Learn more
               <svg className="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

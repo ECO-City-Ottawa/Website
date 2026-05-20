@@ -15,10 +15,10 @@ export default function ApplyCta() {
           Have an idea for a community sustainability project? We can help you shape it, support it, and share it with Ottawa.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Link href="#" className="bg-white text-[#0A1D2E] hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors text-sm">
+          <Link href="/contact" className="bg-white text-[#0A1D2E] hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors text-sm">
             Apply Now
           </Link>
-          <Link href="#" className="border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-colors text-sm">
+          <Link href="/donate" className="border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-colors text-sm">
             Donate now
           </Link>
         </div>

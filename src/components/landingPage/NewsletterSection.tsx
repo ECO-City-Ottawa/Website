@@ -18,7 +18,7 @@ export default function NewsletterSection() {
           <input 
             type="email" 
             placeholder="Enter your email" 
-            className="flex-grow px-4 py-3 rounded-lg border border-black/10 focus:outline-none focus:border-brand-green bg-white shadow-sm text-text-strong"
+            className="flex-grow px-4 py-3 rounded-lg border border-black/10 focus:outline-none focus:border-brand-green bg-white  text-text-strong"
             required
           />
           <button 
