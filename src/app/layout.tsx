@@ -1,12 +1,10 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter, Urbanist } from 'next/font/google'
+import { Inter, Urbanist, Geist } from 'next/font/google'
+import { LanguageProvider } from '@/context/LanguageContext'
+import { cn } from "@/lib/utils";
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-sans-main',
-})
+const geist = Geist({subsets:['latin'],variable:'--font-sans'})
 const urbanist = Urbanist({
   subsets: ['latin'],
   display: 'swap',
@@ -20,9 +18,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${urbanist.variable}`}>
+    <html lang="en" className={cn(urbanist.variable, "font-sans", geist.variable)}>
       <body className="font-sans text-text-normal bg-base-white antialiased">
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   )
