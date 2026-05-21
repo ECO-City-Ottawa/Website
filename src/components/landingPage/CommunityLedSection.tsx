@@ -55,7 +55,7 @@ export default function CommunityLedSection() {
         {/* Right Image */}
         <div className="relative w-full max-h-[500px] aspect-square md:aspect-[4/5] rounded-[24px] overflow-hidden bg-black/5">
           <Image
-            src="/homepage/hero.png"
+            src="/image008.jpg"
             alt="Community path along the water"
             fill
             className="object-cover"

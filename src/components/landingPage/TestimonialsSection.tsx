@@ -46,28 +46,67 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-          {testimonials.map((t, i) => (
-            <div key={i} className="flex flex-col p-8 rounded-3xl bg-brand-green/20 text-white border border-white/10">
+        <div className="flex flex-col lg:flex-row  gap-4 w-full">
+            <div  className="flex flex-col p-8 rounded-xl bg-brand-green/20 text-white border border-white/10">
               <div className="flex gap-0.5 mb-6 text-yellow-400">
                 {/* 5 Stars */}
                 {[...Array(5)].map((_, j) => (
                   <Star key={j} className='w-5 h-5 fill-current text-yellow-400 stroke-transparent' />
                 ))}
               </div>
-              <p className="mb-8 leading-relaxed font-medium text-white/90 text-lg">"{t.quote}"</p>
+              <p className="mb-8 leading-relaxed font-medium text-white/90 text-lg lg:text-4xl">"{testimonials[0].quote}"</p>
 
               <div className="flex items-center gap-4 mt-auto">
                 <div className="w-12 h-12 rounded-full overflow-hidden relative bg-black/5 shrink-0 border border-black/10">
-                  <Image src={t.avatar} alt={t.name} fill className="object-cover" />
+                  <Image src={testimonials[0].avatar} alt={testimonials[0].name} fill className="object-cover" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-bold text-sm text-white/80">{t.name}</span>
-                  <span className="text-white/60 text-xs">{t.role}</span>
+                  <span className="font-bold text-sm text-white/80">{testimonials[0].name}</span>
+                  <span className="text-white/60 text-xs">{testimonials[0].role}</span>
                 </div>
               </div>
             </div>
-          ))}
+            <div className='flex flex-col gap-4 '>
+                <div  className="flex flex-col p-8 rounded-xl bg-brand-green/20 text-white border border-white/10">
+              <div className="flex gap-0.5 mb-6 text-yellow-400">
+                {/* 5 Stars */}
+                {[...Array(5)].map((_, j) => (
+                  <Star key={j} className='w-5 h-5 fill-current text-yellow-400 stroke-transparent' />
+                ))}
+              </div>
+              <p className="mb-8 leading-relaxed font-medium text-white/90 text-lg">"{testimonials[0].quote}"</p>
+
+              <div className="flex items-center gap-4 mt-auto">
+                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-black/5 shrink-0 border border-black/10">
+                  <Image src={testimonials[1].avatar} alt={testimonials[1].name} fill className="object-cover" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-bold text-sm text-white/80">{testimonials[1].name}</span>
+                  <span className="text-white/60 text-xs">{testimonials[1].role}</span>
+                </div>
+              </div>
+            </div>  <div  className="flex flex-col p-8 rounded-xl bg-brand-green/20 text-white border border-white/10">
+              <div className="flex gap-0.5 mb-6 text-yellow-400">
+                {/* 5 Stars */}
+                {[...Array(5)].map((_, j) => (
+                  <Star key={j} className='w-5 h-5 fill-current text-yellow-400 stroke-transparent' />
+                ))}
+              </div>
+              <p className="mb-8 leading-relaxed font-medium text-white/90 text-lg">"{testimonials[2].quote}"</p>
+
+              <div className="flex items-center gap-4 mt-auto">
+                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-black/5 shrink-0 border border-black/10">
+                  <Image src={testimonials[2].avatar} alt={testimonials[2].name} fill className="object-cover" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-bold text-sm text-white/80">{testimonials[2].name}</span>
+                  <span className="text-white/60 text-xs">{testimonials[2].role}</span>
+                </div>
+              </div>
+            </div>
+              
+            </div>
+
         </div>
       </div>
     </section>
