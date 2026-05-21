@@ -12,11 +12,11 @@ export default function JoinMissionSection() {
   return (
     <section className="section bg-base-white w-full">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-        
+
         {/* Left Image */}
         <div className="relative w-full aspect-square md:aspect-[4/5] rounded-[24px] overflow-hidden bg-black/5">
-          <Image 
-            src="/homepage/hero.png" 
+          <Image
+            src="/homepage/hero.png"
             alt="Volunteers"
             fill
             className="object-cover"
@@ -28,8 +28,8 @@ export default function JoinMissionSection() {
           <span className="text-sm font-semibold text-text-strong mb-4 tracking-wide">
             {t('joinMission.title')}
           </span>
-          <h2 
-            className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong tracking-tight mb-6"
+          <h2
+            className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong  mb-6"
             dangerouslySetInnerHTML={{ __html: t('joinMission.headline').replace('\n', '<br />') }}
           />
           <p className="text-text-normal md:text-[18px] leading-[1.6] mb-10">

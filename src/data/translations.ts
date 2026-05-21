@@ -1,6 +1,7 @@
 export const translations = {
   en: {
     // Navigation
+    'nav.home': 'Home',
     'nav.about': 'About',
     'nav.whyHow': 'Why & How',
     'nav.projects': 'Projects',
@@ -10,6 +11,7 @@ export const translations = {
     'nav.contact': 'Contact',
     'nav.donate': 'Donate',
     'nav.volunteer': 'Volunteer',
+    'nav.more': 'More',
     'skip.content': 'Skip to content',
     'toggle.menu': 'Toggle menu',
 
@@ -899,6 +901,7 @@ export const translations = {
   },
   fr: {
     // Navigation
+    'nav.home': 'Accueil',
     'nav.about': 'À propos',
     'nav.whyHow': 'Pourquoi et Comment',
     'nav.projects': 'Projets',
@@ -908,6 +911,7 @@ export const translations = {
     'nav.contact': 'Contact',
     'nav.donate': 'Faire un don',
     'nav.volunteer': 'Bénévolat',
+    'nav.more': 'Plus',
     'skip.content': 'Passer au contenu',
     'toggle.menu': 'Basculer le menu',
 

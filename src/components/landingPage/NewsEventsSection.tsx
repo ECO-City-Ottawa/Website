@@ -89,19 +89,19 @@ export default function NewsEventsSection() {
     <section className="section w-full relative">
       <Image src="/homepage/whyHow.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-5" />
       <div className="max-w-7xl mx-auto w-full flex flex-col bg-white/10 backdrop-blur-lg  ">
-        
+
         {/* Header & Tabs */}
         <div className="mb-12">
           <span className="text-sm font-semibold text-text-strong mb-4 tracking-wide block">
             {t('newsEvents.title')}
           </span>
-          <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong tracking-tight mb-6">
+          <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong  mb-6">
             {t('newsEvents.headline')}
           </h2>
           <p className="text-text-normal md:text-[18px] leading-[1.6] mb-8">
             {t('newsEvents.description')}
           </p>
-          
+
           <div className="flex gap-6 border-b border-black/10">
             {[
               { id: 'All', label: t('newsEvents.tabs.all') },
@@ -109,16 +109,15 @@ export default function NewsEventsSection() {
               { id: 'Events', label: t('newsEvents.tabs.events'), countType: 'event' },
               { id: 'Calendar', label: t('newsEvents.tabs.calendar') }
             ].map(tab => (
-              <button 
+              <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`pb-3 font-medium text-sm transition-colors ${
-                  activeTab === tab.id 
-                    ? 'border-b-2 border-brand-green text-brand-green' 
+                className={`pb-3 font-medium text-sm transition-colors ${activeTab === tab.id
+                    ? 'border-b-2 border-brand-green text-brand-green'
                     : 'text-text-normal hover:text-text-strong'
-                }`}
+                  }`}
               >
-                {tab.label} 
+                {tab.label}
                 {tab.countType && (
                   <span className="text-text-normal text-xs font-semibold py-1 px-2 rounded-full bg-black/5 ml-1">
                     {ITEMS.filter(item => item.type === tab.countType).length}
@@ -135,7 +134,7 @@ export default function NewsEventsSection() {
             {filteredItems.map(item => (
               <div key={item.id} className='p-2 bg-white border border-black/10 rounded-3xl'>
                 <div className={`flex flex-col rounded-2xl border border-black/10 overflow-hidden bg-base-white h-full ${item.type === 'news' ? 'pt-4' : ''}`}>
-                  
+
                   {/* Top Image for Event */}
                   {item.type === 'event' && (
                     <div className="w-full aspect-[16/9] bg-black/5 relative">
@@ -150,23 +149,23 @@ export default function NewsEventsSection() {
                         {item.tags?.map(tag => (
                           <span key={tag} className="bg-black/5 text-text-strong text-xs font-semibold px-3 py-1.5 rounded-md">{tag}</span>
                         ))}
-                        <span className="text-text-normal text-xs font-semibold flex items-center">{item.readTime} <Dot/> {item.date}</span>
+                        <span className="text-text-normal text-xs font-semibold flex items-center">{item.readTime} <Dot /> {item.date}</span>
                       </div>
                     ) : (
                       <div className="flex items-center gap-4 mb-6 text-xs text-text-strong font-semibold">
                         <div className="flex items-center gap-1.5">
-                          <CalendarDays className='w-4 h-4'/>
+                          <CalendarDays className='w-4 h-4' />
                           <span>{item.date}</span>
                         </div>
                         {item.location && (
                           <div className="flex items-center gap-1.5">
-                            <MapPin className='w-4 h-4'/>
+                            <MapPin className='w-4 h-4' />
                             <span>{item.location}</span>
                           </div>
                         )}
                       </div>
                     )}
-                    
+
                     <h3 className="font-alt font-bold text-[28px] leading-tight text-text-strong mb-3">
                       {item.title}
                     </h3>

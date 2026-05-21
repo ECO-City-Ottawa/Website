@@ -32,7 +32,7 @@ export default function DonatePage() {
     <>
       <Navbar />
       <main id="main" className="min-h-screen bg-white pb-0">
-        
+
         {/* Page Hero */}
         <PageHero
           title={t('donate.hero.title')}
@@ -91,7 +91,7 @@ export default function DonatePage() {
         {/* ── Section 2: See what your gift makes possible ────────── */}
         <section className="bg-gray-50 py-20 border-t border-b border-black/5">
           <div className="max-w-7xl mx-auto px-6">
-            
+
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
               <div>
                 <span className="text-xs bg-[#2D7A5D]/10 text-[#2D7A5D] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
@@ -127,15 +127,15 @@ export default function DonatePage() {
         </section>
 
         {/* ── Section 3: Choose how you'd like to give ─────────── */}
-       
-                    <section  id="how-to-give" className="section  w-full relative overflow-hidden bg-[#061D2F]  ">
-      <div className="absolute  z-0 bg-[#114A77] top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
-      <div className="absolute z-0 bg-[#114A77] bottom-0 left-1/2 transform -translate-x-1/2 w-[200px] h-[200px] rounded-full blur-[100px]" />
-      <div className="absolute z-0 bg-[#114A77] top-0 left-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
+
+        <section id="how-to-give" className="section  w-full relative overflow-hidden bg-[#061D2F]  ">
+          <div className="absolute  z-0 bg-[#114A77] top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
+          <div className="absolute z-0 bg-[#114A77] bottom-0 left-1/2 transform -translate-x-1/2 w-[200px] h-[200px] rounded-full blur-[100px]" />
+          <div className="absolute z-0 bg-[#114A77] top-0 left-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
           <div className="max-w-7xl mx-auto px-6">
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center relative z-10">
-              
+
               {/* Left Column */}
               <div className="lg:col-span-2">
                 <span className="text-xs bg-white/10 text-white font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
@@ -159,7 +159,7 @@ export default function DonatePage() {
 
               {/* Right Column Cards */}
               <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                
+
                 {/* Zeffy */}
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col justify-between h-full hover:bg-white/10 transition-all duration-300">
                   <div>
@@ -206,9 +206,9 @@ export default function DonatePage() {
 
         {/* ── Section 4: Final Call to Action ──────────────── */}
         <section className=" py-24 text-center relative ">
-              <Image src="/homepage/heroBG.png" alt="Donate" fill className='object-contain -z-10' /> 
+          <Image src="/homepage/heroBG.png" alt="Donate" fill className='object-contain -z-10' />
           <div className="max-w-4xl mx-auto px-6">
-            <h2 className="font-alt font-bold text-[36px] md:text-[56px] leading-[1.1] text-text-strong tracking-tight mb-8">
+            <h2 className="font-alt font-bold text-[36px] md:text-[56px] leading-[1.1] text-text-strong  mb-8">
               {t('donate.footer.title')}
             </h2>
             <a href="#how-to-give" className="inline-block bg-[#2D7A5D] hover:bg-[#24634b] text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-sm">

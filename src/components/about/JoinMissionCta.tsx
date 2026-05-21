@@ -40,9 +40,9 @@ export default function JoinMissionCta({ title, description, buttons }: JoinMiss
       <div className="absolute  z-0 bg-[#114A77] top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
       <div className="absolute z-0 bg-[#114A77] bottom-0 left-1/2 transform -translate-x-1/2 w-[200px] h-[200px] rounded-full blur-[100px]" />
       <div className="absolute z-0 bg-[#114A77] top-0 left-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
-      
+
       <div className="max-w-4xl mx-auto w-full z-10 relative">
-        <h2 className="font-alt font-bold text-[40px] md:text-[56px] leading-[1.1] text-white tracking-tight mb-6">
+        <h2 className="font-alt font-bold text-[40px] md:text-[56px] leading-[1.1] text-white  mb-6">
           {displayTitle}
         </h2>
         <p className="text-white/80 md:text-[18px] mb-12">

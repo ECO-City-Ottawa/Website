@@ -13,15 +13,15 @@ export default function CommunityActionSection() {
   return (
     <section className="section w-full relative">
       <Image src="/homepage/whyHow.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-5" />
-      
+
       <div className="max-w-7xl mx-auto w-full flex flex-col items-center bg-white/5 backdrop-blur-2xl rounded-full px-6 py-6">
-        
+
         {/* Header */}
         <div className="text-center max-w-3xl mb-16">
           <span className="text-sm font-semibold text-text-strong mb-4 tracking-wide block">
             {t('communityAction.title')}
           </span>
-          <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong tracking-tight mb-6">
+          <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong  mb-6">
             {t('communityAction.headline')}
           </h2>
           <p className="text-text-normal md:text-[18px] leading-[1.6]">
@@ -55,7 +55,7 @@ export default function CommunityActionSection() {
               linkHref="/why-how"
               layout="horizontal"
             />
-            
+
             <FeatureCard
               tag={t('communityAction.card3Tag')}
               title={t('communityAction.card3Title')}

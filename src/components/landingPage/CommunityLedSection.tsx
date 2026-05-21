@@ -17,7 +17,7 @@ export default function CommunityLedSection() {
           <span className="text-sm font-semibold text-text-strong mb-4 tracking-wide">
             {t('communityLed.title')}
           </span>
-          <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong tracking-tight mb-6">
+          <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong  mb-6">
             {t('communityLed.headline')}
           </h2>
           <p className="text-text-normal md:text-[18px] leading-[1.6] mb-10">
@@ -54,8 +54,8 @@ export default function CommunityLedSection() {
 
         {/* Right Image */}
         <div className="relative w-full max-h-[500px] aspect-square md:aspect-[4/5] rounded-[24px] overflow-hidden bg-black/5">
-          <Image 
-            src="/homepage/hero.png" 
+          <Image
+            src="/homepage/hero.png"
             alt="Community path along the water"
             fill
             className="object-cover"

@@ -31,14 +31,14 @@ export default function TestimonialsSection() {
 
   return (
     <section className="section bg-green-dark w-full text-white relative overflow-hidden">
-     <Sprout className="w-96 h-96 text-[#012515] absolute -bottom-16 -left-20 z-0" />
-     <Sprout className="w-96 h-96 text-[#055D36] absolute top-0 -right-20 rotate-270 z-0" />
+      <Sprout className="w-96 h-96 text-[#012515] absolute -bottom-16 -left-20 z-0" />
+      <Sprout className="w-96 h-96 text-[#055D36] absolute top-0 -right-20 rotate-270 z-0" />
       <div className="max-w-7xl mx-auto w-full flex flex-col items-center z-10 relative">
         <div className="text-center mb-16 relative z-10">
           <span className="text-sm font-semibold text-white/80 mb-4 tracking-wide block">
             {t('testimonials.title')}
           </span>
-          <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-white/90 tracking-tight mb-4">
+          <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-white/90  mb-4">
             {t('testimonials.headline')}
           </h2>
           <p className="text-white/80 md:text-[18px]">
@@ -52,11 +52,11 @@ export default function TestimonialsSection() {
               <div className="flex gap-0.5 mb-6 text-yellow-400">
                 {/* 5 Stars */}
                 {[...Array(5)].map((_, j) => (
-                  <Star key={j} className='w-5 h-5 fill-current text-yellow-400 stroke-transparent'/>
+                  <Star key={j} className='w-5 h-5 fill-current text-yellow-400 stroke-transparent' />
                 ))}
               </div>
               <p className="mb-8 leading-relaxed font-medium text-white/90 text-lg">"{t.quote}"</p>
-              
+
               <div className="flex items-center gap-4 mt-auto">
                 <div className="w-12 h-12 rounded-full overflow-hidden relative bg-black/5 shrink-0 border border-black/10">
                   <Image src={t.avatar} alt={t.name} fill className="object-cover" />

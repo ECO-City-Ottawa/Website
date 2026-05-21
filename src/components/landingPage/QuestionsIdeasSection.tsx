@@ -12,20 +12,20 @@ export default function QuestionsIdeasSection() {
     <section className="relative w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       {/* Background Image Placeholder */}
       <div className="absolute inset-0 z-0  bg-white">
-         <Image src="/homepage/questions.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-10 " />
+        <Image src="/homepage/questions.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-10 " />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full ">
         {/* Dark Inner Container */}
         <div className="bg-green-dark rounded-[24px] md:rounded-[32px] p-8 md:p-16 lg:p-20 shadow-xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
+
             {/* Left Column */}
             <div className="flex flex-col">
               <span className="text-white/90 font-medium mb-4 text-sm md:text-base">
                 {t('questionsIdeas.title')}
               </span>
-              <h2 className="font-alt font-bold text-[40px] md:text-[56px] leading-[1.1] text-white tracking-tight">
+              <h2 className="font-alt font-bold text-[40px] md:text-[56px] leading-[1.1] text-white ">
                 {t('questionsIdeas.headline')}
               </h2>
             </div>
@@ -38,13 +38,13 @@ export default function QuestionsIdeasSection() {
               <p className="text-white/80 md:text-[18px] leading-[1.6] mb-8 max-w-md">
                 {t('questionsIdeas.description')}
               </p>
-              
+
               <div className="flex flex-wrap items-center gap-6">
                 <Link href="/contact" className="bg-white text-[#0B1521] hover:opacity-90 px-8 py-3 rounded-lg font-medium transition-colors">
                   {t('questionsIdeas.cta1')}
                 </Link>
                 <Link href="/contact" className="text-white hover:underline flex items-center gap-1 font-medium">
-                  {t('questionsIdeas.cta2')} 
+                  {t('questionsIdeas.cta2')}
                   <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

@@ -8,7 +8,7 @@ export default function ApplyCta() {
         <span className="text-xs font-semibold text-white/80 mb-4 uppercase tracking-wide block">
           Get Started
         </span>
-        <h2 className="font-alt font-bold text-[40px] md:text-[56px] leading-[1.1] text-white tracking-tight mb-6">
+        <h2 className="font-alt font-bold text-[40px] md:text-[56px] leading-[1.1] text-white  mb-6">
           Apply for Project<br />Consideration
         </h2>
         <p className="text-white/80 md:text-[18px] mb-12">
