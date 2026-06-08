@@ -54,7 +54,7 @@ export default function HeroSection() {
       {/* Image Placeholder */}
       <div className="w-full relative   mx-auto  rounded-[24px] overflow-hidden  bg-black/5 aspect-square max-h-[600px] md:max-h-full lg:aspect-video lg:mt-12">
         <Image
-          src="/obec meeting.jpg"
+          src="/homepage/hero1.jpg"
           alt="Ottawa riverfront and green space"
           fill
           priority

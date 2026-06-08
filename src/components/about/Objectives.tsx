@@ -32,30 +32,30 @@ export default function Objectives() {
   ];
 
   return (
-    <section className="section bg-green-dark w-full relative overflow-hidden">
-      <Sprout className="w-96 h-96 text-[#012515] absolute -bottom-16 -left-20 z-0" />
-      <Sprout className="w-96 h-96 text-[#055D36] absolute top-0 -right-20 rotate-270 z-0" />
+    <section className="section bg-brand-green/10  w-full relative overflow-hidden">
+      <Sprout className="w-96 h-96 text-white absolute -bottom-16 -left-20 z-0" />
+      <Sprout className="w-96 h-96 text-brand-green/10 absolute top-0 -right-20 rotate-270 z-0" />
       <div className="max-w-7xl mx-auto w-full relative z-10">
         
         <div className="mb-12">
-          <span className="text-xs font-semibold text-white/80 mb-4 uppercase tracking-wide block">
+          <span className="text-xs font-semibold text-text-strong/80 mb-4 uppercase tracking-wide block">
             {t('objectives.subtitle')}
           </span>
-          <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-white mb-4">
+          <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong/90 mb-4">
             {t('objectives.title')}
           </h2>
-          <p className="text-white/80 text-[18px]">
+          <p className="text-text-strong/80 text-[18px]">
             {t('objectives.paragraph')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((c, i) => (
-            <div key={i} className="flex flex-col p-8 rounded-2xl  bg-white/5 ">
-              <h3 className="font-alt font-bold text-[22px] text-[#42d28b] mb-4 leading-tight">
+            <div key={i} className="flex flex-col p-8 rounded-2xl  bg-brand-green/10 backdrop-blur-sm  ">
+              <h3 className="font-alt font-bold text-[22px] text-text-strong/90 mb-4 leading-tight">
                 {c.title}
               </h3>
-              <p className="text-white/90  leading-relaxed text-white/80">
+              <p className="text-text-strong/90  leading-relaxed text-text-strong/80">
                 {c.desc}
               </p>
             </div>

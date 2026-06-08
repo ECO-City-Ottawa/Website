@@ -37,7 +37,7 @@ export default function CommunityActionSection() {
               tag={t('communityAction.card1Tag')}
               title={t('communityAction.card1Title')}
               description={t('communityAction.card1Desc')}
-              imageSrc="/homepage/hero.png"
+              imageSrc="/homepage/themes.png"
               linkText={t('communityAction.card1Link')}
               linkHref="/why-how"
               layout="vertical"
@@ -50,7 +50,7 @@ export default function CommunityActionSection() {
               tag={t('communityAction.card2Tag')}
               title={t('communityAction.card2Title')}
               description={t('communityAction.card2Desc')}
-              imageSrc="/homepage/hero.png"
+              imageSrc="/homepage/drives.png"
               linkText={t('communityAction.card2Link')}
               linkHref="/why-how"
               layout="horizontal"
@@ -60,7 +60,7 @@ export default function CommunityActionSection() {
               tag={t('communityAction.card3Tag')}
               title={t('communityAction.card3Title')}
               description={t('communityAction.card3Desc')}
-              imageSrc="/homepage/hero.png"
+              imageSrc="/homepage/tools.png"
               linkText={t('communityAction.card3Link')}
               linkHref="/engagement"
               layout="horizontal"

@@ -36,16 +36,13 @@ export default function JoinMissionCta({ title, description, buttons }: JoinMiss
   const displayButtons = buttons || defaultButtons;
 
   return (
-    <section className="section overflow-hidden bg-[#061D2F] w-full flex flex-col items-center text-center border-t border-white/10 relative">
-      <div className="absolute  z-0 bg-[#114A77] top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
-      <div className="absolute z-0 bg-[#114A77] bottom-0 left-1/2 transform -translate-x-1/2 w-[200px] h-[200px] rounded-full blur-[100px]" />
-      <div className="absolute z-0 bg-[#114A77] top-0 left-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
-
-      <div className="max-w-4xl mx-auto w-full z-10 relative">
-        <h2 className="font-alt font-bold text-[40px] md:text-[56px] leading-[1.1] text-white  mb-6">
+    <section className="section overflow-hidden w-full flex flex-col items-center text-center border-t border-white/10 relative">
+  
+      <div className="max-w-7xl mx-auto w-full z-10 relative  bg-brand-green/10  py-16 md:py-24 px-4 sm:px-6 lg:px-8 rounded-[64px]">
+        <h2 className="font-alt font-bold text-[40px] md:text-[56px] leading-[1.1] text-brand-green  mb-6">
           {displayTitle}
         </h2>
-        <p className="text-white/80 md:text-[18px] mb-12">
+        <p className="text-text-strong md:text-[18px] mb-12">
           {displayDescription}
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
@@ -59,14 +56,14 @@ export default function JoinMissionCta({ title, description, buttons }: JoinMiss
             }
             if (btn.variant === 'secondary') {
               return (
-                <Link key={idx} href={btn.href} className="border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-colors text-sm">
+                <Link key={idx} href={btn.href} className="border border-black/30 text-text-stong hover:bg-white/50 px-8 py-3 rounded-lg font-medium transition-colors text-sm ">
                   {btn.label}
                 </Link>
               );
             }
             if (btn.variant === 'link') {
               return (
-                <Link key={idx} href={btn.href} className="text-white hover:text-gray-200 flex items-center gap-1 text-sm border-b border-white pb-0.5 ml-2 transition-colors">
+                <Link key={idx} href={btn.href} className="text-text-stong hover:text-brand-green flex items-center gap-1 text-sm border-b border-text-stong pb-0.5 ml-2 transition-colors">
                   {btn.label} {btn.icon}
                 </Link>
               );

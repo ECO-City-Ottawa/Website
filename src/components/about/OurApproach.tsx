@@ -32,7 +32,7 @@ export default function OurApproach() {
         {/* Right Image */}
         <div className="relative w-full aspect-square md:aspect-[4/3] rounded-[24px] overflow-hidden bg-black/5 ">
           <Image 
-            src="/homepage/hero.png" // Placeholder
+            src="/approach.png" // Placeholder
             alt="Park pathway"
             fill
             className="object-cover"

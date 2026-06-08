@@ -23,7 +23,7 @@ export default function DriversOfChange() {
   ];
 
   return (
-    <section className="section bg-green-dark w-full relative overflow-hidden">
+    <section id="drivers-of-change" className="section bg-green-dark w-full relative overflow-hidden">
       <Sprout className="w-96 h-96 text-[#012515] absolute -bottom-16 -left-20 z-0" />
       <Sprout className="w-96 h-96 text-[#055D36] absolute top-0 -right-20 rotate-270 z-0" />
       <div className="max-w-7xl mx-auto w-full relative z-10">

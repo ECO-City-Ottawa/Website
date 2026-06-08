@@ -41,35 +41,33 @@ export default function WhyItWorks() {
   ];
 
   return (
-    <section className="section  w-full relative overflow-hidden bg-[#061D2F]  ">
-      <div className="absolute  z-0 bg-[#114A77] top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
-      <div className="absolute z-0 bg-[#114A77] bottom-0 left-1/2 transform -translate-x-1/2 w-[200px] h-[200px] rounded-full blur-[100px]" />
-      <div className="absolute z-0 bg-[#114A77] top-0 left-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
+    <section className="section  w-full relative overflow-hidden bg-brand-green/10   ">
+      
       <div className="max-w-7xl mx-auto w-full">
         
         <div className="text-center mb-16 max-w-3xl mx-auto relative z-10">
-          <span className="text-xs font-semibold text-white/80 mb-4 uppercase tracking-wide block">
+          <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
             {t('whyItWorks.subtitle')}
           </span>
           <h2 
-            className="font-alt font-bold text-[40px] md:text-[48px] text-white mb-6"
+            className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-6"
             dangerouslySetInnerHTML={{ __html: t('whyItWorks.title') }}
           />
-          <p className="text-white/80 md:text-[18px]">
+          <p className="text-text-strong/80 md:text-[18px]">
             {t('whyItWorks.paragraph')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10">
           {features.map((f, i) => (
-            <div key={i} className="flex flex-col bg-white/5 p-8 rounded-2xl  border border-white/5">
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-6 text-[#4CB0F9]">
-                <f.icon className="w-5 h-5" />
+            <div key={i} className="flex flex-col text-text-stong p-8 rounded-2xl  border bg-brand-green/5 hover:bg-brand-green group transition-colors duration-300 ease-in-out">
+              <div className="w-16 h-16 rounded-lg bg-brand-green/10 group-hover:bg-white/80 flex items-center justify-center mb-6 text-brand-green transition-colors duration-300 ease-in-out">
+                <f.icon className="w-6 h-6" />
               </div>
-              <h3 className="font-alt font-bold text-[20px] text-white mb-3 leading-snug">
+              <h3 className="font-alt font-bold text-[20px] text-text-strong group-hover:text-white mb-3 leading-snug transition-colors duration-300 ease-in-out">
                 {f.title}
               </h3>
-              <p className="text-white/80  leading-relaxed">
+              <p className="text-text-strong/80  leading-relaxed group-hover:text-white/80 transition-colors duration-300 ease-in-out">
                 {f.desc}
               </p>
             </div>

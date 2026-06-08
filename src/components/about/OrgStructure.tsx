@@ -53,7 +53,7 @@ export default function OrgStructure() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="flex flex-col">
             <div className="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden bg-black/5  mb-6">
-              <Image src="/homepage/hero.png" alt="Workshop" fill className="object-cover" />
+              <Image src="/central-support.png" alt="Workshop" fill className="object-cover" />
             </div>
             <h3 className="font-alt font-bold text-[24px] text-text-strong mb-3">
               {t('orgStructure.left.title')}
@@ -64,7 +64,7 @@ export default function OrgStructure() {
           </div>
           <div className="flex flex-col">
             <div className="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden bg-black/5  mb-6">
-              <Image src="/homepage/hero.png" alt="Presentation" fill className="object-cover" />
+              <Image src="/transparency.jpg" alt="Presentation" fill className="object-cover" />
             </div>
             <h3 className="font-alt font-bold text-[24px] text-text-strong mb-3">
               {t('orgStructure.right.title')}

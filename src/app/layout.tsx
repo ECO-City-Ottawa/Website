@@ -12,9 +12,29 @@ const urbanist = Urbanist({
 })
 
 export const metadata: Metadata = {
-  title: 'OBEC',
-  description: 'Ottawa Biosphere Eco-City',
+  title: {
+    default: 'EcoCity Ottawa | Community-Led Sustainability',
+    template: '%s | EcoCity Ottawa'
+  },
+  description: 'EcoCity Ottawa (formerly Ottawa Biosphere Eco-City - OBEC) is a community-led grassroots charity established in 2009. We bring together neighbourhoods, businesses, schools, and organizations to develop practical sustainability projects in Ottawa.',
+  keywords: [
+    'EcoCity Ottawa',
+    'OBEC',
+    'Ottawa Biosphere Eco-City',
+    'Sustainability Ottawa',
+    'Community Action Labs',
+    'Environmental Charity Ottawa',
+    'Grassroots Sustainability',
+    'Green Ottawa'
+  ],
+  authors: [{ name: 'EcoCity Ottawa' }],
+  creator: 'EcoCity Ottawa',
+  publisher: 'EcoCity Ottawa',
+  icons: {
+    icon: '/favicon.ico',
+  }
 }
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -55,7 +55,7 @@ export default function Footer() {
         <div>
           <div className="section-title text-xl">{t('footer.contactTitle')}</div>
           <ul className="mt-3 space-y-2 text-text-normal">
-            <li>{t('footer.phone')}</li>
+        
             <li>{t('footer.address')}</li>
             <li><Link href="/contact" className="hover:text-text-strong underline">{t('footer.contactUs')}</Link></li>
           </ul>

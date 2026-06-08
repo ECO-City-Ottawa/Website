@@ -11,8 +11,15 @@ import OrgStructure from "@/components/about/OrgStructure";
 import OurBoard from "@/components/about/OurBoard";
 import Volunteers from "@/components/about/Volunteers";
 import JoinMissionCta from "@/components/about/JoinMissionCta";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'Learn about EcoCity Ottawa (formerly OBEC), our history since 2009, mission, vision, organizational structure, board of directors, and how you can get involved in local sustainability.',
+};
 
 export default function AboutPage() {
+
   return (
     <>
       <Navbar />

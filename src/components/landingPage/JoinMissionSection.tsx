@@ -16,7 +16,7 @@ export default function JoinMissionSection() {
         {/* Left Image */}
         <div className="relative w-full aspect-square md:aspect-[4/5] rounded-[24px] overflow-hidden bg-black/5">
           <Image
-            src="/homepage/hero.png"
+            src="/homepage/mission.jpg"
             alt="Volunteers"
             fill
             className="object-cover"
