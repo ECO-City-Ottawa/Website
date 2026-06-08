@@ -357,7 +357,7 @@ export const translations = {
     'ourBoard.member.desc.pamela': 'Pamela A. Jordan is an independent scholar based in Ottawa, Ontario. H...',
     'ourBoard.member.desc.guy': 'Guy is a semi-retired, energetic bilingual entrepreneur and communi...',
     'ourBoard.cta': 'Full Description',
-    'ourBoard.ctaClose': 'Close',
+    'ourBoard.ctaClose': 'Show less',
 
     'volunteers.subtitle': '{#Modal}',
     'volunteers.title': 'Volunteers',
@@ -1264,7 +1264,7 @@ export const translations = {
     'ourBoard.member.desc.pamela': 'Pamela A. Jordan est une chercheuse indépendante basée à Ottawa, en Ontario...',
     'ourBoard.member.desc.guy': 'Guy est un entrepreneur bilingue et un organisateur communautaire semi-retraité et dynamique...',
     'ourBoard.cta': 'Description complète',
-    'ourBoard.ctaClose': 'Fermer',
+    'ourBoard.ctaClose': 'Voir moins',
 
     'volunteers.subtitle': '{#Bénévoles}',
     'volunteers.title': 'Bénévoles',
