@@ -23,7 +23,7 @@ export default function WhyAndHowSplit() {
             {t('whyAndHowSplit.why.paragraph1')}
           </p>
           <div className="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden bg-black/5 mb-6 ">
-            <Image src="/homepage/hero.png" alt="Nature branch" fill className="object-cover" />
+            <Image src="/why.jpg" alt="Nature branch" fill className="object-cover" />
           </div>
           <p className="text-text-normal text-sm leading-relaxed">
             {t('whyAndHowSplit.why.paragraph2')}
@@ -42,7 +42,7 @@ export default function WhyAndHowSplit() {
             {t('whyAndHowSplit.how.paragraph1')}
           </p>
           <div className="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden bg-black/5 mb-6 ">
-            <Image src="/homepage/hero.png" alt="Community is Kindness bridge" fill className="object-cover" />
+            <Image src="/how.png" alt="Community is Kindness bridge" fill className="object-cover" />
           </div>
           <p className="text-text-normal text-sm leading-relaxed">
             {t('whyAndHowSplit.how.paragraph2')}

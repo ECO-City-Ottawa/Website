@@ -42,7 +42,7 @@ export default function OurBoard() {
     {
       name: "Prasanna Siva",
       role: t('ourBoard.member.role.large'),
-      desc: t('ourBoard.member.desc.guy'),
+      desc: t('ourBoard.member.desc.prasanna'),
       image: "/board/pressana.png",
     },
   ];
@@ -74,90 +74,85 @@ export default function OurBoard() {
           </p>
         </div>
 
-        {/* Board grid — each row is a flex row, no wrapping on desktop */}
-        <div className="flex flex-col gap-8">
+        {/* Board grid */}
+        <div className="flex flex-col gap-6 lg:gap-4">
           {rows.map((rowMembers, rowIndex) => {
             const hasExpanded = rowMembers.some(
               (_, i) => expandedIndex === rowIndex * 4 + i
             );
 
             return (
-              <div key={rowIndex} className="flex flex-row flex-nowrap gap-6 w-full">
+              // Grid on mobile/tablet, flex on desktop
+              <div key={rowIndex} className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row lg:flex-nowrap w-full gap-6 lg:gap-0 overflow-hidden">
                 {rowMembers.map((member, i) => {
                   const globalIndex = rowIndex * 4 + i;
                   const isExpanded = expandedIndex === globalIndex;
 
-                  // flex values: expanded card grows, others squeeze — all stay on one line
-                  const flexValue = isExpanded
-                    ? '1.7 1 0%'
+                  // Tailwind width: 2/5 for expanded, 1/5 for squeezed, 1/4 for normal on desktop; full on mobile/tablet
+                  const widthClass = isExpanded
+                    ? 'w-full lg:w-2/5'
                     : hasExpanded
-                      ? '0.76 1 0%'
-                      : '1 1 0%';
+                      ? 'w-full lg:w-1/5'
+                      : 'w-full lg:w-1/4';
 
                   return (
                     <div
                       key={i}
-                      className="flex flex-col min-w-0 rounded-[20px] p-5 border border-black/5 bg-white transition-[flex] duration-400 ease-out"
-                      style={{ flex: flexValue, transitionDuration: '400ms' }}
+                      className={`${widthClass} shrink-0 flex flex-col px-3 transition-[width] duration-[400ms] ease-out`}
                     >
-                      {/* Photo */}
-                      <div className="relative w-full aspect-[4/5] rounded-[14px] overflow-hidden mb-5 bg-black/5 flex-shrink-0">
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
+                      {/* Card inner — fixed height so it NEVER grows in height, borderless and paddingless */}
+                      <div className="flex flex-col h-[450px]">
 
-                      {/* Name & Role */}
-                      <h3 className="font-alt font-bold text-[18px] text-text-strong mb-1">
-                        {member.name}
-                      </h3>
-                      <p className="text-xs text-text-normal font-medium mb-3">
-                        {member.role}
-                      </p>
+                        {/* Photo — fixed height so it NEVER grows when card gets wider */}
+                        <div className="relative w-full h-52 shrink-0 rounded-[14px] overflow-hidden mb-4 bg-black/5">
+                          <Image
+                            src={member.image}
+                            alt={member.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
 
-                      {/* Description — clipped to 3 lines when collapsed, full when expanded */}
-                      <p
-                        className={[
-                          'text-sm text-text-normal leading-relaxed mb-5',
-                          isExpanded ? '' : 'line-clamp-3',
-                        ].join(' ')}
-                      >
-                        {member.desc}
-                      </p>
+                        {/* Name & Role */}
+                        <h3 className="font-alt font-bold text-[18px] text-text-strong mb-1">
+                          {member.name}
+                        </h3>
+                        <p className="text-xs text-text-normal font-medium mb-3">
+                          {member.role}
+                        </p>
 
-                      {/* Toggle button */}
-                      <button
-                        onClick={() => handleToggle(globalIndex)}
-                        aria-expanded={isExpanded}
-                        className="mt-auto inline-flex items-center gap-1 text-xs font-semibold text-brand-green hover:underline cursor-pointer transition-colors duration-200"
-                      >
-                        {isExpanded ? t('ourBoard.ctaClose') : t('ourBoard.cta')}
-                        <svg
-                          className={`w-3 h-3 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
+                        {/* Description — 3 lines when collapsed, scrollable when card is expanded */}
+                        <p className={`text-sm text-text-normal leading-relaxed mb-4 ${isExpanded ? 'flex-1 overflow-y-auto pr-1' : 'line-clamp-3'}`}>
+                          {member.desc}
+                        </p>
+
+                        {/* Toggle button */}
+                        <button
+                          onClick={() => handleToggle(globalIndex)}
+                          aria-expanded={isExpanded}
+                          className="mt-auto inline-flex items-center gap-1 text-xs font-semibold text-brand-green hover:underline cursor-pointer transition-colors duration-200"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </button>
+                          {isExpanded ? t('ourBoard.ctaClose') : t('ourBoard.cta')}
+                          <svg
+                            className={`w-3 h-3 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   );
                 })}
 
-                {/* Invisible placeholders keep partial rows aligned */}
+                {/* Invisible placeholders for partial rows — keep columns aligned, hidden on mobile/tablet */}
                 {rowMembers.length < 4 &&
                   Array.from({ length: 4 - rowMembers.length }).map((_, pi) => (
                     <div
                       key={`pad-${pi}`}
-                      className="min-w-0 invisible pointer-events-none transition-[flex] duration-400 ease-out"
-                      style={{
-                        flex: hasExpanded ? '0.76 1 0%' : '1 1 0%',
-                        transitionDuration: '400ms',
-                      }}
+                      className={`${hasExpanded ? 'w-1/5' : 'w-1/4'} shrink-0 invisible pointer-events-none transition-[width] duration-[400ms] ease-out hidden lg:block`}
                     />
                   ))}
               </div>
