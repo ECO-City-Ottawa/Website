@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function OurApproach() {
@@ -23,9 +22,10 @@ export default function OurApproach() {
             {t('ourApproach.paragraph')}
           </p>
           <div>
-            <Link href="#" className="bg-brand-green hover:bg-[#1a5b3a] text-white rounded-lg px-6 py-3 font-medium transition-colors inline-block text-sm">
+            {/* TODO: add target route when this CTA destination is confirmed. */}
+            <span className="bg-brand-green hover:bg-[#1a5b3a] text-white rounded-lg px-6 py-3 font-medium transition-colors inline-block text-sm">
               {t('ourApproach.cta')}
-            </Link>
+            </span>
           </div>
         </div>
 

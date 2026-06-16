@@ -13,7 +13,7 @@ export default function OurBoard() {
       name: "Esther Weirich",
       role: t('ourBoard.member.role.chair'),
       desc: t('ourBoard.member.desc.esther'),
-      image: "/board/amber.jpg",
+      image: "/board/Amber.jpg",
     },
     {
       name: "Rudi Aksim",
@@ -25,7 +25,7 @@ export default function OurBoard() {
       name: "Eric Sonego",
       role: t('ourBoard.member.role.treasurer'),
       desc: t('ourBoard.member.desc.eric'),
-      image: "/board/eric.jpg",
+      image: "/board/Eric.jpg",
     },
     {
       name: "Muloud Gahlouz",

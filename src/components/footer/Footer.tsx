@@ -19,11 +19,14 @@ export default function Footer() {
             <Link href="/donate" className="btn btn-secondary">{t('nav.donate')}</Link>
           </div>
           <div className="mt-4 flex items-center gap-3 text-text-normal">
-            {/* Replace with real social links/icons */}
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-text-strong">Fb</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-text-strong">Ig</a>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-text-strong">X</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-text-strong">In</a>
+            {/* TODO: replace with real OBEC social URL */}
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-text-strong">Fb</a>
+            {/* TODO: replace with real OBEC social URL */}
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-text-strong">Ig</a>
+            {/* TODO: replace with real OBEC social URL */}
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-text-strong">X</a>
+            {/* TODO: replace with real OBEC social URL */}
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-text-strong">In</a>
           </div>
         </div>
 

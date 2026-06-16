@@ -18,7 +18,7 @@ export default function PageHero({
 }: PageHeroProps) {
   return (
     <section className="relative w-full py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden isolate">
-      <Image src={backgroundImage} alt="Background" fill className="object-cover -z-10" />
+      <Image src={backgroundImage} alt="" fill className="object-cover -z-10" />
       <div className="absolute inset-0 z-0 bg-black/70 backdrop-blur-sm"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -44,4 +44,3 @@ export default function PageHero({
     </section>
   );
 }
-

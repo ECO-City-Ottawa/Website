@@ -64,7 +64,7 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white pb-0">
+      <main id="main" className="min-h-screen bg-white pb-0">
 
         {/* ── Breadcrumb ─────────────────────────────── */}
         <Breadcrumbs items={[

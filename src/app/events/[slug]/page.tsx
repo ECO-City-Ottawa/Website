@@ -26,7 +26,7 @@ export default function SingleEventPage({ params }: { params: Promise<{ slug: st
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white pb-20">
+      <main id="main" className="min-h-screen bg-white pb-20">
         
         {/* Breadcrumbs */}
         <Breadcrumbs
@@ -61,7 +61,7 @@ export default function SingleEventPage({ params }: { params: Promise<{ slug: st
             </div>
 
             <div className="prose prose-lg max-w-none text-text-normal leading-relaxed text-[16px] md:text-[18px] space-y-6">
-              <h3 className="font-alt font-bold text-xl text-text-strong">{t('event.detail.aboutTitle')}</h3>
+              <h2 className="font-alt font-bold text-xl text-text-strong">{t('event.detail.aboutTitle')}</h2>
               <p>{language === 'en' ? event.description : (event.descriptionFr || event.description)}</p>
               <p>
                 {t('event.detail.aboutDesc1')}

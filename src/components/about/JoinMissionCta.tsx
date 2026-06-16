@@ -39,7 +39,7 @@ export default function JoinMissionCta({ title, description, buttons }: JoinMiss
     <section className="section overflow-hidden w-full flex flex-col items-center text-center border-t border-white/10 relative">
   
       <div className="max-w-7xl mx-auto w-full z-10 relative  bg-brand-green/10  py-16 md:py-24 px-4 sm:px-6 lg:px-8 rounded-[64px]">
-        <h2 className="font-alt font-bold text-[40px] md:text-[56px] leading-[1.1] text-brand-green  mb-6">
+        <h2 className="font-alt font-bold text-[40px] md:text-[56px] leading-[1.1] text-brand-green  mb-6 max-w-4xl mx-auto">
           {displayTitle}
         </h2>
         <p className="text-text-strong md:text-[18px] mb-12">

@@ -15,6 +15,9 @@ export const translations = {
     'skip.content': 'Skip to content',
     'toggle.menu': 'Toggle menu',
 
+    // Breadcrumbs
+    'breadcrumbs.home': 'Home',
+
     // Footer
     'footer.brandBlurb': 'Community-led sustainability for Ottawa since 2009.',
     'footer.getInvolved': 'Get involved',
@@ -663,7 +666,7 @@ export const translations = {
     'engagement.volunteer.title': 'Volunteer with OBEC',
     'engagement.volunteer.subtitle': 'Tell us how you’d like to help we’ll match you with opportunities across Ottawa (and the BEC network).',
     'engagement.volunteer.formTitle': 'Volunteer sign-up',
-    'engagement.volunteer.formSubtitle': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
+    'engagement.volunteer.formSubtitle': 'Content coming soon.',
     'engagement.volunteer.successTitle': 'Thank you for signing up!',
     'engagement.volunteer.successText': 'We have received your application and will get back to you shortly to match you with active opportunities.',
     'engagement.volunteer.fullName': 'Full name*',
@@ -733,7 +736,7 @@ export const translations = {
     'engagement.partner.card3.title': 'Shared visibility and storytelling through our network',
     'engagement.partner.card3.btn': 'Learn more',
     'engagement.faq.title': 'FAQs',
-    'engagement.faq.subtitle': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
+    'engagement.faq.subtitle': 'Content coming soon.',
     'engagement.faq.contactUs': 'Contact Us',
     'engagement.faq.q1': 'How much time does volunteering take?',
     'engagement.faq.a1': 'As little as a single event; or ongoing if you like—choose what fits your schedule.',
@@ -922,6 +925,9 @@ export const translations = {
     'nav.more': 'Plus',
     'skip.content': 'Passer au contenu',
     'toggle.menu': 'Basculer le menu',
+
+    // Breadcrumbs
+    'breadcrumbs.home': 'Accueil',
 
     // Footer
     'footer.brandBlurb': 'Une durabilité menée par la communauté pour Ottawa depuis 2009.',
@@ -1710,7 +1716,7 @@ export const translations = {
     'engagement.volunteer.title': 'Faire du bénévolat avec l’OBEC',
     'engagement.volunteer.subtitle': 'Dites-nous comment vous aimeriez aider, nous vous jumellerons avec des opportunités à Ottawa (et dans le réseau BCE).',
     'engagement.volunteer.formTitle': 'Inscription au bénévolat',
-    'engagement.volunteer.formSubtitle': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
+    'engagement.volunteer.formSubtitle': 'Contenu à venir.',
     'engagement.volunteer.successTitle': 'Merci pour votre inscription !',
     'engagement.volunteer.successText': 'Nous avons bien reçu votre candidature et nous vous contacterons sous peu pour vous proposer des opportunités actives.',
     'engagement.volunteer.fullName': 'Nom complet*',
@@ -1780,7 +1786,7 @@ export const translations = {
     'engagement.partner.card3.title': 'Visibilité partagée et récits à travers notre réseau',
     'engagement.partner.card3.btn': 'En savoir plus',
     'engagement.faq.title': 'FAQ',
-    'engagement.faq.subtitle': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
+    'engagement.faq.subtitle': 'Contenu à venir.',
     'engagement.faq.contactUs': 'Contactez-nous',
     'engagement.faq.q1': 'Combien de temps prend le bénévolat ?',
     'engagement.faq.a1': 'Aussi peu qu’un seul événement, ou de manière continue si vous le souhaitez — choisissez ce qui convient à votre horaire.',

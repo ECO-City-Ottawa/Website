@@ -87,7 +87,7 @@ export default function NewsEventsSection() {
 
   return (
     <section className="section w-full relative">
-      <Image src="/homepage/whyHow.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-5" />
+      <Image src="/homepage/whyHow.png" alt="" fill className="object-cover -z-10  opacity-5" />
       <div className="max-w-7xl mx-auto w-full flex flex-col bg-white/10 backdrop-blur-lg  ">
 
         {/* Header & Tabs */}

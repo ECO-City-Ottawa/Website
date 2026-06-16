@@ -10,7 +10,7 @@ export default function HeroSection() {
 
   return (
     <section className="w-full  max-h-[1200px] h-screen  flex flex-col items-start justify-start  section relative isolate pt-8">
-      <Image src="/homepage/heroBG.png" alt={t('hero.title')} fill className="object-cover -z-10  opacity-40" />
+      <Image src="/homepage/heroBG.png" alt="" fill className="object-cover -z-10  opacity-40" />
       <div className='absolute bg-gradient-to-b from-white via-white/80 to-transparent inset-0 -z-5'></div>
       {/* Top Text Content */}
       <div className="max-w-7xl  w-full mx-auto text-center lg:text-left  space-y-4 bg-white/50  rounded-full px-6 py-6">

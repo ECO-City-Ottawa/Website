@@ -1,11 +1,24 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useLanguage } from '@/context/LanguageContext'
-import { Languages, ChevronDown } from 'lucide-react'
+import {
+  ArrowRight,
+  BookOpen,
+  HeartHandshake,
+  Newspaper,
+} from 'lucide-react'
 import Image from 'next/image'
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu'
 
 const PRIMARY_NAV_ITEMS = [
   { href: '/', labelKey: 'nav.home' },
@@ -15,10 +28,33 @@ const PRIMARY_NAV_ITEMS = [
   { href: '/contact', labelKey: 'nav.contact' },
 ]
 
-const DROPDOWN_NAV_ITEMS = [
-  { href: '/news-events', labelKey: 'nav.newsEvents' },
-  { href: '/engagement', labelKey: 'nav.engagement' },
-  { href: '/resources', labelKey: 'nav.resources' },
+const DROPDOWN_ACTIVE_HREFS = [
+  '/news-events',
+  '/news',
+  '/events',
+  '/engagement',
+  '/resources',
+]
+
+const FEATURED_DROPDOWN_ITEMS = [
+  {
+    href: '/news-events',
+    labelKey: 'nav.newsEvents',
+    descriptionKey: 'newsEvents.subtitle',
+    icon: Newspaper,
+  },
+  {
+    href: '/engagement',
+    labelKey: 'nav.engagement',
+    descriptionKey: 'engagement.hero.description',
+    icon: HeartHandshake,
+  },
+  {
+    href: '/resources',
+    labelKey: 'nav.resources',
+    descriptionKey: 'resources.hero.description',
+    icon: BookOpen,
+  },
 ]
 
 const MOBILE_NAV_ITEMS = [
@@ -34,6 +70,11 @@ const MOBILE_NAV_ITEMS = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const [desktopNavValue, setDesktopNavValue] = useState('')
+  const [hoveredNavKey, setHoveredNavKey] = useState<string | null>(null)
+  const [navPill, setNavPill] = useState({ left: 0, width: 0, opacity: 0 })
+  const navListRef = useRef<HTMLUListElement>(null)
+  const navPillTargets = useRef<Record<string, HTMLElement | null>>({})
   const { language, setLanguage, t } = useLanguage()
   const pathname = usePathname()
 
@@ -42,7 +83,18 @@ export default function Navbar() {
     pathname === href || pathname.startsWith(href + '/')
 
   const isDropdownActive = () =>
-    DROPDOWN_NAV_ITEMS.some((item) => isActive(item.href))
+    DROPDOWN_ACTIVE_HREFS.some((href) => isActive(href))
+
+  const activeNavKey = isDropdownActive()
+    ? 'nav.more'
+    : PRIMARY_NAV_ITEMS.find((item) => isActive(item.href))?.labelKey ?? null
+
+  const highlightedNavKey =
+    hoveredNavKey ?? (desktopNavValue === 'more' ? 'nav.more' : activeNavKey)
+
+  const setNavPillTarget = (key: string) => (node: HTMLElement | null) => {
+    navPillTargets.current[key] = node
+  }
 
   // Prevent background scrolling when mobile menu is open
   useEffect(() => {
@@ -55,6 +107,34 @@ export default function Navbar() {
       document.body.style.overflow = ''
     }
   }, [open])
+
+  useEffect(() => {
+    const updateNavPill = () => {
+      const target = highlightedNavKey ? navPillTargets.current[highlightedNavKey] : null
+      const list = navListRef.current
+
+      if (!target || !list) {
+        setNavPill((current) =>
+          current.opacity === 0 ? current : { ...current, opacity: 0 }
+        )
+        return
+      }
+
+      const targetRect = target.getBoundingClientRect()
+      const listRect = list.getBoundingClientRect()
+
+      setNavPill({
+        left: targetRect.left - listRect.left,
+        width: targetRect.width,
+        opacity: 1,
+      })
+    }
+
+    updateNavPill()
+    window.addEventListener('resize', updateNavPill)
+
+    return () => window.removeEventListener('resize', updateNavPill)
+  }, [highlightedNavKey, language, pathname])
 
 
   return (
@@ -145,59 +225,149 @@ export default function Navbar() {
         </div>
 
         {/* ── Desktop nav ──────────────────────────────── */}
-        <nav className="hidden items-center justify-center gap-4 lg:flex">
-          {PRIMARY_NAV_ITEMS.map((item) => {
-            const active = isActive(item.href)
-            return (
-              <Link
-                key={item.labelKey}
-                href={item.href}
-                className={`text-base whitespace-nowrap px-3 py-1.5 rounded-lg transition-colors duration-150 ${
-                  active
-                    ? 'bg-brand-green/10 text-brand-green font-bold'
-                    : 'text-text-normal font-normal hover:text-text-strong hover:bg-black/5'
+        <NavigationMenu
+          className="hidden flex-none lg:flex"
+          delayDuration={80}
+          onValueChange={setDesktopNavValue}
+          skipDelayDuration={200}
+          value={desktopNavValue}
+        >
+          <NavigationMenuList
+            ref={navListRef}
+            onMouseLeave={() => setHoveredNavKey(null)}
+            className="relative rounded-xl bg-brand-green/5 p-1"
+          >
+            <span
+              aria-hidden="true"
+              className={`pointer-events-none absolute left-0 top-1 bottom-1 rounded-lg transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                highlightedNavKey === activeNavKey
+                  ? 'bg-brand-green/10'
+                  : 'bg-black/5'
+              }`}
+              style={{
+                opacity: navPill.opacity,
+                transform: `translateX(${navPill.left}px)`,
+                width: `${navPill.width}px`,
+              }}
+            />
+
+            {PRIMARY_NAV_ITEMS.map((item) => {
+              const active = isActive(item.href)
+              return (
+                <NavigationMenuItem key={item.labelKey}>
+                  <NavigationMenuLink asChild active={active}>
+                    <Link
+                      ref={setNavPillTarget(item.labelKey)}
+                      href={item.href}
+                      onFocus={() => setHoveredNavKey(item.labelKey)}
+                      onMouseEnter={() => setHoveredNavKey(item.labelKey)}
+                      className={`relative z-10 inline-flex h-10 items-center rounded-lg px-3 text-base whitespace-nowrap transition-colors duration-150 hover:no-underline ${
+                        active
+                          ? 'font-bold text-brand-green'
+                          : 'font-normal text-text-normal hover:text-text-strong'
+                      }`}
+                    >
+                      {t(item.labelKey)}
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              )
+            })}
+
+            <NavigationMenuItem value="more">
+              <NavigationMenuTrigger
+                ref={setNavPillTarget('nav.more')}
+                onFocus={() => setHoveredNavKey('nav.more')}
+                onMouseEnter={() => setHoveredNavKey('nav.more')}
+                className={`${
+                  isDropdownActive()
+                    ? 'font-bold text-brand-green'
+                    : 'font-normal text-text-normal hover:text-text-strong'
                 }`}
               >
-                {t(item.labelKey)}
-              </Link>
-            )
-          })}
+                {t('nav.more')}
+              </NavigationMenuTrigger>
 
-          {/* ── "More" Dropdown Menu ───────────────────── */}
-          <div className="relative group py-1.5">
-            <button
-              type="button"
-              className={`text-lg whitespace-nowrap px-3 py-1.5 rounded-lg flex items-center gap-1 transition-colors duration-150 ${
-                isDropdownActive()
-                  ? 'bg-brand-green/10 text-brand-green font-bold'
-                  : 'text-text-normal font-normal hover:text-text-strong hover:bg-black/5'
-              }`}
-            >
-              <span>{t('nav.more')}</span>
-              <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
-            </button>
+              <NavigationMenuContent>
+                <div className="max-h-[calc(100dvh-88px)] overflow-y-auto bg-base-white">
+                  <div className="mx-auto  w-full max-w-7xl gap-8 px-6 py-8 flex lg:px-8">
+                    <div className="lg:w-2/3">
+                      <div className="mb-5 flex items-end justify-between gap-6">
+                        <div>
+                          <p className="text-xs font-semibold text-brand-green">
+                            {language === 'en' ? 'Explore' : 'Explorer'}
+                          </p>
+                          <h2 className="mt-2 font-alt text-2xl font-bold text-text-strong">
+                            {language === 'en'
+                              ? 'Find your next step with OBEC'
+                              : 'Trouvez votre prochaine étape avec l’OBEC'}
+                          </h2>
+                        </div>
+                        <Link
+                          href="/contact"
+                          className="hidden items-center gap-1.5 rounded-md border border-black/10 px-4 py-2 text-sm font-semibold text-text-strong transition-colors hover:bg-black/5 hover:no-underline xl:inline-flex"
+                        >
+                          {t('nav.contact')}
+                          <ArrowRight className="size-4" />
+                        </Link>
+                      </div>
 
-            {/* Dropdown Card */}
-            <div className="absolute border -right-16 top-full mt-1 w-96 rounded-lg border-black/10 bg-base-white  p-2 shadow-xl opacity-0 translate-y-1 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto z-50 flex flex-col gap-0.5">
-              {DROPDOWN_NAV_ITEMS.map((item) => {
-                const active = isActive(item.href)
-                return (
-                  <Link
-                    key={item.labelKey}
-                    href={item.href}
-                    className={`text-lg px-4 py-2.5 rounded-xl transition-colors duration-150 ${
-                      active
-                        ? 'bg-brand-green/10 text-brand-green font-bold'
-                        : 'text-text-normal font-normal hover:text-text-strong hover:bg-black/5'
-                    }`}
-                  >
-                    {t(item.labelKey)}
-                  </Link>
-                )
-              })}
-            </div>
-          </div>
-        </nav>
+                      <div className="grid gap-3 md:grid-cols-3 ">
+                        {FEATURED_DROPDOWN_ITEMS.map((item) => {
+                          return (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className="group flex min-h-56 flex-col rounded-lg hover:bg-brand-green  transtion-all ease-in-out group   bg-brand-green/5 p-5 transition-all duration-200 hover:border-brand-green/30  hover:no-underline"
+                            >
+                           
+                              <span className="font-alt text-xl font-bold leading-tight text-text-strong group-hover:text-white">
+                                {t(item.labelKey)}
+                              </span>
+                              <span className="mt-3 text-sm leading-6 text-text-normal line-clamp-2 group-hover:text-white">
+                                {t(item.descriptionKey)}
+                              </span>
+                              <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-bold text-brand-green group-hover:text-white">
+                                {t('newsEvents.readMore')}
+                                <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
+                              </span>
+                            </Link>
+                          )
+                        })}
+                      </div>
+                    </div>
+
+                    <div className="grid gap-5 lg:w-1/3">
+                    
+
+                      <Link
+                        href="/projects"
+                        className="group relative hidden min-h-full overflow-hidden rounded-lg bg-brand-green text-white hover:no-underline lg:block"
+                      >
+                        <Image
+                          src="/homepage/heroBG.png"
+                          alt=""
+                          fill
+                          sizes="180px"
+                          className="object-cover opacity-35 transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <span className="relative z-10 flex h-full flex-col justify-end p-4">
+                          <span className="font-alt text-xl font-bold leading-tight">
+                            {t('projects.title')}
+                          </span>
+                          <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-bold">
+                            {t('projects.viewAll')}
+                            <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
+                          </span>
+                        </span>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
 
         {/* ── Desktop actions ──────────────────────────── */}
         <div className="hidden items-center gap-4 justify-end lg:flex">

@@ -177,10 +177,6 @@
   .prose-muted :where(p, li) { color: var(--text-normal); }
 }
 
-.bg-green-dark {
-    @apply bg-gradient-to-tr from-[#001009]  to-[#055D36] text-white;
-  }
-
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: var(--font-sans);

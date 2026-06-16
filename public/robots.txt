@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://obec-evbo.ca/sitemap.xml

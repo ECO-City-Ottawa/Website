@@ -23,22 +23,22 @@ export default function DriversOfChange() {
   ];
 
   return (
-    <section id="drivers-of-change" className="section bg-green-dark w-full relative overflow-hidden">
-      <Sprout className="w-96 h-96 text-[#012515] absolute -bottom-16 -left-20 z-0" />
-      <Sprout className="w-96 h-96 text-[#055D36] absolute top-0 -right-20 rotate-270 z-0" />
+    <section id="drivers-of-change" className="section bg-brand-green/10 w-full relative overflow-hidden">
+      <Sprout className="w-96 h-96 text-white absolute -bottom-16 -left-20 z-0" />
+      <Sprout className="w-96 h-96 text-white absolute top-0 -right-20 rotate-270 z-0" />
       <div className="max-w-7xl mx-auto w-full relative z-10">
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-16">
           <div className="flex flex-col">
-            <span className="text-xs font-semibold text-white/80 mb-4 uppercase tracking-wide block">
+            <span className="text-xs font-semibold text-text-strong/80 mb-4 uppercase tracking-wide block">
               {t('driversOfChange.subtitle')}
             </span>
-            <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-white leading-tight">
+            <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong/90 leading-tight">
               {t('driversOfChange.title')}
             </h2>
           </div>
           <div className="flex flex-col justify-center">
-             <p className="text-white/90 md:text-[18px] leading-[1.6]">
+             <p className="text-text-strong/80 md:text-[18px] leading-[1.6]">
                {t('driversOfChange.paragraph')}
              </p>
           </div>
@@ -46,8 +46,8 @@ export default function DriversOfChange() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {drivers.map((d, i) => (
-            <div key={i} className="flex flex-col bg-[#0A4B2C] p-8 rounded-2xl  border border-white/5">
-              <div className="mb-6 text-[#42D28B]">
+            <div key={i} className="flex flex-col p-8 rounded-2xl bg-brand-green/10 backdrop-blur-sm">
+              <div className="mb-6 text-brand-green">
                 {/* Outlined SVG Icons */}
                 {i === 0 && (
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,10 +65,10 @@ export default function DriversOfChange() {
                   </svg>
                 )}
               </div>
-              <h3 className="font-alt font-bold text-[22px] text-[#42D28B] mb-4">
+              <h3 className="font-alt font-bold text-[22px] text-text-strong/90 mb-4">
                 {d.title}
               </h3>
-              <p className="text-white/90 text-sm leading-relaxed">
+              <p className="text-text-strong/80 text-sm leading-relaxed">
                 {d.desc}
               </p>
             </div>

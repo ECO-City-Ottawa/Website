@@ -12,7 +12,7 @@ export default function CommunityActionSection() {
 
   return (
     <section className="section w-full relative">
-      <Image src="/homepage/whyHow.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-5" />
+      <Image src="/homepage/whyHow.png" alt="" fill className="object-cover -z-10  opacity-5" />
 
       <div className="max-w-7xl mx-auto w-full flex flex-col items-center bg-white/5 backdrop-blur-2xl rounded-full px-6 py-6">
 

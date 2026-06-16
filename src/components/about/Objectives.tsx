@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react';
-import Link from 'next/link';
 import { Sprout } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -34,7 +33,7 @@ export default function Objectives() {
   return (
     <section className="section bg-brand-green/10  w-full relative overflow-hidden">
       <Sprout className="w-96 h-96 text-white absolute -bottom-16 -left-20 z-0" />
-      <Sprout className="w-96 h-96 text-brand-green/10 absolute top-0 -right-20 rotate-270 z-0" />
+      <Sprout className="w-96 h-96 text-white absolute top-0 -right-20 rotate-270 z-0" />
       <div className="max-w-7xl mx-auto w-full relative z-10">
         
         <div className="mb-12">
@@ -55,7 +54,7 @@ export default function Objectives() {
               <h3 className="font-alt font-bold text-[22px] text-text-strong/90 mb-4 leading-tight">
                 {c.title}
               </h3>
-              <p className="text-text-strong/90  leading-relaxed text-text-strong/80">
+              <p className="text-text-strong/80 leading-relaxed">
                 {c.desc}
               </p>
             </div>
@@ -70,9 +69,10 @@ export default function Objectives() {
               {t('objectives.cta.desc')}
             </p>
             <div className="mt-auto">
-              <Link href="#" className="inline-flex items-center gap-1 text-brand-green font-medium text-sm hover:underline underline-offset-4">
+              {/* TODO: add target route when this CTA destination is confirmed. */}
+              <span className="inline-flex items-center gap-1 text-brand-green font-medium text-sm hover:underline underline-offset-4">
                 {t('objectives.cta.link')}
-              </Link>
+              </span>
             </div>
           </div>
         </div>

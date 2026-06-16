@@ -12,7 +12,7 @@ export default function QuestionsIdeasSection() {
     <section className="relative w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       {/* Background Image Placeholder */}
       <div className="absolute inset-0 z-0  bg-white">
-        <Image src="/homepage/questions.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-10 " />
+        <Image src="/homepage/questions.png" alt="" fill className="object-cover -z-10  opacity-10 " />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full ">

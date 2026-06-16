@@ -31,8 +31,8 @@ export default function TestimonialsSection() {
 
   return (
     <section className="section bg-brand-green/10  w-full text-text-strong  relative overflow-hidden">
-      <Sprout className="w-96 h-96 text-[#012515]/30 absolute -bottom-16 -left-20 z-0" />
-      <Sprout className="w-96 h-96 text-[#055D36]/30 absolute top-0 -right-20 rotate-270 z-0" />
+      <Sprout className="w-96 h-96 text-white absolute -bottom-16 -left-20 z-0" />
+      <Sprout className="w-96 h-96 text-white absolute top-0 -right-20 rotate-270 z-0" />
       <div className="max-w-7xl mx-auto w-full flex flex-col items-center z-10 relative">
         <div className="text-center mb-16 relative z-10">
           <span className="text-sm font-semibold text-text-strong/80 mb-4 tracking-wide block">
@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
                   <Star key={j} className='w-5 h-5 fill-current text-yellow-400 stroke-transparent' />
                 ))}
               </div>
-              <p className="mb-8 leading-relaxed font-medium text-text-strong/90 text-lg lg:text-4xl">"{testimonials[0].quote}"</p>
+              <p className="mb-8 leading-relaxed font-medium text-text-strong/90 text-lg lg:text-4xl">&ldquo;{testimonials[0].quote}&rdquo;</p>
 
               <div className="flex items-center gap-4 mt-auto">
                 <div className="w-12 h-12 rounded-full overflow-hidden relative bg-black/5 shrink-0 border border-black/10">
@@ -74,7 +74,7 @@ export default function TestimonialsSection() {
                   <Star key={j} className='w-5 h-5 fill-current text-yellow-400 stroke-transparent' />
                 ))}
               </div>
-              <p className="mb-8 leading-relaxed font-medium text-text-strong/90 text-lg">"{testimonials[1].quote}"</p>
+              <p className="mb-8 leading-relaxed font-medium text-text-strong/90 text-lg">&ldquo;{testimonials[1].quote}&rdquo;</p>
 
               <div className="flex items-center gap-4 mt-auto">
                 <div className="w-12 h-12 rounded-full overflow-hidden relative bg-black/5 shrink-0 border border-black/10">
@@ -92,7 +92,7 @@ export default function TestimonialsSection() {
                   <Star key={j} className='w-5 h-5 fill-current text-yellow-400 stroke-transparent' />
                 ))}
               </div>
-              <p className="mb-8 leading-relaxed font-medium text-text-strong/90 text-lg">"{testimonials[2].quote}"</p>
+              <p className="mb-8 leading-relaxed font-medium text-text-strong/90 text-lg">&ldquo;{testimonials[2].quote}&rdquo;</p>
 
               <div className="flex items-center gap-4 mt-auto">
                 <div className="w-12 h-12 rounded-full overflow-hidden relative bg-black/5 shrink-0 border border-black/10">

@@ -22,7 +22,7 @@ export default function TenThemes() {
 
   return (
     <section id="ten-themes" className="section  w-full border-t border-black/5 relative">
-      <Image src="/homepage/heroBG.png" alt="Ottawa background" fill className="object-cover -z-10  opacity-5" />
+      <Image src="/homepage/heroBG.png" alt="" fill className="object-cover -z-10  opacity-5" />
       <div className="max-w-7xl mx-auto w-full bg-white/90 backdrop-blur-xs rounded-full">
 
         <div className="text-center mb-16 max-w-2xl mx-auto ">

@@ -497,7 +497,8 @@ export const mockEvents: Event[] = [
     eventDate: '2026-06-15T00:00:00Z',
     startTime: '09:00 AM',
     endTime: '05:00 PM',
-    registrationLink: 'https://example.com/register-transit',
+    // TODO: replace with real OBEC event registration URL
+    registrationLink: '#',
     createdAt: '2026-03-01T10:00:00Z',
     updatedAt: '2026-05-05T12:00:00Z',
   },
@@ -515,7 +516,8 @@ export const mockEvents: Event[] = [
     eventDate: '2026-05-22T00:00:00Z',
     startTime: '06:00 PM',
     endTime: '07:30 PM',
-    registrationLink: 'https://example.com/register-composting',
+    // TODO: replace with real OBEC event registration URL
+    registrationLink: '#',
     createdAt: '2026-04-15T08:00:00Z',
     updatedAt: '2026-04-15T08:00:00Z',
   },
@@ -533,7 +535,8 @@ export const mockEvents: Event[] = [
     eventDate: '2026-05-30T00:00:00Z',
     startTime: '10:00 AM',
     endTime: '02:00 PM',
-    registrationLink: 'https://example.com/register-solar',
+    // TODO: replace with real OBEC event registration URL
+    registrationLink: '#',
     createdAt: '2026-04-20T08:00:00Z',
     updatedAt: '2026-04-20T08:00:00Z',
   },
@@ -551,7 +554,8 @@ export const mockEvents: Event[] = [
     eventDate: '2026-06-05T00:00:00Z',
     startTime: '11:00 AM',
     endTime: '01:30 PM',
-    registrationLink: 'https://example.com/register-cycling',
+    // TODO: replace with real OBEC event registration URL
+    registrationLink: '#',
     createdAt: '2026-05-01T09:00:00Z',
     updatedAt: '2026-05-01T09:00:00Z',
   },
@@ -569,7 +573,8 @@ export const mockEvents: Event[] = [
     eventDate: '2026-05-28T00:00:00Z',
     startTime: '07:00 PM',
     endTime: '09:30 PM',
-    registrationLink: 'https://example.com/register-gamenight',
+    // TODO: replace with real OBEC event registration URL
+    registrationLink: '#',
     createdAt: '2026-04-28T10:00:00Z',
     updatedAt: '2026-04-28T10:00:00Z',
   },
@@ -587,7 +592,8 @@ export const mockEvents: Event[] = [
     eventDate: '2026-06-12T00:00:00Z',
     startTime: '12:00 PM',
     endTime: '01:00 PM',
-    registrationLink: 'https://example.com/register-webinar-waste',
+    // TODO: replace with real OBEC event registration URL
+    registrationLink: '#',
     createdAt: '2026-05-05T08:00:00Z',
     updatedAt: '2026-05-05T08:00:00Z',
   },
@@ -605,7 +611,8 @@ export const mockEvents: Event[] = [
     eventDate: '2026-06-20T00:00:00Z',
     startTime: '01:00 PM',
     endTime: '05:00 PM',
-    registrationLink: 'https://example.com/register-jam',
+    // TODO: replace with real OBEC event registration URL
+    registrationLink: '#',
     createdAt: '2026-05-10T12:00:00Z',
     updatedAt: '2026-05-10T12:00:00Z',
   },
@@ -623,7 +630,8 @@ export const mockEvents: Event[] = [
     eventDate: '2026-05-25T00:00:00Z',
     startTime: '09:00 AM',
     endTime: '12:00 PM',
-    registrationLink: 'https://example.com/register-planting',
+    // TODO: replace with real OBEC event registration URL
+    registrationLink: '#',
     createdAt: '2026-04-18T10:00:00Z',
     updatedAt: '2026-04-18T10:00:00Z',
   },

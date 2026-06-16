@@ -182,6 +182,7 @@ export default function ExploreProjects({
         <div className="flex flex-col md:flex-row gap-4 mb-4">
           <div className="flex-grow flex items-center bg-gray-100 rounded-lg px-4 py-2">
             <input 
+              aria-label="Search projects"
               type="text" 
               placeholder={t('projects.explore.searchPlaceholder')} 
               value={searchQuery}

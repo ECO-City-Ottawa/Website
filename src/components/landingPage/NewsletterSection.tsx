@@ -4,7 +4,7 @@ import React from 'react';
 export default function NewsletterSection() {
   return (
     <section className="relative section  w-full flex flex-col items-center text-center">
-      <Image src="/homepage/CTA.png" alt="Ottawa background" fill className="object-cover -z-10 opacity-50  " />
+      <Image src="/homepage/CTA.png" alt="" fill className="object-cover -z-10 opacity-50  " />
       <div className=" absolute top-0 bottom-0 left-0 right-0 w-full h-full -z-5 bg-gradient-to-b from-white via-white/80 to-transparent"></div>
       <div className="max-w-xl mx-auto w-full">
         <h2 className="font-alt font-bold text-[36px] md:text-[40px] leading-[1.1] text-text-strong  mb-4">
@@ -16,6 +16,7 @@ export default function NewsletterSection() {
 
         <form className="flex flex-col sm:flex-row gap-4 mb-4">
           <input
+            aria-label="Newsletter email address"
             type="email"
             placeholder="Enter your email"
             className="flex-grow px-4 py-3 rounded-lg border border-black/10 focus:outline-none focus:border-brand-green bg-white  text-text-strong"
