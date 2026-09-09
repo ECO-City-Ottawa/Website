@@ -153,7 +153,7 @@ export default function Navbar() {
         {t('skip.content')}
       </a>
 
-      <div className="px-4 sm:px-6 lg:px-8 flex flex-col py-3 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-4">
+      <div className="px-4 sm:px-6 lg:px-8 flex flex-col py-3 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-2 xl:gap-4">
 
         {/* ── Logo row (mobile: full width) ───────────── */}
         <div className="flex items-center justify-between w-full lg:w-auto lg:justify-start">
@@ -263,7 +263,7 @@ export default function Navbar() {
                       href={item.href}
                       onFocus={() => setHoveredNavKey(item.labelKey)}
                       onMouseEnter={() => setHoveredNavKey(item.labelKey)}
-                      className={`relative z-10 inline-flex h-10 items-center rounded-lg px-3 text-base whitespace-nowrap transition-colors duration-150 hover:no-underline ${
+                      className={`relative z-10 inline-flex h-10 items-center rounded-lg px-2 xl:px-3 text-sm xl:text-base whitespace-nowrap transition-colors duration-150 hover:no-underline ${
                         active
                           ? 'font-bold text-brand-green'
                           : 'font-normal text-text-normal hover:text-text-strong'
@@ -372,7 +372,7 @@ export default function Navbar() {
         </NavigationMenu>
 
         {/* ── Desktop actions ──────────────────────────── */}
-        <div className="hidden items-center gap-4 justify-end lg:flex">
+        <div className="hidden items-center gap-2 xl:gap-4 justify-end lg:flex">
           {/* Language Switcher */}
           <div role="group" aria-label="Language" className="flex items-center gap-1.5 bg-black/[0.03] border border-black/5 p-1 rounded-full">
 
@@ -403,8 +403,8 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Link href="/donate" className="btn btn-secondary">{t('nav.donate')}</Link>
-          <Link href="/engagement#volunteer" className="btn btn-primary">{t('nav.volunteer')}</Link>
+          <Link href="/donate" className="btn btn-secondary px-3 xl:px-4 text-sm xl:text-base whitespace-nowrap">{t('nav.donate')}</Link>
+          <Link href="/engagement#volunteer" className="btn btn-primary px-3 xl:px-4 text-sm xl:text-base whitespace-nowrap">{t('nav.volunteer')}</Link>
         </div>
 
       </div>
