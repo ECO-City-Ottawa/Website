@@ -11,6 +11,7 @@ Running list of things that are wired up in code but waiting on real information
 - **Testimonials** — real quotes/names/photos to replace the 3 placeholder entries in `TestimonialsSection.tsx`.
 - **Team/Volunteers section** — real volunteer names/photos to replace the duplicated placeholder entry in `Volunteers.tsx`.
 - **Board data fixes** — in `OurBoard.tsx`: Chair Esther Weirich's photo currently points to `Amber.jpg` (looks like a leftover from an earlier roster), and Muloud Gahlouz's bio pulls from a translation key still named `desc.pamela`. Needs the correct photo file and a bio key rename once confirmed.
+- **Real contact page location** — mailing address / city / postal code (and phone, if it should be shown) for `/contact`. Currently no real location is wired in.
 
 ## Waiting on board approval
 
@@ -27,7 +28,8 @@ Running list of things that are wired up in code but waiting on real information
 - `npm audit` reported vulnerabilities in current dependencies — worth a review pass before launch (`npm audit` for details).
 - **Project location maps are deferred.** Both the project detail page's "location map" section and the Explore Projects "Map view" toggle were showing a static stock photo with fake marker text, not a real map — this matches your own project notes that live map integration is intentional future work, not an oversight. Both fake sections are now removed (the Map toggle was replaced with a real List view). Add a real map back in when there's an actual map integration to wire up.
 - **Placeholder image you sent in chat** — still need it saved to a file I can reach (Downloads or `public/` directly) before I can wire it in as the site's default placeholder photo.
-- **Green-color consolidation and section-padding unification** — flagged in the original design audit (brand green rendered as 6+ different hex values across the site; two competing padding systems between older and newer pages). Both are visible, sitewide changes that deserve your eyes before I touch them — holding off until you're ready to review.
+- **Green-color consolidation and section-padding unification — done.** Brand green consolidated to the `brand-green` token sitewide (commit `86d9cb5`), off-brand navy/blue accents converted to brand-green, and every page's section spacing unified onto the shared `.section` system including a doubled-padding bug found along the way (commit `28f0ff6`).
+- **Dead/orphaned components** — `DemonstrationEvents.tsx`, `ProjectLibrary.tsx`, and `PublicActionLabs.tsx` in `src/components/projects/` are not imported by any page and contain unfinished placeholder text (literal `{#pal#}`-style tags, hardcoded English with no translation). Not a live bug since nothing renders them, but worth deleting or finishing during a cleanup pass.
 
 ## Incident log
 
