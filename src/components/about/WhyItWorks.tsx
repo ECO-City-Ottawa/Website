@@ -3,6 +3,7 @@
 import React from 'react';
 import { Users, Network, Sprout, Shield, Lightbulb, Heart } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { renderWithBreaks } from '@/lib/text';
 
 export default function WhyItWorks() {
   const { t } = useLanguage();
@@ -49,10 +50,9 @@ export default function WhyItWorks() {
           <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
             {t('whyItWorks.subtitle')}
           </span>
-          <h2 
-            className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-6"
-            dangerouslySetInnerHTML={{ __html: t('whyItWorks.title') }}
-          />
+          <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-6">
+            {renderWithBreaks(t('whyItWorks.title'))}
+          </h2>
           <p className="text-text-strong/80 md:text-[18px]">
             {t('whyItWorks.paragraph')}
           </p>
@@ -60,7 +60,7 @@ export default function WhyItWorks() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10">
           {features.map((f, i) => (
-            <div key={i} className="flex flex-col text-text-stong p-8 rounded-2xl  border bg-brand-green/5 hover:bg-brand-green group transition-colors duration-300 ease-in-out">
+            <div key={i} className="flex flex-col text-text-strong p-8 rounded-2xl  border bg-brand-green/5 hover:bg-brand-green group transition-colors duration-300 ease-in-out">
               <div className="w-16 h-16 rounded-lg bg-brand-green/10 group-hover:bg-white/80 flex items-center justify-center mb-6 text-brand-green transition-colors duration-300 ease-in-out">
                 <f.icon className="w-6 h-6" />
               </div>

@@ -12,6 +12,7 @@ import CommunitySustainabilityPlans from "@/components/projects/CommunitySustain
 import JoinMissionCta from "@/components/about/JoinMissionCta";
 import ProjectsFaq from "@/components/projects/ProjectsFaq";
 import { useLanguage } from "@/context/LanguageContext";
+import { renderWithBreaks } from '@/lib/text';
 
 export default function ProjectsPage() {
   const { t } = useLanguage();
@@ -22,7 +23,7 @@ export default function ProjectsPage() {
       <main id="main" className="min-h-screen pb-20">
         <PageHero
           title={
-            <span dangerouslySetInnerHTML={{ __html: t('projects.hero.title') }} />
+            <span>{renderWithBreaks(t('projects.hero.title'))}</span>
           }
           description={t('projects.hero.description')}
           buttons={

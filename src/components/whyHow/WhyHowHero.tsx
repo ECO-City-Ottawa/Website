@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import PageHero from '@/components/ui/PageHero';
+import { renderWithBreaks } from '@/lib/text';
 
 export default function WhyHowHero() {
   const { t } = useLanguage();
@@ -11,7 +12,7 @@ export default function WhyHowHero() {
   return (
     <PageHero
       title={
-        <span dangerouslySetInnerHTML={{ __html: t('whyHowHero.title') }} />
+        <span>{renderWithBreaks(t('whyHowHero.title'))}</span>
       }
       description={t('whyHowHero.paragraph')}
       buttons={

@@ -19,7 +19,7 @@ export default function DemonstrationEvents() {
             These are real projects opened to the public to demonstrate practical approaches to sustainability. Any organization willing to share its methods and results can develop a Demonstration Project.
           </p>
           <p className="text-text-normal leading-relaxed">
-            Demonstration Projects motivate others by showing what can actually be done — complementing the effects of Community Sustainability Plans and the Project Library.
+            Demonstration Projects motivate others by showing what can actually be done, complementing the effects of Community Sustainability Plans and the Project Library.
           </p>
         </div>
 

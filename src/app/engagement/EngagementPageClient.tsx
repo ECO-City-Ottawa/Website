@@ -22,6 +22,14 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import JoinMissionCta from '@/components/about/JoinMissionCta';
 import { useLanguage } from '@/context/LanguageContext';
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const VOLUNTEER_FIELD_IDS: Record<string, string> = {
+  fullName: 'volunteer-full-name',
+  email: 'volunteer-email',
+  consent: 'volunteer-consent',
+};
+
 export default function EngagementPage() {
   const { t, language } = useLanguage();
 
@@ -44,6 +52,9 @@ export default function EngagementPage() {
   });
 
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleRoleChange = (role: string) => {
     setFormData(prev => ({
@@ -65,13 +76,43 @@ export default function EngagementPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateVolunteerForm = () => {
+    const next: Record<string, string> = {};
+    if (!formData.fullName.trim()) next.fullName = t('engagement.volunteer.error.fullName');
+    if (!formData.email.trim()) next.email = t('engagement.volunteer.error.email');
+    else if (!EMAIL_RE.test(formData.email.trim())) next.email = t('engagement.volunteer.error.emailInvalid');
+    if (!formData.consent) next.consent = t('engagement.volunteer.error.consent');
+    return next;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName || !formData.email || !formData.consent) {
-      alert(t('engagement.volunteer.alert'));
+    setSubmitError(null);
+    const nextErrors = validateVolunteerForm();
+    setErrors(nextErrors);
+
+    const firstErrorField = Object.keys(nextErrors)[0];
+    if (firstErrorField) {
+      const el = document.getElementById(VOLUNTEER_FIELD_IDS[firstErrorField]);
+      el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el?.focus({ preventScroll: true });
       return;
     }
-    setFormSubmitted(true);
+
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('/api/volunteer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Request failed');
+      setFormSubmitted(true);
+    } catch {
+      setSubmitError(t('engagement.volunteer.submitError'));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const rolesList = [
@@ -321,8 +362,8 @@ export default function EngagementPage() {
                   <p className="text-base">{t('engagement.volunteer.successText')}</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  
+                <form onSubmit={handleSubmit} noValidate className="space-y-6">
+
                   {/* Row 1 */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -330,24 +371,32 @@ export default function EngagementPage() {
                       <input
                         id="volunteer-full-name"
                         type="text"
-                        required
                         placeholder={t('engagement.volunteer.fullNamePlaceholder')}
                         value={formData.fullName}
                         onChange={e => setFormData(prev => ({ ...prev, fullName: e.target.value }))}
-                        className="w-full px-4 py-3 border border-black/10 rounded-lg text-base text-text-strong placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-transparent transition-colors"
+                        aria-invalid={!!errors.fullName}
+                        aria-describedby={errors.fullName ? 'volunteer-full-name-error' : undefined}
+                        className={`w-full px-4 py-3 border rounded-lg text-base text-text-strong placeholder-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition-colors ${errors.fullName ? 'border-error focus:ring-error' : 'border-black/10 focus:ring-green-700'}`}
                       />
+                      {errors.fullName && (
+                        <p id="volunteer-full-name-error" role="alert" className="mt-1.5 text-sm text-error">{errors.fullName}</p>
+                      )}
                     </div>
                     <div>
                       <label htmlFor="volunteer-email" className="block text-base font-semibold text-text-strong mb-2">{t('engagement.volunteer.email')}</label>
                       <input
                         id="volunteer-email"
                         type="email"
-                        required
                         placeholder={t('engagement.volunteer.emailPlaceholder')}
                         value={formData.email}
                         onChange={e => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                        className="w-full px-4 py-3 border border-black/10 rounded-lg text-base text-text-strong placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-transparent transition-colors"
+                        aria-invalid={!!errors.email}
+                        aria-describedby={errors.email ? 'volunteer-email-error' : undefined}
+                        className={`w-full px-4 py-3 border rounded-lg text-base text-text-strong placeholder-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition-colors ${errors.email ? 'border-error focus:ring-error' : 'border-black/10 focus:ring-green-700'}`}
                       />
+                      {errors.email && (
+                        <p id="volunteer-email-error" role="alert" className="mt-1.5 text-sm text-error">{errors.email}</p>
+                      )}
                     </div>
                   </div>
 
@@ -480,26 +529,36 @@ export default function EngagementPage() {
                   </div>
 
                   {/* Consent */}
-                  <label htmlFor="volunteer-consent" className="flex items-start gap-3 cursor-pointer select-none">
-                    <input
-                      id="volunteer-consent"
-                      type="checkbox"
-                      required
-                      checked={formData.consent}
-                      onChange={e => setFormData(prev => ({ ...prev, consent: e.target.checked }))}
-                      className="w-5 h-5 rounded border-black/20 text-[#2D7A5D] mt-1 focus:ring-[#2D7A5D]"
-                    />
-                    <span className="text-base text-text-normal">
-                      {t('engagement.volunteer.consent')}
-                    </span>
-                  </label>
+                  <div>
+                    <label htmlFor="volunteer-consent" className="flex items-start gap-3 cursor-pointer select-none">
+                      <input
+                        id="volunteer-consent"
+                        type="checkbox"
+                        checked={formData.consent}
+                        onChange={e => setFormData(prev => ({ ...prev, consent: e.target.checked }))}
+                        aria-invalid={!!errors.consent}
+                        aria-describedby={errors.consent ? 'volunteer-consent-error' : undefined}
+                        className={`w-5 h-5 rounded mt-1 text-[#2D7A5D] focus:ring-[#2D7A5D] ${errors.consent ? 'border-error' : 'border-black/20'}`}
+                      />
+                      <span className="text-base text-text-normal">
+                        {t('engagement.volunteer.consent')}
+                      </span>
+                    </label>
+                    {errors.consent && (
+                      <p id="volunteer-consent-error" role="alert" className="mt-1.5 text-sm text-error">{errors.consent}</p>
+                    )}
+                  </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-[#2D7A5D] hover:bg-[#24634b] text-white py-4 rounded-lg font-bold text-base transition-colors shadow-sm text-center"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#2D7A5D] hover:bg-[#24634b] disabled:opacity-60 disabled:cursor-not-allowed text-white py-4 rounded-lg font-bold text-base transition-colors shadow-sm text-center"
                   >
-                    {t('engagement.volunteer.submit')}
+                    {isSubmitting ? t('engagement.volunteer.submitting') : t('engagement.volunteer.submit')}
                   </button>
+                  {submitError && (
+                    <p role="alert" className="text-sm text-error text-center">{submitError}</p>
+                  )}
                 </form>
               )}
             </div>

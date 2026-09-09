@@ -90,7 +90,7 @@ export default function ToolsOfEngagementSection() {
                  |
                </div>
                <h4 className="font-bold text-[20px] mb-4">
-                 <span className="text-[#3E8D61]">SPARK-PAL</span> <span className="text-gray-400 font-normal">—</span> <span className="text-[#3E8D61] text-[15px]">{t('toolsOfEngagement.pal.card1.sub')}</span>
+                 <span className="text-[#3E8D61]">SPARK-PAL</span> <span className="text-gray-400 font-normal">·</span> <span className="text-[#3E8D61] text-[15px]">{t('toolsOfEngagement.pal.card1.sub')}</span>
                </h4>
                <p className="text-text-normal text-[15px] leading-relaxed">
                  {t('toolsOfEngagement.pal.card1.desc')}
@@ -103,7 +103,7 @@ export default function ToolsOfEngagementSection() {
                  ||
                </div>
                <h4 className="font-bold text-[20px] mb-4">
-                 <span className="text-[#3E8D61]">Engagement-PAL</span> <span className="text-gray-400 font-normal">—</span> <span className="text-[#3E8D61] text-[15px]">{t('toolsOfEngagement.pal.card2.sub')}</span>
+                 <span className="text-[#3E8D61]">Engagement-PAL</span> <span className="text-gray-400 font-normal">·</span> <span className="text-[#3E8D61] text-[15px]">{t('toolsOfEngagement.pal.card2.sub')}</span>
                </h4>
                <p className="text-text-normal text-[15px] leading-relaxed">
                  {t('toolsOfEngagement.pal.card2.desc')}
@@ -117,7 +117,7 @@ export default function ToolsOfEngagementSection() {
                </div>
                <h4 className="font-bold text-[20px] mb-4 leading-tight">
                  <span className="text-[#3E8D61]">Community Sustainability PAL</span> <br className="hidden md:block lg:hidden" />
-                 <span className="text-gray-400 font-normal hidden lg:inline"> — </span>
+                 <span className="text-gray-400 font-normal hidden lg:inline"> · </span>
                  <span className="text-[#3E8D61] text-[15px]">{t('toolsOfEngagement.pal.card3.sub')}</span>
                </h4>
                <p className="text-text-normal text-[15px] leading-relaxed">

@@ -4,6 +4,7 @@ import React, { ReactNode } from 'react';
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { renderWithBreaks } from '@/lib/text';
 
 export interface CtaButtonProps {
   label: string;
@@ -22,7 +23,7 @@ export default function JoinMissionCta({ title, description, buttons }: JoinMiss
   const { t } = useLanguage();
 
   const defaultTitle = (
-    <span dangerouslySetInnerHTML={{ __html: t('joinMission.headline').replace('\n', '<br />') }} />
+    <span>{renderWithBreaks(t('joinMission.headline'))}</span>
   );
   const defaultDescription = t('joinMission.description');
   const defaultButtons: CtaButtonProps[] = [
@@ -56,14 +57,14 @@ export default function JoinMissionCta({ title, description, buttons }: JoinMiss
             }
             if (btn.variant === 'secondary') {
               return (
-                <Link key={idx} href={btn.href} className="border border-black/30 text-text-stong hover:bg-white/50 px-8 py-3 rounded-lg font-medium transition-colors text-sm ">
+                <Link key={idx} href={btn.href} className="border border-black/30 text-text-strong hover:bg-white/50 px-8 py-3 rounded-lg font-medium transition-colors text-sm ">
                   {btn.label}
                 </Link>
               );
             }
             if (btn.variant === 'link') {
               return (
-                <Link key={idx} href={btn.href} className="text-text-stong hover:text-brand-green flex items-center gap-1 text-sm border-b border-text-stong pb-0.5 ml-2 transition-colors">
+                <Link key={idx} href={btn.href} className="text-text-strong hover:text-brand-green flex items-center gap-1 text-sm border-b border-text-strong pb-0.5 ml-2 transition-colors">
                   {btn.label} {btn.icon}
                 </Link>
               );

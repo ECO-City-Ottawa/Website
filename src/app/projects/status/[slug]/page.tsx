@@ -58,7 +58,7 @@ export default function StatusProjectsPage({ params }: { params: Promise<{ slug:
     : (STATUS_DESCRIPTIONS_EN[slug.toLowerCase()] ?? "Explore projects by status.");
 
   const pageHeroTitle = language === 'fr'
-    ? `Projets — ${displayTitle}`
+    ? `Projets : ${displayTitle}`
     : `${displayTitle} projects`;
 
   return (

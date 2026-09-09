@@ -281,7 +281,7 @@ export const mockProjects: Project[] = [
     city: 'Kanata',
     objective: 'Co-design a renewed Kanata community park that reflects the needs and vision of residents of all ages.',
     address: '400 Terry Fox Dr, Kanata, ON',
-    organization: 'City of Ottawa — Parks Dept',
+    organization: 'City of Ottawa · Parks Dept',
     tools: ['Discussion Game', 'CSP'],
     contact: { email: 'parks@ottawa.ca', website: 'ottawa.ca/parks' },
     coordinates: { lat: 45.3012, lng: -75.9140 },

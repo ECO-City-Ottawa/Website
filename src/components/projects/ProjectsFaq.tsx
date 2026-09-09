@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
+import { renderWithBreaks } from '@/lib/text';
 
 export default function ProjectsFaq() {
   const { t } = useLanguage();
@@ -30,10 +31,9 @@ export default function ProjectsFaq() {
         
         {/* Left Side: Text and CTA */}
         <div className="flex flex-col items-start">
-          <h2 
-            className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong mb-6"
-            dangerouslySetInnerHTML={{ __html: t('projects.faq.title') }}
-          />
+          <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong mb-6">
+            {renderWithBreaks(t('projects.faq.title'))}
+          </h2>
           <p className="text-text-normal text-[16px] leading-relaxed mb-8 max-w-md">
             {t('projects.faq.description')}
           </p>

@@ -10,10 +10,22 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import JoinMissionCta from '@/components/about/JoinMissionCta';
 import { useLanguage } from '@/context/LanguageContext';
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const CONTACT_FIELD_IDS: Record<string, string> = {
+  fullName: 'contact-full-name',
+  email: 'contact-email',
+  message: 'contact-message',
+  consent: 'contact-consent',
+};
+
 export default function ContactPage() {
   const { t } = useLanguage();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -45,13 +57,44 @@ export default function ContactPage() {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateContactForm = () => {
+    const next: Record<string, string> = {};
+    if (!formData.fullName.trim()) next.fullName = t('contact.form.error.fullName');
+    if (!formData.email.trim()) next.email = t('contact.form.error.email');
+    else if (!EMAIL_RE.test(formData.email.trim())) next.email = t('contact.form.error.emailInvalid');
+    if (!formData.message.trim()) next.message = t('contact.form.error.message');
+    if (!formData.consent) next.consent = t('contact.form.error.consent');
+    return next;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName || !formData.email || !formData.message || !formData.consent) {
-      alert(t('contact.form.alert'));
+    setSubmitError(null);
+    const nextErrors = validateContactForm();
+    setErrors(nextErrors);
+
+    const firstErrorField = Object.keys(nextErrors)[0];
+    if (firstErrorField) {
+      const el = document.getElementById(CONTACT_FIELD_IDS[firstErrorField]);
+      el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el?.focus({ preventScroll: true });
       return;
     }
-    setFormSubmitted(true);
+
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Request failed');
+      setFormSubmitted(true);
+    } catch {
+      setSubmitError(t('contact.form.submitError'));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -123,8 +166,8 @@ export default function ContactPage() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  
+                <form onSubmit={handleSubmit} noValidate className="space-y-6">
+
                   {/* Row 1 */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -134,12 +177,16 @@ export default function ContactPage() {
                       <input
                         id="contact-full-name"
                         type="text"
-                        required
                         placeholder={t('contact.form.fullNamePlaceholder')}
                         value={formData.fullName}
                         onChange={e => setFormData(prev => ({ ...prev, fullName: e.target.value }))}
-                        className="w-full px-4 py-3 border border-black/10 rounded-lg text-base text-text-strong placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-transparent transition-colors"
+                        aria-invalid={!!errors.fullName}
+                        aria-describedby={errors.fullName ? 'contact-full-name-error' : undefined}
+                        className={`w-full px-4 py-3 border rounded-lg text-base text-text-strong placeholder-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition-colors ${errors.fullName ? 'border-error focus:ring-error' : 'border-black/10 focus:ring-green-700'}`}
                       />
+                      {errors.fullName && (
+                        <p id="contact-full-name-error" role="alert" className="mt-1.5 text-sm text-error">{errors.fullName}</p>
+                      )}
                     </div>
                     <div>
                       <label htmlFor="contact-email" className="block text-base font-semibold text-text-strong mb-2">
@@ -148,12 +195,16 @@ export default function ContactPage() {
                       <input
                         id="contact-email"
                         type="email"
-                        required
                         placeholder={t('contact.form.emailPlaceholder')}
                         value={formData.email}
                         onChange={e => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                        className="w-full px-4 py-3 border border-black/10 rounded-lg text-base text-text-strong placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-transparent transition-colors"
+                        aria-invalid={!!errors.email}
+                        aria-describedby={errors.email ? 'contact-email-error' : undefined}
+                        className={`w-full px-4 py-3 border rounded-lg text-base text-text-strong placeholder-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition-colors ${errors.email ? 'border-error focus:ring-error' : 'border-black/10 focus:ring-green-700'}`}
                       />
+                      {errors.email && (
+                        <p id="contact-email-error" role="alert" className="mt-1.5 text-sm text-error">{errors.email}</p>
+                      )}
                     </div>
                   </div>
 
@@ -247,36 +298,50 @@ export default function ContactPage() {
                     </label>
                     <textarea
                       id="contact-message"
-                      required
                       placeholder={t('contact.form.messagePlaceholder')}
                       rows={5}
                       value={formData.message}
                       onChange={e => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                      className="w-full px-4 py-3 border border-black/10 rounded-lg text-base text-text-strong placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-transparent transition-colors resize-none"
+                      aria-invalid={!!errors.message}
+                      aria-describedby={errors.message ? 'contact-message-error' : undefined}
+                      className={`w-full px-4 py-3 border rounded-lg text-base text-text-strong placeholder-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition-colors resize-none ${errors.message ? 'border-error focus:ring-error' : 'border-black/10 focus:ring-green-700'}`}
                     />
+                    {errors.message && (
+                      <p id="contact-message-error" role="alert" className="mt-1.5 text-sm text-error">{errors.message}</p>
+                    )}
                   </div>
 
                   {/* Consent */}
-                  <label htmlFor="contact-consent" className="flex items-start gap-3 cursor-pointer select-none">
-                    <input
-                      id="contact-consent"
-                      type="checkbox"
-                      required
-                      checked={formData.consent}
-                      onChange={e => setFormData(prev => ({ ...prev, consent: e.target.checked }))}
-                      className="w-5 h-5 rounded border-black/20 text-[#2D7A5D] mt-1 focus:ring-[#2D7A5D]"
-                    />
-                    <span className="text-base text-text-normal">
-                      {t('contact.form.consent')}
-                    </span>
-                  </label>
+                  <div>
+                    <label htmlFor="contact-consent" className="flex items-start gap-3 cursor-pointer select-none">
+                      <input
+                        id="contact-consent"
+                        type="checkbox"
+                        checked={formData.consent}
+                        onChange={e => setFormData(prev => ({ ...prev, consent: e.target.checked }))}
+                        aria-invalid={!!errors.consent}
+                        aria-describedby={errors.consent ? 'contact-consent-error' : undefined}
+                        className={`w-5 h-5 rounded mt-1 text-[#2D7A5D] focus:ring-[#2D7A5D] ${errors.consent ? 'border-error' : 'border-black/20'}`}
+                      />
+                      <span className="text-base text-text-normal">
+                        {t('contact.form.consent')}
+                      </span>
+                    </label>
+                    {errors.consent && (
+                      <p id="contact-consent-error" role="alert" className="mt-1.5 text-sm text-error">{errors.consent}</p>
+                    )}
+                  </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-[#2D7A5D] hover:bg-[#24634b] text-white py-4 rounded-lg font-bold text-base transition-colors shadow-sm text-center animate-pulse"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#2D7A5D] hover:bg-[#24634b] disabled:opacity-60 disabled:cursor-not-allowed text-white py-4 rounded-lg font-bold text-base transition-colors shadow-sm text-center"
                   >
-                    {t('contact.form.submit')}
+                    {isSubmitting ? t('contact.form.submitting') : t('contact.form.submit')}
                   </button>
+                  {submitError && (
+                    <p role="alert" className="text-sm text-error text-center">{submitError}</p>
+                  )}
                 </form>
               )}
             </div>

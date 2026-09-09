@@ -12,6 +12,7 @@ const urbanist = Urbanist({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://obec-evbo.ca'),
   title: {
     default: 'EcoCity Ottawa | Community-Led Sustainability',
     template: '%s | EcoCity Ottawa'

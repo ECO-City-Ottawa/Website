@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { User } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { renderWithBreaks } from '@/lib/text';
 
 
 
@@ -20,10 +21,9 @@ export default function SupportCtaSection() {
 
 
         <div className="max-w-3xl mx-auto w-full z-10 relative  backdrop-blur-md p-8 rounded-3xl">
-          <h2
-            className="font-alt font-bold text-[40px] text-text-strong md:text-[48px] leading-[1.1]   mb-6"
-            dangerouslySetInnerHTML={{ __html: t('supportCta.headline') }}
-          />
+          <h2 className="font-alt font-bold text-[40px] text-text-strong md:text-[48px] leading-[1.1]   mb-6">
+            {renderWithBreaks(t('supportCta.headline'))}
+          </h2>
           <p className=" md:text-[18px] leading-[1.6] mb-10 text-text-normal">
             {t('supportCta.description')}
           </p>

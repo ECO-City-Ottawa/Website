@@ -42,7 +42,7 @@ export default function ProjectLibrary() {
           </div>
           <div className="flex flex-col justify-end">
             <p className="text-text-normal leading-[1.6]">
-              A growing collection of real projects from Ottawa and other communities — organized around BEC's 10 Themes of Sustainability. The library is designed to inspire people to try, adapt, and learn from what others have already done.
+              A growing collection of real projects from Ottawa and other communities, organized around BEC's 10 Themes of Sustainability. The library is designed to inspire people to try, adapt, and learn from what others have already done.
             </p>
           </div>
         </div>

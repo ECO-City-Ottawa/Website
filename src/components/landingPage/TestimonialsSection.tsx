@@ -62,7 +62,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-bold text-sm text-text-strong/80">{testimonials[0].name}</span>
-                  <span className="text-text-strong/60 text-xs">{testimonials[0].role}</span>
+                  <span className="text-text-strong/80 text-xs">{testimonials[0].role}</span>
                 </div>
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-bold text-sm text-text-strong/80">{testimonials[1].name}</span>
-                  <span className="text-text-strong/60 text-xs">{testimonials[1].role}</span>
+                  <span className="text-text-strong/80 text-xs">{testimonials[1].role}</span>
                 </div>
               </div>
             </div>  <div  className="flex flex-col p-8 rounded-xl bg-brand-green/20 text-text-strong border border-white/10">
@@ -100,7 +100,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-bold text-sm text-text-strong/80">{testimonials[2].name}</span>
-                  <span className="text-text-strong/60 text-xs">{testimonials[2].role}</span>
+                  <span className="text-text-strong/80 text-xs">{testimonials[2].role}</span>
                 </div>
               </div>
             </div>

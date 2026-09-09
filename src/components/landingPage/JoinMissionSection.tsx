@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { renderWithBreaks } from '@/lib/text';
 
 export default function JoinMissionSection() {
   const { t } = useLanguage();
@@ -28,10 +29,9 @@ export default function JoinMissionSection() {
           <span className="text-sm font-semibold text-text-strong mb-4 tracking-wide">
             {t('joinMission.title')}
           </span>
-          <h2
-            className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong  mb-6"
-            dangerouslySetInnerHTML={{ __html: t('joinMission.headline').replace('\n', '<br />') }}
-          />
+          <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong  mb-6">
+            {renderWithBreaks(t('joinMission.headline'))}
+          </h2>
           <p className="text-text-normal md:text-[18px] leading-[1.6] mb-10">
             {t('joinMission.description')}
           </p>

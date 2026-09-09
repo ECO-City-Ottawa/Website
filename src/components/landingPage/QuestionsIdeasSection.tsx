@@ -22,10 +22,10 @@ export default function QuestionsIdeasSection() {
 
             {/* Left Column */}
             <div className="flex flex-col">
-              <span className="text-text-stong font-medium mb-4 text-sm md:text-base">
+              <span className="text-text-strong font-medium mb-4 text-sm md:text-base">
                 {t('questionsIdeas.title')}
               </span>
-              <h2 className="font-alt text-black font-bold text-[40px] md:text-[56px] leading-[1.1] text-text-stong ">
+              <h2 className="font-alt text-black font-bold text-[40px] md:text-[56px] leading-[1.1] text-text-strong ">
                 {t('questionsIdeas.headline')}
               </h2>
             </div>
@@ -35,7 +35,7 @@ export default function QuestionsIdeasSection() {
               <h3 className="text-[20px] md:text-[24px] font-semibold text-black mb-4">
                 {t('questionsIdeas.subheading')}
               </h3>
-              <p className="text-text-stong/80 md:text-[18px] leading-[1.6] mb-8 max-w-md">
+              <p className="text-text-strong/80 md:text-[18px] leading-[1.6] mb-8 max-w-md">
                 {t('questionsIdeas.description')}
               </p>
 
@@ -43,7 +43,7 @@ export default function QuestionsIdeasSection() {
                 <Link href="/contact" className="bg-brand-green text-white hover:opacity-90 px-8 py-3 rounded-lg font-medium transition-colors">
                   {t('questionsIdeas.cta1')}
                 </Link>
-                <Link href="/contact" className="text-text-stong hover:underline flex items-center gap-1 font-medium">
+                <Link href="/contact" className="text-text-strong hover:underline flex items-center gap-1 font-medium">
                   {t('questionsIdeas.cta2')}
                   <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

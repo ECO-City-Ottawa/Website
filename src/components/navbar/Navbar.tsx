@@ -160,14 +160,14 @@ export default function Navbar() {
 
           {/* Logo / Brand */}
           <Link href="/" className="relative z-50 flex items-center gap-2">
-            <Image src={"/Ecocity logo.png"} alt="Logo" width={80} height={50} />
+            <Image src={"/Ecocity logo.png"} alt="EcoCity Ottawa home" width={80} height={50} />
           </Link>
 
           <div className="flex gap-2 items-center">
 
             {/* Language Switcher — mobile only */}
-            <div className="flex lg:hidden items-center gap-1.5 bg-black/[0.03] border border-black/5 p-1 rounded-xl">
-             
+            <div role="group" aria-label="Language" className="flex lg:hidden items-center gap-1.5 bg-black/[0.03] border border-black/5 p-1 rounded-xl">
+
               <div className="relative flex bg-black/[0.04] p-0.5 rounded-lg h-[30px] w-[68px] items-center">
                 <div
                   className={`absolute top-0.5 bottom-0.5 w-[32px] bg-base-white rounded-md shadow-sm transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
@@ -176,6 +176,7 @@ export default function Navbar() {
                 />
                 <button
                   onClick={() => setLanguage('en')}
+                  aria-pressed={language === 'en'}
                   className={`relative z-10 w-[32px] h-[26px] rounded-md flex items-center justify-center text-xs font-semibold transition-colors duration-200 ${
                     language === 'en' ? 'text-text-strong' : 'text-text-normal hover:text-text-strong'
                   }`}
@@ -184,6 +185,7 @@ export default function Navbar() {
                 </button>
                 <button
                   onClick={() => setLanguage('fr')}
+                  aria-pressed={language === 'fr'}
                   className={`relative z-10 w-[32px] h-[26px] rounded-md flex items-center justify-center text-xs font-semibold transition-colors duration-200 ${
                     language === 'fr' ? 'text-text-strong' : 'text-text-normal hover:text-text-strong'
                   }`}
@@ -372,8 +374,8 @@ export default function Navbar() {
         {/* ── Desktop actions ──────────────────────────── */}
         <div className="hidden items-center gap-4 justify-end lg:flex">
           {/* Language Switcher */}
-          <div className="flex items-center gap-1.5 bg-black/[0.03] border border-black/5 p-1 rounded-full">
-           
+          <div role="group" aria-label="Language" className="flex items-center gap-1.5 bg-black/[0.03] border border-black/5 p-1 rounded-full">
+
             <div className="relative flex bg-black/[0.04] p-0.5 rounded-full  items-center">
               <div
                 className={`absolute top-0.5 bottom-0.5 w-[32px] h-[32px] bg-base-white rounded-full shadow-sm transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
@@ -382,6 +384,7 @@ export default function Navbar() {
               />
               <button
                 onClick={() => setLanguage('en')}
+                aria-pressed={language === 'en'}
                 className={`relative z-10  w-[32px] text-sm h-[32px] rounded-full flex items-center justify-center  font-semibold transition-colors duration-200 ${
                   language === 'en' ? 'text-text-strong' : 'text-text-normal hover:text-text-strong'
                 }`}
@@ -390,6 +393,7 @@ export default function Navbar() {
               </button>
               <button
                 onClick={() => setLanguage('fr')}
+                aria-pressed={language === 'fr'}
                 className={`relative z-10 w-[32px] h-[32px]   text-sm rounded-full flex items-center justify-center font-semibold transition-colors duration-200 ${
                   language === 'fr' ? 'text-text-strong' : 'text-text-normal hover:text-text-strong'
                 }`}
@@ -408,6 +412,8 @@ export default function Navbar() {
       {/* ── Full-screen mobile menu ───────────────────── */}
       <div
         id="mobile-menu"
+        inert={!open}
+        aria-hidden={!open}
         className={`fixed z-40 flex flex-col overflow-hidden bg-base-white transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden ${
           open
             ? 'right-0 top-0 h-[100dvh] w-screen rounded-none opacity-100 pointer-events-auto'
