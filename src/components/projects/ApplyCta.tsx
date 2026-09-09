@@ -1,10 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
+import { Sprout } from 'lucide-react';
 
 export default function ApplyCta() {
   return (
-    <section className="section bg-brand-green w-full flex flex-col items-center text-center border-t border-white/10">
-      <div className="max-w-3xl mx-auto w-full">
+    <section className="section bg-brand-green w-full flex flex-col items-center text-center border-t border-white/10 relative overflow-hidden">
+      <Sprout className="w-96 h-96 text-white/40 absolute -bottom-16 -left-20 z-0" />
+      <Sprout className="w-96 h-96 text-white/40 absolute top-0 -right-20 rotate-270 z-0" />
+      <div className="max-w-3xl mx-auto w-full relative z-10">
         <span className="text-xs font-semibold text-white/80 mb-4 uppercase tracking-wide block">
           Get Started
         </span>

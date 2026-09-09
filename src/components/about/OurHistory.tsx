@@ -83,11 +83,22 @@ export default function OurHistory() {
           </div>
 
           {/* Mobile View */}
-          <div className="lg:hidden flex flex-col gap-4 w-full">
+          <div className="lg:hidden flex flex-col w-full">
             {timeline.map((item, index) => (
-              <div key={index} className="bg-gray-100 rounded-lg p-6 z-10  border border-black/5">
-                <h3 className="font-alt font-bold text-[28px] text-brand-green mb-2">{item.year}</h3>
-                <p className="text-sm text-text-strong leading-relaxed">{item.text}</p>
+              <div key={index} className="flex gap-4">
+                {/* Marker column: dot + connecting line */}
+                <div className="flex flex-col items-center">
+                  <div className="w-4 h-4 rounded-full bg-brand-green outline-[4px] outline-white shrink-0 mt-1"></div>
+                  {index < timeline.length - 1 && (
+                    <div className="w-[2px] flex-1 bg-brand-green/30 my-1"></div>
+                  )}
+                </div>
+
+                {/* Card */}
+                <div className={`flex-1 bg-gradient-to-br from-[#1F6D4A]/5 to-[#3CD38F]/5 rounded-2xl p-6 border border-brand-green/10 ${index < timeline.length - 1 ? 'mb-6' : ''}`}>
+                  <h3 className="font-alt font-bold text-[28px] text-brand-green mb-2">{item.year}</h3>
+                  <p className="text-sm text-text-strong leading-relaxed">{item.text}</p>
+                </div>
               </div>
             ))}
           </div>

@@ -42,11 +42,13 @@ export default function WhyItWorks() {
   ];
 
   return (
-    <section className="section  w-full relative overflow-hidden bg-brand-green/10   ">
-      
-      <div className="max-w-7xl mx-auto w-full">
+    <section className="section w-full relative overflow-hidden bg-brand-green/10">
+      <Sprout className="w-96 h-96 text-white absolute -bottom-16 -left-20 z-0" />
+      <Sprout className="w-96 h-96 text-white absolute top-0 -right-20 rotate-270 z-0" />
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         
-        <div className="text-center mb-16 max-w-3xl mx-auto relative z-10">
+        <div className="text-center mb-16 max-w-[700px] mx-auto relative z-10">
           <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
             {t('whyItWorks.subtitle')}
           </span>
