@@ -11,11 +11,12 @@ import JoinMissionCta from '@/components/about/JoinMissionCta';
 import ProjectCard from '@/components/projects/ProjectCard';
 import { mockProjects } from '@/data/mockData';
 import { useLanguage } from '@/context/LanguageContext';
+import { localize as localizeText } from '@/lib/text';
 
 export default function SingleProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
   const { t, language } = useLanguage();
-  
+
   const project = mockProjects.find((p) => p.slug === slug);
   if (!project) notFound();
 
@@ -29,12 +30,7 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
     return val !== cleanKey ? val : tag;
   };
 
-  // t() returns the key itself when a translation is missing (never falsy),
-  // so a real "not found" check has to compare the result against the key.
-  const localize = (key: string, fallback?: string) => {
-    const val = t(key as any);
-    return val !== key ? val : fallback;
-  };
+  const localize = (key: string, fallback?: string) => localizeText(t as (k: string) => string, key, fallback);
 
   const getLocalizedStatusLabel = (st: string) => {
     if (language === 'fr') {

@@ -5,6 +5,7 @@ import ProjectCard from './ProjectCard';
 import Link from 'next/link';
 import { mockProjects } from '@/data/mockData';
 import { useLanguage } from '@/context/LanguageContext';
+import { localize } from '@/lib/text';
 
 export default function CommunitySustainabilityPlans() {
   const { t } = useLanguage();
@@ -17,8 +18,8 @@ export default function CommunitySustainabilityPlans() {
 
   const localizedProjects = mockProjects.slice(0, 3).map(p => ({
     ...p,
-    title: t(`mockProject.${p.id}.title` as any) || p.title,
-    description: t(`mockProject.${p.id}.description` as any) || p.description,
+    title: localize(t as (k: string) => string, `mockProject.${p.id}.title`, p.title) as string,
+    description: localize(t as (k: string) => string, `mockProject.${p.id}.description`, p.description) as string,
     tags: p.tags.map(getLocalizedTag)
   }));
 

@@ -2,9 +2,10 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
-import Image from 'next/image';
+import ProjectListItem from './ProjectListItem';
 import { mockProjects } from '@/data/mockData';
 import { useLanguage } from '@/context/LanguageContext';
+import { localize } from '@/lib/text';
 import {
   Select,
   SelectContent,
@@ -31,7 +32,7 @@ export default function ExploreProjects({
   const { t, language } = useLanguage();
   const displayTitle = title ?? t('projects.explore.title');
 
-  const [view, setView] = useState<'Map' | 'List'>('List');
+  const [view, setView] = useState<'Cards' | 'List'>('Cards');
   const [showFilters, setShowFilters] = useState(false);
   
   // Filter states
@@ -104,8 +105,8 @@ export default function ExploreProjects({
     if (searchQuery.trim() !== '') {
       const q = searchQuery.toLowerCase();
       result = result.filter(p => {
-        const transTitle = (t(`mockProject.${p.id}.title` as any) || p.title).toLowerCase();
-        const transDesc = (t(`mockProject.${p.id}.description` as any) || p.description).toLowerCase();
+        const transTitle = (localize(t as (k: string) => string, `mockProject.${p.id}.title`, p.title) as string).toLowerCase();
+        const transDesc = (localize(t as (k: string) => string, `mockProject.${p.id}.description`, p.description) as string).toLowerCase();
         const transTheme = getLocalizedTheme(p.theme).toLowerCase();
         const transTags = p.tags.map(getLocalizedTag).map(t => t.toLowerCase());
 
@@ -139,8 +140,8 @@ export default function ExploreProjects({
       result.sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
     } else if (selectedSort === 'a-z') {
       result.sort((a, b) => {
-        const titleA = t(`mockProject.${a.id}.title` as any) || a.title;
-        const titleB = t(`mockProject.${b.id}.title` as any) || b.title;
+        const titleA = localize(t as (k: string) => string, `mockProject.${a.id}.title`, a.title) as string;
+        const titleB = localize(t as (k: string) => string, `mockProject.${b.id}.title`, b.title) as string;
         return titleA.localeCompare(titleB);
       });
     }
@@ -161,8 +162,8 @@ export default function ExploreProjects({
   const localizedDisplayProjects = useMemo(() => {
     return paginatedProjects.map(p => ({
       ...p,
-      title: t(`mockProject.${p.id}.title` as any) || p.title,
-      description: t(`mockProject.${p.id}.description` as any) || p.description,
+      title: localize(t as (k: string) => string, `mockProject.${p.id}.title`, p.title) as string,
+      description: localize(t as (k: string) => string, `mockProject.${p.id}.description`, p.description) as string,
       tags: p.tags.map(getLocalizedTag)
     }));
   }, [paginatedProjects, t]);
@@ -209,12 +210,12 @@ export default function ExploreProjects({
               </SelectContent>
             </Select>
 
-            <Select value={view} onValueChange={(val) => setView(val as 'Map' | 'List')}>
+            <Select value={view} onValueChange={(val) => setView(val as 'Cards' | 'List')}>
               <SelectTrigger className="w-[120px] bg-gray-100 border-none font-medium text-sm h-10">
                 <SelectValue placeholder={t('projects.explore.view')} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="Map">{t('projects.explore.viewMap')}</SelectItem>
+                <SelectItem value="Cards">{t('projects.explore.viewCards')}</SelectItem>
                 <SelectItem value="List">{t('projects.explore.viewList')}</SelectItem>
               </SelectContent>
             </Select>
@@ -307,45 +308,42 @@ export default function ExploreProjects({
         </div>
 
         {/* Content Area */}
-        {view === 'Map' ? (
-          <div className="w-full h-[500px] bg-gray-200 rounded-2xl overflow-hidden relative">
-            <Image 
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80" 
-              alt="Map view placeholder" 
-              fill 
-              className="object-cover opacity-80"
-            />
-            {/* Map markers placeholder */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-white/90 px-4 py-2 rounded-lg shadow-lg font-medium text-sm text-center">
-                {t('projects.explore.mapPlaceholder')}<br/>
-                <span className="text-xs text-gray-500">
-                  {t('projects.explore.mapSub').replace('{count}', filteredProjects.length.toString())}
-                </span>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="flex flex-col w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {localizedDisplayProjects.length > 0 ? (
-                localizedDisplayProjects.map((p) => (
-                  <ProjectCard 
-                    key={p.id} 
-                    title={p.title} 
-                    description={p.description} 
-                    tags={p.tags} 
-                    image={p.image} 
-                    link={`/projects/${p.slug}`}
-                  />
-                ))
+        <div className="flex flex-col w-full">
+            {localizedDisplayProjects.length > 0 ? (
+              view === 'Cards' ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {localizedDisplayProjects.map((p) => (
+                    <ProjectCard
+                      key={p.id}
+                      title={p.title}
+                      description={p.description}
+                      tags={p.tags}
+                      image={p.image}
+                      link={`/projects/${p.slug}`}
+                    />
+                  ))}
+                </div>
               ) : (
-              <div className="col-span-full py-20 flex flex-col items-center justify-center text-gray-500">
+                <div className="flex flex-col gap-4">
+                  {localizedDisplayProjects.map((p) => (
+                    <ProjectListItem
+                      key={p.id}
+                      title={p.title}
+                      description={p.description}
+                      tags={p.tags}
+                      image={p.image}
+                      link={`/projects/${p.slug}`}
+                    />
+                  ))}
+                </div>
+              )
+            ) : (
+              <div className="py-20 flex flex-col items-center justify-center text-gray-500">
                 <svg className="w-12 h-12 mb-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <p className="text-lg font-medium">{t('projects.explore.noResults')}</p>
-                <button 
+                <button
                   onClick={() => {
                     setSearchQuery('');
                     setSelectedTheme('all');
@@ -359,8 +357,7 @@ export default function ExploreProjects({
                 </button>
               </div>
             )}
-            </div>
-            
+
             {/* Pagination Controls */}
             {withPagination && totalPages > 1 && (
               <div className="flex justify-between items-center mt-12 w-full">
@@ -396,8 +393,7 @@ export default function ExploreProjects({
                 </button>
               </div>
             )}
-          </div>
-        )}
+        </div>
       </div>
     </section>
   );

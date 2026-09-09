@@ -44,7 +44,7 @@ export default function ProjectsPage() {
           { label: t('projects.breadcrumbs.projects') }
         ]} />
 
-        <ExploreProjects />
+        <ExploreProjects withPagination />
         <ExploreByTheme />
         <ProjectsUnderConsideration />
         <CommunitySustainabilityPlans />
