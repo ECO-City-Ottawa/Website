@@ -5,24 +5,24 @@ import Link from 'next/link';
 export default function ProjectLibrary() {
   const projects = [
     {
-      title: "Adopt-a-Ditch",
-      slug: "adopt-a-ditch",
-      desc: "Native plantings to manage rural roadsides and support biodiversity.",
-      tags: ["Habitat", "Natural Capital", "Community impact"],
+      title: "South March Highlands Ecological Eco-Tour Guidebook",
+      slug: "south-march-highlands-eco-tour-guidebook",
+      desc: "A self-guided ecological tour and guidebook for the South March Highlands forest.",
+      tags: ["Habitat", "Natural Capital", "Education"],
       image: "/homepage/hero.png"
     },
     {
-      title: "Electrical System Simulation (ESS)",
-      slug: "electrical-system-simulation",
-      desc: "A hands-on energy planning game that sparks discussion and collective decisions.",
-      tags: ["Energy", "Education"],
+      title: "Glebe Community Sustainability Plan (CSP)",
+      slug: "glebe-community-sustainability-plan",
+      desc: "A living, resident-shaped sustainability plan for the Glebe, covering all ten Themes of Sustainability.",
+      tags: ["Community", "Ten Themes", "Living Plan"],
       image: "/homepage/hero.png"
     },
     {
-      title: "My Sustainable Business Path (MSBP)",
-      slug: "my-sustainable-business-path",
-      desc: "Peer workshops that help small businesses plan and act on sustainability.",
-      tags: ["Sustainable Economy", "Cooperation"],
+      title: "Kanata Community Sustainability Plan (CSP)",
+      slug: "kanata-community-sustainability-plan",
+      desc: "A resident-shaped guide to sustainability priorities and projects across Kanata North.",
+      tags: ["Community", "Green Spaces", "Biodiversity"],
       image: "/homepage/hero.png"
     }
   ];

@@ -28,13 +28,13 @@ export default function DemonstrationEvents() {
           
           <div className="flex flex-col">
             <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden bg-black/5 mb-4 ">
-              <Image src="/homepage/hero.png" alt="Electrical System" fill className="object-cover" />
+              <Image src="/homepage/hero.png" alt="Community E-Waste Collection and Recycling Event" fill className="object-cover" />
             </div>
             <h3 className="font-alt font-bold text-[18px] text-text-strong mb-2">
-              Electrical System Simulation
+              Community E-Waste Collection and Recycling Event
             </h3>
-            <p className="text-text-normal text-[13px] mb-3">hands-on energy planning game.</p>
-            <Link href="/projects/electrical-system-simulation" className="text-text-strong text-[13px] font-semibold hover:underline flex items-center">
+            <p className="text-text-normal text-[13px] mb-3">Community electronic-waste collection events with the Electronic Recycling Association.</p>
+            <Link href="/projects/community-e-waste-collection-and-recycling" className="text-text-strong text-[13px] font-semibold hover:underline flex items-center">
               Learn more
               <svg className="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -44,13 +44,13 @@ export default function DemonstrationEvents() {
 
           <div className="flex flex-col">
             <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden bg-black/5 mb-4 ">
-              <Image src="/homepage/hero.png" alt="Agricultural Biodiversity" fill className="object-cover" />
+              <Image src="/homepage/hero.png" alt="Braiding Sweetgrass Educational Library Exhibit" fill className="object-cover" />
             </div>
             <h3 className="font-alt font-bold text-[18px] text-text-strong mb-2">
-              Agricultural Biodiversity
+              Braiding Sweetgrass Educational Library Exhibit
             </h3>
-            <p className="text-text-normal text-[13px] mb-3">hands-on energy planning game.</p>
-            <Link href="/projects/adopt-a-ditch" className="text-text-strong text-[13px] font-semibold hover:underline flex items-center">
+            <p className="text-text-normal text-[13px] mb-3">A public library exhibit introducing Indigenous ecological knowledge.</p>
+            <Link href="/projects/braiding-sweetgrass-educational-library-exhibit" className="text-text-strong text-[13px] font-semibold hover:underline flex items-center">
               Learn more
               <svg className="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

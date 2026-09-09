@@ -159,7 +159,7 @@ export default function DonatePage() {
               {/* Right Column Cards */}
               <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-6">
 
-                {/* Zeffy */}
+                {/* CanadaHelps - impact page */}
                 <div className="bg-white border border-black/5 rounded-2xl p-8 flex flex-col justify-between h-full transition-all duration-300 hover:border-brand-green/30 hover:shadow-sm">
                   <div>
                     <h3 className="font-alt font-bold text-2xl text-text-strong/90 mb-3">{t('donate.choose.card1.title')}</h3>
@@ -167,8 +167,7 @@ export default function DonatePage() {
                       {t('donate.choose.card1.desc')}
                     </p>
                   </div>
-                  {/* TODO: replace with real OBEC donation URL */}
-                  <a href="#" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-brand-green font-bold text-base hover:underline mt-auto">
+                  <a href="https://www.canadahelps.org/en/charities/ottawa-biosphere-ecocity/impact/view/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-brand-green font-bold text-base hover:underline mt-auto">
                     {t('donate.choose.card1.btn')} <ArrowRight className="w-5 h-5" />
                   </a>
                 </div>
@@ -184,7 +183,7 @@ export default function DonatePage() {
                   <span className="text-text-strong/60 text-sm font-semibold mt-auto">{t('donate.choose.card2.footer')}</span>
                 </div>
 
-                {/* CanadaHelps */}
+                {/* CanadaHelps - direct donation page */}
                 <div className="bg-white border border-black/5 rounded-2xl p-8 sm:col-span-2 flex flex-col justify-between transition-all duration-300 hover:border-brand-green/30 hover:shadow-sm">
                   <div>
                     <h3 className="font-alt font-bold text-2xl text-text-strong/90 mb-3">{t('donate.choose.card3.title')}</h3>
@@ -192,8 +191,7 @@ export default function DonatePage() {
                       {t('donate.choose.card3.desc')}
                     </p>
                   </div>
-                  {/* TODO: replace with real OBEC donation URL */}
-                  <a href="#" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-brand-green font-bold text-base hover:underline mt-auto">
+                  <a href="https://www.canadahelps.org/en/charities/ottawa-biosphere-ecocity/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-brand-green font-bold text-base hover:underline mt-auto">
                     {t('donate.choose.card3.btn')} <ArrowRight className="w-5 h-5" />
                   </a>
                 </div>
