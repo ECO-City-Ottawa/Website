@@ -165,7 +165,7 @@ export default function Navbar() {
 
           <div className="flex gap-2 items-center">
 
-            {/* Language Switcher — mobile only */}
+{/*           
             <div role="group" aria-label="Language" className="flex lg:hidden items-center gap-1.5 bg-black/[0.03] border border-black/5 p-1 rounded-xl">
 
               <div className="relative flex bg-black/[0.04] p-0.5 rounded-lg h-[30px] w-[68px] items-center">
@@ -193,7 +193,7 @@ export default function Navbar() {
                   FR
                 </button>
               </div>
-            </div>
+            </div> */}
 
             {/* Hamburger button */}
             <button
@@ -372,8 +372,8 @@ export default function Navbar() {
         </NavigationMenu>
 
         {/* ── Desktop actions ──────────────────────────── */}
-        <div className="hidden items-center gap-2 xl:gap-4 justify-end lg:flex">
-          {/* Language Switcher */}
+        {/* <div className="hidden items-center gap-2 xl:gap-4 justify-end lg:flex">
+       
           <div role="group" aria-label="Language" className="flex items-center gap-1.5 bg-black/[0.03] border border-black/5 p-1 rounded-full">
 
             <div className="relative flex bg-black/[0.04] p-0.5 rounded-full  items-center">
@@ -405,7 +405,7 @@ export default function Navbar() {
 
           <Link href="/donate" className="btn btn-secondary px-3 xl:px-4 text-sm xl:text-base whitespace-nowrap">{t('nav.donate')}</Link>
           <Link href="/engagement#volunteer" className="btn btn-primary px-3 xl:px-4 text-sm xl:text-base whitespace-nowrap">{t('nav.volunteer')}</Link>
-        </div>
+        </div> */}
 
       </div>
 
