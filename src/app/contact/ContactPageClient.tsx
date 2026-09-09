@@ -109,7 +109,7 @@ export default function ContactPage() {
           backgroundImage="/homepage/heroBG.png"
           buttons={
             <>
-              <a href="#form" className="bg-[#2D7A5D] hover:bg-[#24634b] text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm text-center">
+              <a href="#form" className="bg-brand-green hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm text-center">
                 {t('contact.hero.send')}
               </a>
               <Link
@@ -136,7 +136,7 @@ export default function ContactPage() {
             
             {/* Left Column Info */}
             <div className="lg:col-span-2">
-              <span className="text-xs bg-[#2D7A5D]/10 text-[#2D7A5D] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+              <span className="text-xs bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
                 #form
               </span>
               <h2 className="font-alt font-bold text-[36px] md:text-[48px] text-text-strong mt-4 mb-6">
@@ -321,7 +321,7 @@ export default function ContactPage() {
                         onChange={e => setFormData(prev => ({ ...prev, consent: e.target.checked }))}
                         aria-invalid={!!errors.consent}
                         aria-describedby={errors.consent ? 'contact-consent-error' : undefined}
-                        className={`w-5 h-5 rounded mt-1 text-[#2D7A5D] focus:ring-[#2D7A5D] ${errors.consent ? 'border-error' : 'border-black/20'}`}
+                        className={`w-5 h-5 rounded mt-1 text-brand-green focus:ring-brand-green ${errors.consent ? 'border-error' : 'border-black/20'}`}
                       />
                       <span className="text-base text-text-normal">
                         {t('contact.form.consent')}
@@ -335,7 +335,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#2D7A5D] hover:bg-[#24634b] disabled:opacity-60 disabled:cursor-not-allowed text-white py-4 rounded-lg font-bold text-base transition-colors shadow-sm text-center"
+                    className="w-full bg-brand-green hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed text-white py-4 rounded-lg font-bold text-base transition-colors shadow-sm text-center"
                   >
                     {isSubmitting ? t('contact.form.submitting') : t('contact.form.submit')}
                   </button>
@@ -375,7 +375,7 @@ export default function ContactPage() {
             </div>
             <div className="absolute left-6 bottom-6 bg-white/95 backdrop-blur border border-black/10 p-4 rounded-xl shadow-md text-left z-10 max-w-xs">
               <div className="flex gap-2 items-start">
-                <MapPin className="w-5 h-5 text-[#2D7A5D] shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-text-strong text-base">{t('contact.where.hub')}</p>
                   <p className="text-text-normal text-sm mt-1">{t('contact.where.location')}</p>
@@ -391,7 +391,7 @@ export default function ContactPage() {
             
             {/* Left side text */}
             <div className="lg:col-span-2">
-              <span className="text-xs bg-[#2D7A5D]/10 text-[#2D7A5D] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+              <span className="text-xs bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
                 #faq
               </span>
               <h2 className="font-alt font-bold text-[36px] md:text-[48px] text-text-strong mt-4 mb-6">
@@ -400,7 +400,7 @@ export default function ContactPage() {
               <p className="text-text-normal text-base leading-relaxed mb-8">
                 {t('contact.faq.subtitle')}
               </p>
-              <a href="#form" className="inline-block bg-[#2D7A5D] hover:bg-[#24634b] text-white px-6 py-3 rounded-lg font-bold text-base transition-colors shadow-sm">
+              <a href="#form" className="inline-block bg-brand-green hover:opacity-90 text-white px-6 py-3 rounded-lg font-bold text-base transition-colors shadow-sm">
                 {t('contact.faq.contactUs')}
               </a>
             </div>
@@ -413,10 +413,10 @@ export default function ContactPage() {
                   <div key={i} className="py-4 first:pt-0 last:pb-0">
                     <button
                       onClick={() => setOpenFaq(isOpen ? null : i)}
-                      className="w-full flex items-center justify-between py-4 text-left font-bold text-lg text-text-strong hover:text-[#2D7A5D] transition-colors"
+                      className="w-full flex items-center justify-between py-4 text-left font-bold text-lg text-text-strong hover:text-brand-green transition-colors"
                     >
                       <span>{faq.q}</span>
-                      <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#2D7A5D]' : 'text-gray-400'}`} />
+                      <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand-green' : 'text-gray-400'}`} />
                     </button>
                     {isOpen && (
                       <div className="pb-4 text-text-normal text-base leading-relaxed animate-in fade-in slide-in-from-top-1 duration-300">

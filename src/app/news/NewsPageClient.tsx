@@ -86,7 +86,7 @@ export default function NewsPage() {
                     ))}
                   </div>
 
-                  <h2 className="font-alt font-bold text-[20px] text-text-strong leading-tight mb-2 group-hover:text-[#2D7A5D] transition-colors">
+                  <h2 className="font-alt font-bold text-[20px] text-text-strong leading-tight mb-2 group-hover:text-brand-green transition-colors">
                     {language === 'en' ? article.title : (article.titleFr || article.title)}
                   </h2>
                   <p className="text-text-normal text-sm leading-relaxed mb-4 flex-grow">
@@ -97,7 +97,7 @@ export default function NewsPage() {
                     <span className="text-xs text-text-normal font-medium">
                       {new Date(article.publishedAt).toLocaleDateString(language === 'en' ? 'en-US' : 'fr-CA', { year: 'numeric', month: 'long', day: 'numeric' })}
                     </span>
-                    <span className="inline-flex items-center gap-1 text-[#2D7A5D] font-semibold text-sm">
+                    <span className="inline-flex items-center gap-1 text-brand-green font-semibold text-sm">
                       {language === 'en' ? 'Read more' : 'Lire la suite'} <ArrowRightIcon className="w-4 h-4" />
                     </span>
                   </div>

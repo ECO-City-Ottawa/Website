@@ -73,7 +73,7 @@ export default function SingleNewsPage({ params }: { params: Promise<{ slug: str
           {/* Back button */}
           <Link
             href="/news-events"
-            className="inline-flex items-center gap-1.5 text-[#2D7A5D] font-semibold text-sm hover:underline mb-8"
+            className="inline-flex items-center gap-1.5 text-brand-green font-semibold text-sm hover:underline mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             {t('news.detail.back')}
@@ -101,7 +101,7 @@ export default function SingleNewsPage({ params }: { params: Promise<{ slug: str
             </p>
 
             <div className="flex items-center gap-3 border-t border-b border-black/10 py-4">
-              <div className="w-10 h-10 rounded-full bg-[#2D7A5D]/10 flex items-center justify-center font-bold text-[#2D7A5D] text-sm">
+              <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center font-bold text-brand-green text-sm">
                 {article.author.charAt(0)}
               </div>
               <div>
@@ -148,7 +148,7 @@ export default function SingleNewsPage({ params }: { params: Promise<{ slug: str
                           {language === 'en' ? item.excerpt : (item.excerptFr || item.excerpt)}
                         </p>
                         <div className="mb-4">
-                          <Link href={`/news/${item.slug}`} className="inline-flex items-center gap-1 text-[#2D7A5D] font-bold text-xs hover:underline">
+                          <Link href={`/news/${item.slug}`} className="inline-flex items-center gap-1 text-brand-green font-bold text-xs hover:underline">
                             {t('news.detail.readMore')} <ArrowLeft className="w-3.5 h-3.5 rotate-180" />
                           </Link>
                         </div>

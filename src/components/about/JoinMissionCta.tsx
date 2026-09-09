@@ -50,7 +50,7 @@ export default function JoinMissionCta({ title, description, buttons }: JoinMiss
           {displayButtons.map((btn, idx) => {
             if (btn.variant === 'primary') {
               return (
-                <Link key={idx} href={btn.href} className="bg-white text-[#0A1D2E] hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors text-sm">
+                <Link key={idx} href={btn.href} className="bg-white text-brand-green hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors text-sm">
                   {btn.label}
                 </Link>
               );
@@ -71,7 +71,7 @@ export default function JoinMissionCta({ title, description, buttons }: JoinMiss
             }
             // fallback for missing variant
             return (
-              <Link key={idx} href={btn.href} className="bg-white text-[#0A1D2E] hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors text-sm">
+              <Link key={idx} href={btn.href} className="bg-white text-brand-green hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors text-sm">
                 {btn.label}
               </Link>
             );

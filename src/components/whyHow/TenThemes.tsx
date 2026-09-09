@@ -40,7 +40,7 @@ export default function TenThemes() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
           {themes.map((theme, i) => (
             <div key={i} className="flex flex-col bg-white p-6 rounded-2xl group border border-black/10  h-full hover:bg-brand-green hover:text-white transition-colors duration-300 cursor-pointer">
-              <h3 className="font-alt font-bold text-xl text-[#1E7444] mb-6 group-hover:text-white transition-colors duration-300">{theme.title}</h3>
+              <h3 className="font-alt font-bold text-xl text-brand-green mb-6 group-hover:text-white transition-colors duration-300">{theme.title}</h3>
               <p className="text-text-normal leading-relaxed mt-auto mb-auto group-hover:text-white transition-colors duration-300">{theme.desc}</p>
             </div>
           ))}

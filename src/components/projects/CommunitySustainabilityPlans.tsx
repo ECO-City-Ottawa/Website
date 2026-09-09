@@ -53,7 +53,7 @@ export default function CommunitySustainabilityPlans() {
           <span className="text-text-strong font-medium text-sm">
             {t('projects.csp.exploreAll')}
           </span>
-          <Link href="/projects/browse" className="border border-[#2D7A5D] text-[#2D7A5D] hover:bg-[#2D7A5D]/5 px-8 py-2 rounded-lg font-medium transition-colors text-sm">
+          <Link href="/projects/browse" className="border border-brand-green text-brand-green hover:bg-brand-green/5 px-8 py-2 rounded-lg font-medium transition-colors text-sm">
             {t('projects.csp.viewAllBtn')}
           </Link>
         </div>

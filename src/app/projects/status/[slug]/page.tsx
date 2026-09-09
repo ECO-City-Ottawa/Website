@@ -72,7 +72,7 @@ export default function StatusProjectsPage({ params }: { params: Promise<{ slug:
             <>
               <Link
                 href="/contact"
-                className="bg-[#2D7A5D] hover:bg-[#24634b] text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm text-center"
+                className="bg-brand-green hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm text-center"
               >
                 {t('projects.browse.submit')}
               </Link>

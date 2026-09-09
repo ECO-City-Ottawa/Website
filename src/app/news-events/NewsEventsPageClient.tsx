@@ -117,7 +117,7 @@ export default function NewsEventsPage() {
           backgroundImage="/homepage/heroBG.png"
           buttons={
             <>
-              <a href="#subscribe" className="bg-[#2D7A5D] hover:bg-[#24634b] text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm text-center">
+              <a href="#subscribe" className="bg-brand-green hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm text-center">
                 {t('newsEvents.hero.btn1')}
               </a>
               <Link
@@ -155,7 +155,7 @@ export default function NewsEventsPage() {
                   }}
                   className={`pb-3 font-semibold text-sm transition-colors relative ${
                     activeTab === tab.id
-                      ? 'text-[#2D7A5D] border-b-2 border-[#2D7A5D]'
+                      ? 'text-brand-green border-b-2 border-brand-green'
                       : 'text-text-normal hover:text-text-strong'
                   }`}
                 >
@@ -183,7 +183,7 @@ export default function NewsEventsPage() {
                       setSearchQuery(e.target.value);
                       setCurrentPage(1);
                     }}
-                    className="w-full pl-9 pr-4 py-2 border border-black/10 rounded-lg text-sm text-text-strong placeholder-gray-400 focus:outline-none focus:border-[#2D7A5D] transition-colors"
+                    className="w-full pl-9 pr-4 py-2 border border-black/10 rounded-lg text-sm text-text-strong placeholder-gray-400 focus:outline-none focus:border-brand-green transition-colors"
                   />
                 </div>
                 <button className="flex items-center gap-1.5 border border-black/10 hover:bg-black/5 px-4 py-2 rounded-lg text-sm font-medium text-text-strong transition-all">
@@ -226,7 +226,7 @@ export default function NewsEventsPage() {
                           </p>
 
                           <div className="mb-4">
-                            <Link href={`/news/${item.slug}`} className="inline-flex items-center gap-1 text-[#2D7A5D] font-bold text-sm hover:underline">
+                            <Link href={`/news/${item.slug}`} className="inline-flex items-center gap-1 text-brand-green font-bold text-sm hover:underline">
                               {language === 'en' ? 'Read more' : 'Lire la suite'} <ArrowRight className="w-4 h-4" />
                             </Link>
                           </div>
@@ -262,7 +262,7 @@ export default function NewsEventsPage() {
                         onClick={() => setCurrentPage(p)}
                         className={`w-8 h-8 rounded-lg text-sm font-semibold transition-all ${
                           currentPage === p
-                            ? 'bg-[#2D7A5D] text-white'
+                            ? 'bg-brand-green text-white'
                             : 'text-text-strong hover:bg-black/5'
                         }`}
                       >
@@ -316,7 +316,7 @@ export default function NewsEventsPage() {
                           </p>
 
                           <div className="mt-auto">
-                            <Link href={`/events/${item.slug}`} className="inline-flex items-center gap-1 text-[#2D7A5D] font-bold text-sm hover:underline">
+                            <Link href={`/events/${item.slug}`} className="inline-flex items-center gap-1 text-brand-green font-bold text-sm hover:underline">
                               {language === 'en' ? 'Read more' : 'Lire la suite'} <ArrowRight className="w-4 h-4" />
                             </Link>
                           </div>
@@ -347,7 +347,7 @@ export default function NewsEventsPage() {
                         onClick={() => setCurrentPage(p)}
                         className={`w-8 h-8 rounded-lg text-sm font-semibold transition-all ${
                           currentPage === p
-                            ? 'bg-[#2D7A5D] text-white'
+                            ? 'bg-brand-green text-white'
                             : 'text-text-strong hover:bg-black/5'
                         }`}
                       >

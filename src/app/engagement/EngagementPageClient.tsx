@@ -287,7 +287,7 @@ export default function EngagementPage() {
           backgroundImage="/homepage/heroBG.png"
           buttons={
             <>
-              <a href="#volunteer" className="bg-[#2D7A5D] hover:bg-[#24634b] text-white px-6 py-3 rounded-lg font-medium transition-colors text-center">
+              <a href="#volunteer" className="bg-brand-green hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-colors text-center">
                 {t('engagement.hero.btn1')}
               </a>
               <a href="#membership" className="border border-white/50 hover:bg-white/10 text-white px-6 py-3 rounded-lg font-medium transition-colors text-center">
@@ -311,7 +311,7 @@ export default function EngagementPage() {
         {/* ── Section 1: Ways to Participate ─────────── */}
         <section className="max-w-7xl mx-auto px-6 py-20">
           <div className="text-center mb-16">
-            <span className="text-xs bg-[#2D7A5D]/10 text-[#2D7A5D] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+            <span className="text-xs bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
               #Participate
             </span>
             <h2 className="font-alt font-bold text-[36px] md:text-[48px] text-text-strong mt-4 mb-4">
@@ -321,10 +321,10 @@ export default function EngagementPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {participateCards.map((item, idx) => (
-              <div key={idx} className="bg-white border border-black/10 rounded-2xl p-8 hover:border-[#2D7A5D] hover:shadow-md transition-all duration-300 flex flex-col h-full">
+              <div key={idx} className="bg-white border border-black/10 rounded-2xl p-8 hover:border-brand-green hover:shadow-md transition-all duration-300 flex flex-col h-full">
                 <h3 className="font-alt font-bold text-2xl text-text-strong mb-3">{item.title}</h3>
                 <p className="text-text-normal text-base leading-relaxed mb-8 flex-grow">{item.desc}</p>
-                <a href={item.href} className="inline-flex items-center gap-1.5 text-[#2D7A5D] font-bold text-base hover:underline mt-auto">
+                <a href={item.href} className="inline-flex items-center gap-1.5 text-brand-green font-bold text-base hover:underline mt-auto">
                   {item.linkText} <ArrowRight className="w-5 h-5" />
                 </a>
               </div>
@@ -338,7 +338,7 @@ export default function EngagementPage() {
             
             {/* Left Col Info */}
             <div className="lg:col-span-2">
-              <span className="text-xs bg-[#2D7A5D]/10 text-[#2D7A5D] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+              <span className="text-xs bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
                 #volunteer
               </span>
               <h2 className="font-alt font-bold text-[36px] md:text-[48px] text-text-strong mt-4 mb-6 leading-tight">
@@ -469,8 +469,8 @@ export default function EngagementPage() {
                             onClick={() => handleInterestSelect(theme.value)}
                             className={`px-3 py-2 rounded-lg text-left text-base font-medium transition-all flex items-center justify-between ${
                               isSelected
-                                ? 'bg-[#2D7A5D] text-white'
-                                : 'bg-white border border-black/5 hover:border-[#2D7A5D]/40 text-text-strong'
+                                ? 'bg-brand-green text-white'
+                                : 'bg-white border border-black/5 hover:border-brand-green/40 text-text-strong'
                             }`}
                           >
                             <span>{theme.label}</span>
@@ -507,7 +507,7 @@ export default function EngagementPage() {
                             type="checkbox"
                             checked={formData.roles.includes(role.value)}
                             onChange={() => handleRoleChange(role.value)}
-                            className="w-5 h-5 rounded border-black/20 text-[#2D7A5D] focus:ring-[#2D7A5D]"
+                            className="w-5 h-5 rounded border-black/20 text-brand-green focus:ring-brand-green"
                           />
                           <span className="text-base text-text-strong">{role.label}</span>
                         </label>
@@ -538,7 +538,7 @@ export default function EngagementPage() {
                         onChange={e => setFormData(prev => ({ ...prev, consent: e.target.checked }))}
                         aria-invalid={!!errors.consent}
                         aria-describedby={errors.consent ? 'volunteer-consent-error' : undefined}
-                        className={`w-5 h-5 rounded mt-1 text-[#2D7A5D] focus:ring-[#2D7A5D] ${errors.consent ? 'border-error' : 'border-black/20'}`}
+                        className={`w-5 h-5 rounded mt-1 text-brand-green focus:ring-brand-green ${errors.consent ? 'border-error' : 'border-black/20'}`}
                       />
                       <span className="text-base text-text-normal">
                         {t('engagement.volunteer.consent')}
@@ -552,7 +552,7 @@ export default function EngagementPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#2D7A5D] hover:bg-[#24634b] disabled:opacity-60 disabled:cursor-not-allowed text-white py-4 rounded-lg font-bold text-base transition-colors shadow-sm text-center"
+                    className="w-full bg-brand-green hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed text-white py-4 rounded-lg font-bold text-base transition-colors shadow-sm text-center"
                   >
                     {isSubmitting ? t('engagement.volunteer.submitting') : t('engagement.volunteer.submit')}
                   </button>
@@ -666,7 +666,7 @@ export default function EngagementPage() {
         {/* ── Section 4: PAL ─────────────────────────── */}
         <section id="pal" className="max-w-7xl mx-auto px-6 py-20 border-b border-black/5">
           <div className="mb-16">
-            <span className="text-xs bg-[#2D7A5D]/10 text-[#2D7A5D] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+            <span className="text-xs bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
               #pal
             </span>
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mt-4">
@@ -687,7 +687,7 @@ export default function EngagementPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {palSteps.map((step, idx) => (
               <div key={idx} className="bg-gray-50 border border-black/5 rounded-2xl p-8">
-                <span className="text-4xl font-extrabold text-[#2D7A5D]/30 block mb-6">{step.num}</span>
+                <span className="text-4xl font-extrabold text-brand-green/30 block mb-6">{step.num}</span>
                 <h3 className="font-alt font-bold text-xl text-text-strong mb-3">{step.title}</h3>
                 <p className="text-text-normal text-base leading-relaxed">{step.text}</p>
               </div>
@@ -696,10 +696,10 @@ export default function EngagementPage() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="bg-[#2D7A5D] hover:bg-[#24634b] text-white px-6 py-3 rounded-lg font-bold text-base transition-colors shadow-sm">
+            <Link href="/contact" className="bg-brand-green hover:opacity-90 text-white px-6 py-3 rounded-lg font-bold text-base transition-colors shadow-sm">
               {t('engagement.pal.btn1')}
             </Link>
-            <Link href="/why-how" className="border border-[#2D7A5D] hover:bg-[#2D7A5D]/5 text-[#2D7A5D] px-6 py-3 rounded-lg font-bold text-base transition-colors">
+            <Link href="/why-how" className="border border-brand-green hover:bg-brand-green/5 text-brand-green px-6 py-3 rounded-lg font-bold text-base transition-colors">
               {t('engagement.pal.btn2')}
             </Link>
           </div>
@@ -721,7 +721,7 @@ export default function EngagementPage() {
 
             {/* Right side details */}
             <div className="flex flex-col justify-center">
-              <span className="text-xs w-max bg-[#2D7A5D]/10 text-[#2D7A5D] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+              <span className="text-xs w-max bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
                 #Plan
               </span>
               <h2 className="font-alt font-bold text-[34px] md:text-[44px] text-text-strong mt-4 mb-5 leading-tight">
@@ -734,15 +734,15 @@ export default function EngagementPage() {
               {/* Three blocks */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-7">
                 {cspBlocks.map((item, i) => (
-                  <div key={i} className="border border-[#2D7A5D]/20 bg-emerald-50/20 p-3.5 rounded-xl">
-                    <h4 className="font-bold text-[#2D7A5D] text-base mb-1.5">{item.title}</h4>
+                  <div key={i} className="border border-brand-green/20 bg-emerald-50/20 p-3.5 rounded-xl">
+                    <h4 className="font-bold text-brand-green text-base mb-1.5">{item.title}</h4>
                     <p className="text-text-normal text-sm leading-relaxed">{item.text}</p>
                   </div>
                 ))}
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Link href="/contact" className="bg-[#2D7A5D] hover:bg-[#24634b] text-white px-6 py-3 rounded-lg font-bold text-base transition-colors shadow-sm">
+                <Link href="/contact" className="bg-brand-green hover:opacity-90 text-white px-6 py-3 rounded-lg font-bold text-base transition-colors shadow-sm">
                   {t('engagement.plan.btn1')}
                 </Link>
                 <Link href="/why-how" className="border border-black/10 hover:bg-black/5 text-text-strong px-6 py-3 rounded-lg font-bold text-base transition-colors">
@@ -814,7 +814,7 @@ export default function EngagementPage() {
             
             {/* Left side text */}
             <div className="lg:col-span-2">
-              <span className="text-xs bg-[#2D7A5D]/10 text-[#2D7A5D] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+              <span className="text-xs bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
                 #faq
               </span>
               <h2 className="font-alt font-bold text-[36px] md:text-[48px] text-text-strong mt-4 mb-6">
@@ -823,7 +823,7 @@ export default function EngagementPage() {
               <p className="text-text-normal text-base leading-relaxed mb-8">
                 {t('engagement.faq.subtitle')}
               </p>
-              <Link href="/contact" className="inline-block bg-[#2D7A5D] hover:bg-[#24634b] text-white px-6 py-3 rounded-lg font-bold text-base transition-colors shadow-sm">
+              <Link href="/contact" className="inline-block bg-brand-green hover:opacity-90 text-white px-6 py-3 rounded-lg font-bold text-base transition-colors shadow-sm">
                 {t('engagement.faq.contactUs')}
               </Link>
             </div>
@@ -836,10 +836,10 @@ export default function EngagementPage() {
                   <div key={i} className="py-4 first:pt-0 last:pb-0">
                     <button
                       onClick={() => setOpenFaq(isOpen ? null : i)}
-                      className="w-full flex items-center justify-between py-4 text-left font-bold text-lg text-text-strong hover:text-[#2D7A5D] transition-colors"
+                      className="w-full flex items-center justify-between py-4 text-left font-bold text-lg text-text-strong hover:text-brand-green transition-colors"
                     >
                       <span>{faq.q}</span>
-                      <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#2D7A5D]' : 'text-gray-400'}`} />
+                      <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand-green' : 'text-gray-400'}`} />
                     </button>
                     {isOpen && (
                       <div className="pb-4 text-text-normal text-base leading-relaxed animate-in fade-in slide-in-from-top-1 duration-300">

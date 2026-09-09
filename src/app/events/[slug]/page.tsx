@@ -46,7 +46,7 @@ export default function SingleEventPage({ params }: { params: Promise<{ slug: st
             {/* Back button */}
             <Link
               href="/news-events"
-              className="inline-flex items-center gap-1.5 text-[#2D7A5D] font-semibold text-sm hover:underline mb-8"
+              className="inline-flex items-center gap-1.5 text-brand-green font-semibold text-sm hover:underline mb-8"
             >
               <ArrowLeft className="w-4 h-4" />
               {t('event.detail.back')}
@@ -84,7 +84,7 @@ export default function SingleEventPage({ params }: { params: Promise<{ slug: st
                 
                 {/* Date */}
                 <div className="flex gap-3">
-                  <CalendarDays className="w-5 h-5 text-[#2D7A5D] shrink-0" />
+                  <CalendarDays className="w-5 h-5 text-brand-green shrink-0" />
                   <div>
                     <p className="text-xs font-bold text-text-strong uppercase tracking-wider mb-0.5">{t('event.detail.sidebarDate')}</p>
                     <p className="text-sm text-text-normal">
@@ -100,7 +100,7 @@ export default function SingleEventPage({ params }: { params: Promise<{ slug: st
 
                 {/* Time */}
                 <div className="flex gap-3">
-                  <Clock className="w-5 h-5 text-[#2D7A5D] shrink-0" />
+                  <Clock className="w-5 h-5 text-brand-green shrink-0" />
                   <div>
                     <p className="text-xs font-bold text-text-strong uppercase tracking-wider mb-0.5">{t('event.detail.sidebarTime')}</p>
                     <p className="text-sm text-text-normal">{event.startTime} - {event.endTime}</p>
@@ -109,7 +109,7 @@ export default function SingleEventPage({ params }: { params: Promise<{ slug: st
 
                 {/* Location */}
                 <div className="flex gap-3">
-                  <MapPin className="w-5 h-5 text-[#2D7A5D] shrink-0" />
+                  <MapPin className="w-5 h-5 text-brand-green shrink-0" />
                   <div>
                     <p className="text-xs font-bold text-text-strong uppercase tracking-wider mb-0.5">{t('event.detail.sidebarLocation')}</p>
                     <p className="text-sm text-text-strong">{language === 'en' ? event.location : (event.locationFr || event.location)}</p>
@@ -127,14 +127,14 @@ export default function SingleEventPage({ params }: { params: Promise<{ slug: st
                     href={event.registrationLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full block text-center bg-[#2D7A5D] hover:bg-[#24634b] text-white py-3 rounded-lg font-bold text-sm transition-all shadow-sm"
+                    className="w-full block text-center bg-brand-green hover:opacity-90 text-white py-3 rounded-lg font-bold text-sm transition-all shadow-sm"
                   >
                     {t('event.detail.btnRegister')}
                   </a>
                 ) : (
                   <Link
                     href="/contact"
-                    className="w-full block text-center bg-[#2D7A5D] hover:bg-[#24634b] text-white py-3 rounded-lg font-bold text-sm transition-all shadow-sm"
+                    className="w-full block text-center bg-brand-green hover:opacity-90 text-white py-3 rounded-lg font-bold text-sm transition-all shadow-sm"
                   >
                     {t('event.detail.btnContactRegister')}
                   </Link>
@@ -177,7 +177,7 @@ export default function SingleEventPage({ params }: { params: Promise<{ slug: st
                           {language === 'en' ? item.description : (item.descriptionFr || item.description)}
                         </p>
                         <div className="mt-auto">
-                          <Link href={`/events/${item.slug}`} className="inline-flex items-center gap-1 text-[#2D7A5D] font-bold text-xs hover:underline">
+                          <Link href={`/events/${item.slug}`} className="inline-flex items-center gap-1 text-brand-green font-bold text-xs hover:underline">
                             {t('event.detail.readMore')} <ArrowLeft className="w-3.5 h-3.5 rotate-180" />
                           </Link>
                         </div>

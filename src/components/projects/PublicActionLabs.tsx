@@ -22,7 +22,7 @@ export default function PublicActionLabs() {
           <div className="flex flex-col p-8 rounded-2xl border border-black/10 bg-white ">
             <div className="w-[3px] h-5 bg-brand-green mb-16 rounded-full"></div>
             <h3 className="font-alt font-bold text-[18px] text-brand-green mb-4">
-              SPARK-PAL · <span className="text-[13px] font-semibold text-[#186A3E]">Small</span>
+              SPARK-PAL · <span className="text-[13px] font-semibold text-brand-green">Small</span>
             </h3>
             <p className="text-text-strong text-[13px] leading-relaxed">
               For people who want to turn a conversation into action. 1-2 short virtual sessions · 3-10 people. Perfect for: community groups, garden starters, tool share initiatives, and more.
@@ -35,7 +35,7 @@ export default function PublicActionLabs() {
               <div className="w-[3px] h-5 bg-brand-green rounded-full"></div>
             </div>
             <h3 className="font-alt font-bold text-[18px] text-brand-green mb-4">
-              Engagement-PAL · <span className="text-[13px] font-semibold text-[#186A3E]">Medium</span>
+              Engagement-PAL · <span className="text-[13px] font-semibold text-brand-green">Medium</span>
             </h3>
             <p className="text-text-strong text-[13px] leading-relaxed">
               For doing bigger projects than you can do on your own, 3-5 sessions, in-person and virtual · 10-20 people. Includes: My Sustainable Business Path and Independent Community & Business Improvement Group formats.
@@ -49,7 +49,7 @@ export default function PublicActionLabs() {
               <div className="w-[3px] h-5 bg-brand-green rounded-full"></div>
             </div>
             <h3 className="font-alt font-bold text-[18px] text-brand-green mb-4">
-              Community Sustainability PAL<br/><span className="text-[13px] font-semibold text-[#186A3E]">· Large</span>
+              Community Sustainability PAL<br/><span className="text-[13px] font-semibold text-brand-green">· Large</span>
             </h3>
             <p className="text-text-strong text-[13px] leading-relaxed">
               Empowering neighbourhoods, schools, and large groups to turn sustainability goals into real-world outcomes. 1+ follow-up sessions · 15+ people. Develops a Community Sustainability Plan (CSP), a locally grounded plan that builds a culture of sustainability.

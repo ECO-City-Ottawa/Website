@@ -15,7 +15,7 @@ export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
         return (
           <React.Fragment key={index}>
             {item.href && !isLast ? (
-              <Link href={item.href} className="hover:text-[#2D7A5D] transition-colors">
+              <Link href={item.href} className="hover:text-brand-green transition-colors">
                 {item.label}
               </Link>
             ) : (

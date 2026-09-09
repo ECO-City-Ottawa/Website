@@ -66,7 +66,7 @@ export default function ProjectsUnderConsideration() {
           <span className="text-text-strong font-medium text-sm">
             {t('projects.underConsideration.exploreAll')}
           </span>
-          <Link href="/projects/status/under-consideration" className="border border-[#2D7A5D] text-[#2D7A5D] hover:bg-[#2D7A5D]/5 px-8 py-2 rounded-lg font-medium transition-colors text-sm">
+          <Link href="/projects/status/under-consideration" className="border border-brand-green text-brand-green hover:bg-brand-green/5 px-8 py-2 rounded-lg font-medium transition-colors text-sm">
             {t('projects.underConsideration.viewAllBtn')}
           </Link>
         </div>

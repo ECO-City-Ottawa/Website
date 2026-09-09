@@ -21,7 +21,7 @@ export default function BrowseProjectsPage() {
           description={t('projects.browse.heroDescription')}
           buttons={
             <>
-              <Link href="/contact" className="bg-[#2D7A5D] hover:bg-[#24634b] text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm text-center">
+              <Link href="/contact" className="bg-brand-green hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm text-center">
                 {t('projects.browse.submit')}
               </Link>
               <Link href="/contact" className="border border-white/50 hover:bg-white/10 text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm text-center">

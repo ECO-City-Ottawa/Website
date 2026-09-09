@@ -17,7 +17,7 @@ export default function WhyHowHero() {
       description={t('whyHowHero.paragraph')}
       buttons={
         <>
-          <Link href="/engagement" className="bg-[#1C6842] hover:bg-[#165133] text-white px-8 py-3 rounded-lg font-medium transition-colors text-sm text-center">
+          <Link href="/engagement" className="bg-brand-green hover:opacity-90 text-white px-8 py-3 rounded-lg font-medium transition-colors text-sm text-center">
             {t('whyHowHero.cta1')}
           </Link>
           <Link href="/engagement" className="border border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-medium transition-colors text-sm text-center">

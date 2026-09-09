@@ -196,7 +196,7 @@ export default function ExploreProjects({
           </div>
           
           <div className="flex flex-wrap gap-2 items-center">
-            <button className="bg-[#2D7A5D] hover:bg-[#24634b] text-white px-6 py-2 rounded-lg font-medium transition-colors text-sm flex items-center h-10">
+            <button className="bg-brand-green hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition-colors text-sm flex items-center h-10">
               {t('projects.explore.searchBtn')}
             </button>
             
@@ -222,7 +222,7 @@ export default function ExploreProjects({
 
             <button 
               onClick={() => setShowFilters(!showFilters)}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors text-sm flex items-center gap-2 h-10 ${showFilters ? 'bg-[#2D7A5D] text-white' : 'bg-gray-100 hover:bg-gray-200 text-text-strong'}`}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors text-sm flex items-center gap-2 h-10 ${showFilters ? 'bg-brand-green text-white' : 'bg-gray-100 hover:bg-gray-200 text-text-strong'}`}
             >
               {t('projects.explore.filters')}
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -351,7 +351,7 @@ export default function ExploreProjects({
                     setSelectedStatus('all');
                     setSelectedCity('all');
                   }}
-                  className="mt-4 text-[#2D7A5D] hover:underline font-medium text-sm"
+                  className="mt-4 text-brand-green hover:underline font-medium text-sm"
                 >
                   {t('projects.explore.clearFilters')}
                 </button>
@@ -375,7 +375,7 @@ export default function ExploreProjects({
                     <button 
                       key={i} 
                       onClick={() => setCurrentPage(i + 1)}
-                      className={`w-8 h-8 rounded-lg flex items-center justify-center font-medium text-sm transition-colors ${currentPage === i + 1 ? 'bg-[#e2f0e9] text-[#2D7A5D]' : 'bg-gray-100 hover:bg-gray-200 text-text-strong'}`}
+                      className={`w-8 h-8 rounded-lg flex items-center justify-center font-medium text-sm transition-colors ${currentPage === i + 1 ? 'bg-[#e2f0e9] text-brand-green' : 'bg-gray-100 hover:bg-gray-200 text-text-strong'}`}
                     >
                       {i + 1}
                     </button>

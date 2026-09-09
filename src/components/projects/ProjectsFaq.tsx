@@ -37,7 +37,7 @@ export default function ProjectsFaq() {
           <p className="text-text-normal text-[16px] leading-relaxed mb-8 max-w-md">
             {t('projects.faq.description')}
           </p>
-          <Link href="/contact" className="bg-[#2D7A5D] hover:bg-[#24634b] text-white px-8 py-3 rounded-lg font-medium transition-colors text-sm">
+          <Link href="/contact" className="bg-brand-green hover:opacity-90 text-white px-8 py-3 rounded-lg font-medium transition-colors text-sm">
             {t('projects.faq.contactUs')}
           </Link>
         </div>

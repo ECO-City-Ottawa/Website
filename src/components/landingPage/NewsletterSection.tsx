@@ -79,7 +79,7 @@ export default function NewsletterSection() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-[#1B4B6B] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#153a53] disabled:opacity-60 disabled:cursor-not-allowed transition-colors whitespace-nowrap h-fit"
+              className="bg-brand-green text-white px-8 py-3 rounded-lg font-medium hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed transition-colors whitespace-nowrap h-fit"
             >
               {isSubmitting ? 'Subscribing…' : 'Subscribe'}
             </button>

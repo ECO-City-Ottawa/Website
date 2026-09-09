@@ -23,7 +23,7 @@ export default function OurApproach() {
           </p>
           <div>
             {/* TODO: add target route when this CTA destination is confirmed. */}
-            <span className="bg-brand-green hover:bg-[#1a5b3a] text-white rounded-lg px-6 py-3 font-medium transition-colors inline-block text-sm">
+            <span className="bg-brand-green hover:opacity-90 text-white rounded-lg px-6 py-3 font-medium transition-colors inline-block text-sm">
               {t('ourApproach.cta')}
             </span>
           </div>

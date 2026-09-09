@@ -39,7 +39,7 @@ export default function DonatePage() {
           description={t('donate.hero.description')}
           buttons={
             <>
-              <a href="#how-to-give" className="bg-[#2D7A5D] hover:bg-[#24634b] text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm text-center">
+              <a href="#how-to-give" className="bg-brand-green hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm text-center">
                 {t('donate.hero.btn1')}
               </a>
               <Link
@@ -64,7 +64,7 @@ export default function DonatePage() {
         {/* ── Section 1: Your donation puts sustainability into action ─ */}
         <section className="max-w-7xl mx-auto px-6 py-20 text-center">
           <div className="mb-16">
-            <span className="text-xs bg-[#2D7A5D]/10 text-[#2D7A5D] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+            <span className="text-xs bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
               #Why It Matters
             </span>
             <h2 className="font-alt font-bold text-[36px] md:text-[48px] text-text-strong mt-4 mb-6">
@@ -77,10 +77,10 @@ export default function DonatePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {actionCards.map((card, idx) => (
-              <div key={idx} className="bg-white border border-black/10 rounded-2xl p-8 hover:border-[#2D7A5D] hover:shadow-sm transition-all duration-300 flex flex-col text-left">
+              <div key={idx} className="bg-white border border-black/10 rounded-2xl p-8 hover:border-brand-green hover:shadow-sm transition-all duration-300 flex flex-col text-left">
                 <h3 className="font-alt font-bold text-2xl text-text-strong mb-3">{card.title}</h3>
                 <p className="text-text-normal text-base leading-relaxed mb-8 flex-grow">{card.desc}</p>
-                <a href="#how-to-give" className="inline-flex items-center gap-1.5 text-[#2D7A5D] font-bold text-base hover:underline mt-auto">
+                <a href="#how-to-give" className="inline-flex items-center gap-1.5 text-brand-green font-bold text-base hover:underline mt-auto">
                   {t('donate.hero.btn1')} <ArrowRight className="w-5 h-5" />
                 </a>
               </div>
@@ -94,7 +94,7 @@ export default function DonatePage() {
 
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
               <div>
-                <span className="text-xs bg-[#2D7A5D]/10 text-[#2D7A5D] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                <span className="text-xs bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
                   #Your Impact
                 </span>
                 <h2 className="font-alt font-bold text-[36px] md:text-[48px] text-text-strong mt-4">
@@ -113,10 +113,10 @@ export default function DonatePage() {
               {possibleTiers.map((tier, idx) => (
                 <div key={idx} className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm flex flex-col justify-between h-full">
                   <div>
-                    <span className="font-alt font-bold text-4xl text-[#2D7A5D] block mb-6">{tier.amount}</span>
+                    <span className="font-alt font-bold text-4xl text-brand-green block mb-6">{tier.amount}</span>
                     <p className="text-text-strong text-base leading-relaxed">{tier.text}</p>
                   </div>
-                  <a href="#how-to-give" className="inline-flex items-center gap-1.5 text-[#2D7A5D] font-bold text-base hover:underline mt-8">
+                  <a href="#how-to-give" className="inline-flex items-center gap-1.5 text-brand-green font-bold text-base hover:underline mt-8">
                     {t('donate.possible.selectAmount')} <ArrowRight className="w-5 h-5" />
                   </a>
                 </div>
@@ -210,7 +210,7 @@ export default function DonatePage() {
             <h2 className="font-alt font-bold text-[36px] md:text-[56px] leading-[1.1] text-text-strong  mb-8">
               {t('donate.footer.title')}
             </h2>
-            <a href="#how-to-give" className="inline-block bg-[#2D7A5D] hover:bg-[#24634b] text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-sm">
+            <a href="#how-to-give" className="inline-block bg-brand-green hover:opacity-90 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-sm">
               {t('donate.hero.btn1')}
             </a>
           </div>

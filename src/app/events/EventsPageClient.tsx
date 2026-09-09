@@ -69,14 +69,14 @@ export default function EventsPage() {
                         </div>
                       </div>
 
-                      <h2 className="font-alt font-bold text-[20px] text-text-strong leading-tight mb-2 group-hover:text-[#2D7A5D] transition-colors">
+                      <h2 className="font-alt font-bold text-[20px] text-text-strong leading-tight mb-2 group-hover:text-brand-green transition-colors">
                         {language === 'en' ? event.title : (event.titleFr || event.title)}
                       </h2>
                       <p className="text-text-normal text-sm leading-relaxed mb-4 flex-grow">
                         {language === 'en' ? event.description : (event.descriptionFr || event.description)}
                       </p>
 
-                      <span className="inline-flex items-center gap-1 text-[#2D7A5D] font-semibold text-sm mt-auto">
+                      <span className="inline-flex items-center gap-1 text-brand-green font-semibold text-sm mt-auto">
                         {t('events.btn.view')} <ArrowRightIcon className="w-4 h-4" />
                       </span>
                     </div>

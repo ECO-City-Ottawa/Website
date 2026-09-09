@@ -58,16 +58,16 @@ export default function ExploreByTheme() {
             <Link 
               key={idx} 
               href={`/projects/theme/${theme.title.toLowerCase().replace(/\s+/g, '-')}`}
-              className="flex flex-col bg-white p-6 rounded-2xl border border-black/10 h-[140px] hover:border-[#2D7A5D] hover:shadow-sm transition-all duration-300"
+              className="flex flex-col bg-white p-6 rounded-2xl border border-black/10 h-[140px] hover:border-brand-green hover:shadow-sm transition-all duration-300"
             >
-              <h3 className="font-alt font-bold text-[18px] text-[#2D7A5D]">
+              <h3 className="font-alt font-bold text-[18px] text-brand-green">
                 {getLocalizedTheme(theme.title)}
               </h3>
               <div className="mt-auto flex justify-between items-end">
                 <span className="text-gray-400 text-xs uppercase tracking-wide">
                   {t('projects.exploreByTheme.projectsLabel')}
                 </span>
-                <span className="text-[#2D7A5D] font-bold text-2xl leading-none">{theme.count}</span>
+                <span className="text-brand-green font-bold text-2xl leading-none">{theme.count}</span>
               </div>
             </Link>
           ))}

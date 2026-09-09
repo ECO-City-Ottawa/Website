@@ -93,7 +93,7 @@ export default function ResourcesPage() {
           backgroundImage="/homepage/heroBG.png"
           buttons={
             <>
-              <a href="#explore" className="bg-[#2D7A5D] hover:bg-[#24634b] text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm text-center">
+              <a href="#explore" className="bg-brand-green hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-colors text-sm text-center">
                 {t('resources.hero.btn1')}
               </a>
               <Link
@@ -134,7 +134,7 @@ export default function ResourcesPage() {
                   setSearchQuery(e.target.value);
                   setCurrentPage(1);
                 }}
-                className="w-full pl-10 pr-4 py-3 border border-black/10 rounded-lg text-base text-text-strong placeholder-gray-400 focus:outline-none focus:border-[#2D7A5D] transition-colors"
+                className="w-full pl-10 pr-4 py-3 border border-black/10 rounded-lg text-base text-text-strong placeholder-gray-400 focus:outline-none focus:border-brand-green transition-colors"
               />
             </div>
             <button className="flex items-center justify-center gap-2 border border-black/10 hover:bg-black/5 px-6 py-3 rounded-lg text-base font-semibold text-text-strong transition-all">
@@ -160,7 +160,7 @@ export default function ResourcesPage() {
                       fill
                       className="object-cover"
                     />
-                    <span className="absolute top-4 left-4 bg-white/90 backdrop-blur text-[#2D7A5D] font-bold text-xs px-2.5 py-1 rounded">
+                    <span className="absolute top-4 left-4 bg-white/90 backdrop-blur text-brand-green font-bold text-xs px-2.5 py-1 rounded">
                       {item.category}
                     </span>
                   </div>
@@ -171,7 +171,7 @@ export default function ResourcesPage() {
                     <p className="text-text-normal text-base leading-relaxed mb-8 flex-grow">
                       {item.desc}
                     </p>
-                    <button className="inline-flex items-center gap-1.5 text-[#2D7A5D] font-bold text-base hover:underline mt-auto">
+                    <button className="inline-flex items-center gap-1.5 text-brand-green font-bold text-base hover:underline mt-auto">
                       {t('resources.main.download')} <Download className="w-4 h-4" />
                     </button>
                   </div>
@@ -200,7 +200,7 @@ export default function ResourcesPage() {
                     onClick={() => setCurrentPage(p)}
                     className={`w-10 h-10 rounded-lg text-base font-semibold transition-all ${
                       currentPage === p
-                        ? 'bg-[#2D7A5D] text-white'
+                        ? 'bg-brand-green text-white'
                         : 'text-text-strong hover:bg-black/5'
                     }`}
                   >
@@ -211,7 +211,7 @@ export default function ResourcesPage() {
               <button
                 disabled={currentPage === totalPages}
                 onClick={() => setCurrentPage(v => Math.min(v + 1, totalPages))}
-                className="flex items-center gap-1.5 text-base font-semibold text-[#2D7A5D] disabled:text-text-strong disabled:opacity-50 hover:bg-black/5 px-4 py-2 rounded-lg transition-all"
+                className="flex items-center gap-1.5 text-base font-semibold text-brand-green disabled:text-text-strong disabled:opacity-50 hover:bg-black/5 px-4 py-2 rounded-lg transition-all"
               >
                 {t('resources.main.next')}
                 <ChevronRight className="w-5 h-5" />

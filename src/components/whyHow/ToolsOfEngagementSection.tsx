@@ -86,11 +86,11 @@ export default function ToolsOfEngagementSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* PAL Card 1 */}
             <div className="bg-white border border-black/10 rounded-2xl p-8  hover:shadow-md transition-shadow">
-               <div className="text-[#3E8D61] font-bold text-3xl mb-12">
+               <div className="text-brand-green font-bold text-3xl mb-12">
                  |
                </div>
                <h4 className="font-bold text-[20px] mb-4">
-                 <span className="text-[#3E8D61]">SPARK-PAL</span> <span className="text-gray-400 font-normal">·</span> <span className="text-[#3E8D61] text-[15px]">{t('toolsOfEngagement.pal.card1.sub')}</span>
+                 <span className="text-brand-green">SPARK-PAL</span> <span className="text-gray-400 font-normal">·</span> <span className="text-brand-green text-[15px]">{t('toolsOfEngagement.pal.card1.sub')}</span>
                </h4>
                <p className="text-text-normal text-[15px] leading-relaxed">
                  {t('toolsOfEngagement.pal.card1.desc')}
@@ -99,11 +99,11 @@ export default function ToolsOfEngagementSection() {
             
             {/* PAL Card 2 */}
             <div className="bg-white border border-black/10 rounded-2xl p-8  hover:shadow-md transition-shadow">
-               <div className="text-[#3E8D61] font-bold text-3xl mb-12">
+               <div className="text-brand-green font-bold text-3xl mb-12">
                  ||
                </div>
                <h4 className="font-bold text-[20px] mb-4">
-                 <span className="text-[#3E8D61]">Engagement-PAL</span> <span className="text-gray-400 font-normal">·</span> <span className="text-[#3E8D61] text-[15px]">{t('toolsOfEngagement.pal.card2.sub')}</span>
+                 <span className="text-brand-green">Engagement-PAL</span> <span className="text-gray-400 font-normal">·</span> <span className="text-brand-green text-[15px]">{t('toolsOfEngagement.pal.card2.sub')}</span>
                </h4>
                <p className="text-text-normal text-[15px] leading-relaxed">
                  {t('toolsOfEngagement.pal.card2.desc')}
@@ -112,13 +112,13 @@ export default function ToolsOfEngagementSection() {
 
             {/* PAL Card 3 */}
             <div className="bg-white border border-black/10 rounded-2xl p-8  hover:shadow-md transition-shadow">
-               <div className="text-[#3E8D61] font-bold text-3xl mb-12 tracking-widest">
+               <div className="text-brand-green font-bold text-3xl mb-12 tracking-widest">
                  |||
                </div>
                <h4 className="font-bold text-[20px] mb-4 leading-tight">
-                 <span className="text-[#3E8D61]">Community Sustainability PAL</span> <br className="hidden md:block lg:hidden" />
+                 <span className="text-brand-green">Community Sustainability PAL</span> <br className="hidden md:block lg:hidden" />
                  <span className="text-gray-400 font-normal hidden lg:inline"> · </span>
-                 <span className="text-[#3E8D61] text-[15px]">{t('toolsOfEngagement.pal.card3.sub')}</span>
+                 <span className="text-brand-green text-[15px]">{t('toolsOfEngagement.pal.card3.sub')}</span>
                </h4>
                <p className="text-text-normal text-[15px] leading-relaxed">
                  {t('toolsOfEngagement.pal.card3.desc')}
@@ -164,7 +164,7 @@ export default function ToolsOfEngagementSection() {
                       </span>
                     ))}
                   </div>
-                  <button className="text-[#3E8D61] font-semibold text-[14px] flex items-center hover:opacity-80 transition-opacity mt-auto w-fit">
+                  <button className="text-brand-green font-semibold text-[14px] flex items-center hover:opacity-80 transition-opacity mt-auto w-fit">
                     {t('toolsOfEngagement.library.viewProject')} <ChevronRight className="w-4 h-4 ml-1" />
                   </button>
                 </div>
@@ -173,7 +173,7 @@ export default function ToolsOfEngagementSection() {
           </div>
 
           <div className="flex justify-center">
-             <button className="border border-[#3E8D61] text-[#3E8D61] px-6 py-2.5 rounded-lg font-semibold text-[15px] hover:bg-[#3E8D61] hover:text-white transition-colors duration-300">
+             <button className="border border-brand-green text-brand-green px-6 py-2.5 rounded-lg font-semibold text-[15px] hover:bg-brand-green hover:text-white transition-colors duration-300">
                {t('toolsOfEngagement.library.viewAll')}
              </button>
           </div>

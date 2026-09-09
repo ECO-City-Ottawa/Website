@@ -74,7 +74,7 @@ export default function ProjectsTabs({ category, activeValue }: ProjectsTabsProp
               href={item.href}
               className={`px-6 py-3 rounded-xl border transition-colors font-medium text-sm md:text-base ${
                 isActive 
-                  ? 'bg-[#e2f0e9] border-[#e2f0e9] text-[#2D7A5D]' 
+                  ? 'bg-[#e2f0e9] border-[#e2f0e9] text-brand-green' 
                   : 'bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50'
               }`}
             >

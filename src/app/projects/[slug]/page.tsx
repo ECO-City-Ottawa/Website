@@ -91,7 +91,7 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
             </h1>
 
             {localizedObjective && (
-              <div className="mb-8 border-l-4 border-[#2D7A5D] pl-4">
+              <div className="mb-8 border-l-4 border-brand-green pl-4">
                 <p className="font-semibold text-text-strong uppercase tracking-wider mb-2">
                   {t('projectDetail.objective')}
                 </p>
@@ -191,14 +191,14 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
                 {t('projectDetail.overview')}
               </h2>
             </div>
-            <div className="md:col-span-3 flex flex-col divide-y divide-[#2D7A5D]/20">
+            <div className="md:col-span-3 flex flex-col divide-y divide-brand-green/20">
               {[
                 { n: 1, label: t('projectDetail.problem'), text: localizedProblem },
                 { n: 2, label: t('projectDetail.action'),  text: localizedAction  },
                 { n: 3, label: t('projectDetail.outcome'), text: localizedOutcome  },
               ].map(({ n, label, text }) => (
                 <div key={n} className="py-8">
-                  <p className=" text-[#2D7A5D] font-semibold mb-2">{n}. &nbsp;{label}</p>
+                  <p className=" text-brand-green font-semibold mb-2">{n}. &nbsp;{label}</p>
                   <p className="text-text-normal  leading-relaxed">{text}</p>
                 </div>
               ))}
@@ -250,7 +250,7 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
               <span className="text-sm font-medium text-text-strong">
                 {t('projects.underConsideration.exploreAll')}
               </span>
-              <Link href="/projects/browse" className="border border-[#2D7A5D] text-[#2D7A5D] hover:bg-[#2D7A5D]/5 px-8 py-2 rounded-lg font-medium transition-colors text-sm">
+              <Link href="/projects/browse" className="border border-brand-green text-brand-green hover:bg-brand-green/5 px-8 py-2 rounded-lg font-medium transition-colors text-sm">
                 {t('projects.underConsideration.viewAllBtn')}
               </Link>
             </div>
