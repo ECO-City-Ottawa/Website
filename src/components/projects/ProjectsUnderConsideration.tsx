@@ -31,7 +31,7 @@ export default function ProjectsUnderConsideration() {
     <section className="section bg-base-white w-full border-t border-black/5">
       <div className="max-w-7xl mx-auto w-full">
         
-        <div className="mb-12">
+        <div className="mb-12 max-w-[700px]">
           <h2 className="font-alt font-bold text-[32px] md:text-[40px] text-text-strong mb-4">
             {t('projects.underConsideration.title')}
           </h2>

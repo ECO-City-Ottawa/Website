@@ -41,7 +41,7 @@ export default function ExploreByTheme() {
     <section className="section bg-base-white w-full">
       <div className="max-w-7xl mx-auto w-full">
         
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 max-w-[700px] mx-auto">
           <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
             {t('projects.exploreByTheme.subtitle')}
           </span>

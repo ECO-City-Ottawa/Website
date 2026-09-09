@@ -57,7 +57,7 @@ export default function ToolsOfEngagementSection() {
       <div className="max-w-7xl mx-auto w-full pb-24">
         
         {/* Main Title Section */}
-        <div className="text-center max-w-3xl mx-auto mb-20 pt-16">
+        <div className="text-center max-w-[700px] mx-auto mb-20 pt-16">
           <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
             {t('toolsOfEngagement.subtitle')}
           </span>
@@ -71,7 +71,7 @@ export default function ToolsOfEngagementSection() {
 
         {/* Public Action Labs Section */}
         <div className="mb-28">
-          <div className="mb-10 max-w-3xl">
+          <div className="mb-10 max-w-[700px]">
             <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
               {t('toolsOfEngagement.pal.subtitle')}
             </span>

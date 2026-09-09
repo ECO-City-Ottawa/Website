@@ -36,7 +36,7 @@ export default function Objectives() {
       <Sprout className="w-96 h-96 text-white absolute top-0 -right-20 rotate-270 z-0" />
       <div className="max-w-7xl mx-auto w-full relative z-10">
         
-        <div className="mb-12">
+        <div className="mb-12 max-w-[700px]">
           <span className="text-xs font-semibold text-text-strong/80 mb-4 uppercase tracking-wide block">
             {t('objectives.subtitle')}
           </span>

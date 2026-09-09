@@ -98,7 +98,7 @@ export default function NewsEventsSection() {
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] leading-[1.1] text-text-strong  mb-6">
             {t('newsEvents.headline')}
           </h2>
-          <p className="text-text-normal md:text-[18px] leading-[1.6] mb-8">
+          <p className="text-text-normal md:text-[18px] leading-[1.6] mb-8 max-w-[700px]">
             {t('newsEvents.description')}
           </p>
 

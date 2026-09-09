@@ -62,7 +62,7 @@ export default function OurBoard() {
       <div className="max-w-7xl mx-auto w-full">
 
         {/* Section header */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
+        <div className="text-center mb-16 max-w-[700px] mx-auto">
           <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
             {t('ourBoard.subtitle')}
           </span>

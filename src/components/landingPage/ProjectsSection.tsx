@@ -17,7 +17,7 @@ export default function ProjectsSection() {
       <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mb-12">
+        <div className="text-center max-w-[700px] mx-auto mb-12">
           <span className="text-sm font-semibold text-text-strong mb-4 tracking-wide block">
             {t('projects.title')}
           </span>

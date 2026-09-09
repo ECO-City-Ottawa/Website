@@ -11,14 +11,14 @@ export default function OrgStructure() {
     <section className="section bg-base-white w-full border-t border-black/5">
       <div className="max-w-7xl mx-auto w-full">
         
-        <div className="mb-16">
+        <div className="mb-16 max-w-[700px]">
           <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
             {t('orgStructure.subtitle')}
           </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-4">
             {t('orgStructure.title')}
           </h2>
-          <p className="text-text-normal md:text-[18px] max-w-2xl">
+          <p className="text-text-normal md:text-[18px]">
             {t('orgStructure.paragraph')}
           </p>
         </div>

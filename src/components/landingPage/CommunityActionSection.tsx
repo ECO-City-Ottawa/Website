@@ -17,7 +17,7 @@ export default function CommunityActionSection() {
       <div className="max-w-7xl mx-auto w-full flex flex-col items-center bg-white/5 backdrop-blur-2xl rounded-full px-6 py-6">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mb-16">
+        <div className="text-center max-w-[700px] mx-auto mb-16">
           <span className="text-sm font-semibold text-text-strong mb-4 tracking-wide block">
             {t('communityAction.title')}
           </span>

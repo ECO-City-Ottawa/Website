@@ -57,7 +57,7 @@ export default function Framework() {
     <section className="section bg-base-white w-full">
       <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
         
-        <div className="text-center mb-16 max-w-2xl mx-auto">
+        <div className="text-center mb-16 max-w-[700px] mx-auto">
           <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
             {t('framework.subtitle')}
           </span>
