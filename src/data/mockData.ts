@@ -9,6 +9,16 @@ const IMG = {
   biz:   'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80',
 };
 
+// Real photos pulled from the owner's project document - only used where the photo is
+// an actual, confirmed match for that specific project (most of the doc's 19 embedded
+// images were generic clip-art icons or mismatched, so the rest of mockProjects still
+// uses IMG.* placeholders until better photos are provided).
+const REAL_IMG = {
+  eWaste: '/projects/e-waste-collection.png',
+  hintonburg: '/projects/hintonburg-csp.jpeg',
+  braidingSweetgrass: '/projects/braiding-sweetgrass.png',
+};
+
 export const mockProjects: Project[] = [
   {
     id: '1',
@@ -16,7 +26,7 @@ export const mockProjects: Project[] = [
     slug: 'community-e-waste-collection-and-recycling',
     description: 'Community electronic-waste collection events across the Ottawa region, run with the Electronic Recycling Association.',
     fullDescription: 'The Electronic Recycling Association (ERA), a Canadian non-profit founded in 2004, organizes community e-waste collection events that let individuals, schools, and businesses dispose of old electronics responsibly. Recovered equipment is refurbished and redistributed to charities, schools, and non-profits that need technology but lack funds.',
-    image: IMG.city,
+    image: REAL_IMG.eWaste,
     status: 'current',
     startDate: '2026-01-01',
     endDate: '2030-12-31',
@@ -36,7 +46,7 @@ export const mockProjects: Project[] = [
       action: 'ERA organizes community e-waste collection events where individuals, schools, and businesses can responsibly dispose of old electronics; recovered equipment is refurbished for reuse.',
       outcome: 'Refurbished electronics are redistributed to charities, schools, and non-profit organizations that need technology but lack financial resources.',
     },
-    gallery: [IMG.city, IMG.trees],
+    gallery: [REAL_IMG.eWaste, IMG.city],
     createdAt: '2025-12-01T08:30:00Z',
     updatedAt: '2026-09-09T11:20:00Z',
   },
@@ -103,7 +113,7 @@ export const mockProjects: Project[] = [
     slug: 'hintonburg-community-sustainability-plan',
     description: 'A resident-driven plan identifying sustainability priorities and action projects for Hintonburg.',
     fullDescription: 'Developed with the Hintonburg Community Association and local residents, this plan organizes sustainability actions into themes such as transportation, energy, waste, food, health, recreation, and sense of place.',
-    image: IMG.road,
+    image: REAL_IMG.hintonburg,
     status: 'past',
     startDate: '2018-01-01',
     endDate: '2018-04-27',
@@ -122,7 +132,7 @@ export const mockProjects: Project[] = [
       action: 'OBEC worked with the Hintonburg Community Association and local residents through discussion sessions covering transportation, energy, waste, food, health, recreation, and sense of place.',
       outcome: 'The plan serves as an action guide encouraging residents, organizations, and local businesses to take individual or collective action toward a healthier, more sustainable neighbourhood.',
     },
-    gallery: [IMG.road, IMG.city],
+    gallery: [REAL_IMG.hintonburg, IMG.road],
     createdAt: '2017-12-01T10:00:00Z',
     updatedAt: '2018-05-01T15:30:00Z',
   },
@@ -191,7 +201,7 @@ export const mockProjects: Project[] = [
     slug: 'braiding-sweetgrass-educational-library-exhibit',
     description: 'A public library exhibit introducing Indigenous ecological knowledge, inspired by Robin Wall Kimmerer\'s Braiding Sweetgrass.',
     fullDescription: 'The exhibit highlights the relationship between people and nature, presenting teachings such as the "Honorable Harvest" and encouraging visitors to reflect on their responsibilities toward the Earth.',
-    image: IMG.city,
+    image: REAL_IMG.braidingSweetgrass,
     status: 'past',
     startDate: '2023-05-01',
     endDate: '2023-06-30',
@@ -210,7 +220,7 @@ export const mockProjects: Project[] = [
       action: 'OBEC created a public library exhibit inspired by Robin Wall Kimmerer\'s Braiding Sweetgrass, presenting teachings such as the "Honorable Harvest": asking permission before taking from the land, harvesting only what is needed, sharing with others, and expressing gratitude.',
       outcome: 'The exhibit encourages visitors to reflect on their responsibilities toward the Earth and adopt more respectful, sustainable ways of living with the natural world.',
     },
-    gallery: [IMG.city, IMG.biz],
+    gallery: [REAL_IMG.braidingSweetgrass, IMG.city],
     createdAt: '2023-04-01T10:00:00Z',
     updatedAt: '2023-07-01T15:30:00Z',
   },

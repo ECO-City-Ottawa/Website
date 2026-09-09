@@ -18,16 +18,14 @@ export default function Footer() {
           <div className="mt-4 flex gap-2">
             <Link href="/donate" className="btn btn-secondary">{t('nav.donate')}</Link>
           </div>
+          {/* Social links hidden until real OBEC social URLs are provided - see docs/launch-open-items.md
           <div className="mt-4 flex items-center gap-3 text-text-normal">
-            {/* TODO: replace with real OBEC social URL */}
             <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-text-strong">Fb</a>
-            {/* TODO: replace with real OBEC social URL */}
             <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-text-strong">Ig</a>
-            {/* TODO: replace with real OBEC social URL */}
             <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-text-strong">X</a>
-            {/* TODO: replace with real OBEC social URL */}
             <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-text-strong">In</a>
           </div>
+          */}
         </div>
 
         {/* Get involved */}

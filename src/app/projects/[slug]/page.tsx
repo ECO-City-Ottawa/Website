@@ -29,6 +29,13 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
     return val !== cleanKey ? val : tag;
   };
 
+  // t() returns the key itself when a translation is missing (never falsy),
+  // so a real "not found" check has to compare the result against the key.
+  const localize = (key: string, fallback?: string) => {
+    const val = t(key as any);
+    return val !== key ? val : fallback;
+  };
+
   const getLocalizedStatusLabel = (st: string) => {
     if (language === 'fr') {
       if (st === 'past') return 'Passé';
@@ -38,12 +45,13 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
     return st.charAt(0).toUpperCase() + st.slice(1);
   };
 
-  // Localized project details
-  const localizedTitle = t(`mockProject.${project.id}.title` as any) || project.title;
-  const localizedObjective = t(`mockProject.${project.id}.objective` as any) || project.objective;
-  const localizedProblem = t(`mockProject.${project.id}.problem` as any) || project.overview?.problem;
-  const localizedAction = t(`mockProject.${project.id}.action` as any) || project.overview?.action;
-  const localizedOutcome = t(`mockProject.${project.id}.outcome` as any) || project.overview?.outcome;
+  // Localized project details - falls back to the real (English) project data
+  // whenever no translation has been added yet for this project.
+  const localizedTitle = localize(`mockProject.${project.id}.title`, project.title) as string;
+  const localizedObjective = localize(`mockProject.${project.id}.objective`, project.objective);
+  const localizedProblem = localize(`mockProject.${project.id}.problem`, project.overview?.problem);
+  const localizedAction = localize(`mockProject.${project.id}.action`, project.overview?.action);
+  const localizedOutcome = localize(`mockProject.${project.id}.outcome`, project.overview?.outcome);
   const localizedTags = project.tags.map(getLocalizedTag);
   const localizedTools = project.tools?.map(getLocalizedTag);
 
@@ -56,8 +64,8 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
   // Translate related projects too
   const localizedRelated = related.map(p => ({
     ...p,
-    title: t(`mockProject.${p.id}.title` as any) || p.title,
-    description: t(`mockProject.${p.id}.description` as any) || p.description,
+    title: localize(`mockProject.${p.id}.title`, p.title) as string,
+    description: localize(`mockProject.${p.id}.description`, p.description) as string,
     tags: p.tags.map(getLocalizedTag)
   }));
 
@@ -75,7 +83,7 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
         ]} />
 
         {/* ── Section 1 · Project detail card ─────────── */}
-        <section className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 border border-dashed border-blue-300 rounded-2xl my-8">
+        <section className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
 
           {/* Left col */}
           <div>
@@ -176,28 +184,8 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
           </div>
         </section>
 
-        {/* ── Section 2 · Project location map ────────── */}
-        <section className="max-w-7xl mx-auto px-6 py-12">
-          <h2 className="font-alt font-bold text-[28px] md:text-[36px] text-text-strong mb-6">
-            {t('projectDetail.projectLocation')}
-          </h2>
-          <div className="w-full h-[420px] rounded-2xl overflow-hidden bg-gray-200 relative border border-black/10">
-            <Image
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80"
-              alt="Project map"
-              fill
-              className="object-cover opacity-80"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow font-medium text-sm text-center">
-                📍 {project.address ?? project.city}<br />
-                <span className="text-xs text-gray-500">
-                  {t('projectDetail.mapSoon')}
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Section 2 (project location map) is deferred until there's a real map integration -
+            see docs/launch-open-items.md. A static stock-photo placeholder was here before. */}
 
         {/* ── Section 3 · Overview (Problem / Action / Outcome) */}
         {project.overview && (
