@@ -1,7 +1,8 @@
 'use client'
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { ChevronDown } from 'lucide-react';
 import { THEMES } from '@/data/constants';
 import { mockProjects } from '@/data/mockData';
 import { useLanguage } from '@/context/LanguageContext';
@@ -13,6 +14,9 @@ interface ProjectsTabsProps {
 
 export default function ProjectsTabs({ category, activeValue }: ProjectsTabsProps) {
   const { t, language } = useLanguage();
+  const activeRef = useRef<HTMLAnchorElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // Compute real theme counts from mock data
   const countByTheme: Record<string, number> = {};
@@ -62,26 +66,90 @@ export default function ProjectsTabs({ category, activeValue }: ProjectsTabsProp
 
   // Normalize activeValue to match value for comparison
   const normalizedActive = activeValue?.toLowerCase()?.replace(/\s+/g, '-');
+  const isItemActive = (value: string) => value.toLowerCase().replace(/\s+/g, '-') === normalizedActive;
+
+  // Keep the active pill in view when the filter changes
+  useEffect(() => {
+    activeRef.current?.scrollIntoView({ block: 'nearest', inline: 'start', behavior: 'smooth' });
+  }, [normalizedActive]);
+
+  // Close the dropdown on outside click
+  useEffect(() => {
+    if (!dropdownOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [dropdownOpen]);
 
   return (
     <div className="max-w-7xl mx-auto w-full px-6 pt-12 pb-6 border-b border-black/5">
-      <div className="flex flex-wrap gap-4 items-center">
-        {items.map(item => {
-          const isActive = item.value.toLowerCase().replace(/\s+/g, '-') === normalizedActive;
-          return (
-            <Link 
-              key={item.value} 
-              href={item.href}
-              className={`px-6 py-3 rounded-xl border transition-colors font-medium text-sm md:text-base ${
-                isActive 
-                  ? 'bg-[#e2f0e9] border-[#e2f0e9] text-brand-green' 
-                  : 'bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50'
-              }`}
+      <div className="flex items-center gap-3">
+        <div className="flex gap-3 overflow-x-auto scroll-smooth py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {items.map(item => {
+            const isActive = isItemActive(item.value);
+            return (
+              <Link
+                key={item.value}
+                ref={isActive ? activeRef : undefined}
+                href={item.href}
+                aria-current={isActive ? 'page' : undefined}
+                className={`shrink-0 px-6 py-3 rounded-xl border transition-colors font-medium text-sm md:text-base whitespace-nowrap ${
+                  isActive
+                    ? 'bg-[#e2f0e9] border-[#e2f0e9] text-brand-green'
+                    : 'bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50'
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </div>
+
+        {items.length > 3 && (
+          <div className="relative shrink-0" ref={dropdownRef}>
+            <button
+              type="button"
+              onClick={() => setDropdownOpen(v => !v)}
+              aria-expanded={dropdownOpen}
+              aria-haspopup="listbox"
+              aria-label={t('projects.tabs.showAll')}
+              className="inline-flex h-[46px] w-[46px] items-center justify-center rounded-xl border border-gray-200 text-gray-600 transition-colors hover:border-gray-300 hover:bg-gray-50"
             >
-              {item.label}
-            </Link>
-          );
-        })}
+              <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            {dropdownOpen && (
+              <div
+                role="listbox"
+                className="absolute right-0 top-[52px] z-30 max-h-80 w-64 overflow-y-auto rounded-xl border border-black/10 bg-white p-2 shadow-lg"
+              >
+                {items.map(item => {
+                  const isActive = isItemActive(item.value);
+                  return (
+                    <Link
+                      key={item.value}
+                      href={item.href}
+                      role="option"
+                      aria-selected={isActive}
+                      onClick={() => setDropdownOpen(false)}
+                      className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                        isActive
+                          ? 'bg-[#e2f0e9] text-brand-green'
+                          : 'text-gray-600 hover:bg-gray-50'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -213,6 +213,12 @@ export const translations = {
     'testimonials.item2.role': 'Community organizer, Kanata North',
     'testimonials.item3.quote': 'The sustainability tours showed us practical changes we could bring home.',
     'testimonials.item3.role': 'Resident, West Carleton',
+    'testimonials.item4.quote': 'Working on the Community Sustainability Plan gave our neighbourhood a real voice in what gets built here.',
+    'testimonials.item4.role': 'Resident, Manor Park',
+    'testimonials.item5.quote': 'The discussion games made a complex planning topic approachable for people who\'d never joined a public meeting before.',
+    'testimonials.item5.role': 'Volunteer facilitator, Lowertown',
+    'testimonials.prev': 'Previous testimonial',
+    'testimonials.next': 'Next testimonial',
 
     // Partners Section
     'partners.title': 'Stronger in partnership',
@@ -478,6 +484,7 @@ export const translations = {
     'projects.explore.view': 'View',
     'projects.explore.viewCards': 'Cards',
     'projects.explore.viewList': 'List',
+    'projects.tabs.showAll': 'Show all filters',
     'projects.explore.filters': 'Filters',
     'projects.explore.filtersSubtitle': 'Use search and filters to find community-led sustainability projects. View them on a map or as a list.',
     'projects.explore.filterTheme': 'Theme',
@@ -1112,6 +1119,12 @@ export const translations = {
     'testimonials.item2.role': 'Organisateur communautaire, Kanata Nord',
     'testimonials.item3.quote': 'Les visites de durabilité nous ont montré des changements pratiques que nous pourrions appliquer chez nous.',
     'testimonials.item3.role': 'Résident, West Carleton',
+    'testimonials.item4.quote': 'Travailler sur le plan de durabilité communautaire a donné à notre quartier une vraie voix dans ce qui s’y construit.',
+    'testimonials.item4.role': 'Résidente, Manor Park',
+    'testimonials.item5.quote': 'Les jeux de discussion ont rendu un sujet d’urbanisme complexe accessible à des gens qui n’avaient jamais assisté à une réunion publique.',
+    'testimonials.item5.role': 'Bénévole animateur, Basse-Ville',
+    'testimonials.prev': 'Témoignage précédent',
+    'testimonials.next': 'Témoignage suivant',
 
     // Partners Section
     'partners.title': 'Plus forts en partenariat',
@@ -1377,6 +1390,7 @@ export const translations = {
     'projects.explore.view': 'Vue',
     'projects.explore.viewCards': 'Cartes',
     'projects.explore.viewList': 'Liste',
+    'projects.tabs.showAll': 'Afficher tous les filtres',
     'projects.explore.filters': 'Filtres',
     'projects.explore.filtersSubtitle': 'Utilisez la recherche et les filtres pour trouver des projets de durabilité menés par la communauté. Affichez-les sur une carte ou sous forme de liste.',
     'projects.explore.filterTheme': 'Thème',
