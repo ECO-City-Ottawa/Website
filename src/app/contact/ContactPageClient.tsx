@@ -131,7 +131,7 @@ export default function ContactPage() {
         />
 
         {/* Send message form */}
-        <section id="form" className="max-w-7xl mx-auto px-6 py-20">
+        <section id="form" className="section max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             
             {/* Left Column Info */}
@@ -350,7 +350,7 @@ export default function ContactPage() {
         </section>
 
         {/* Where We Are Map section */}
-        <section className="max-w-7xl mx-auto px-6 py-12 text-center border-t border-black/5">
+        <section className="section max-w-7xl mx-auto text-center border-t border-black/5">
           <h2 className="font-alt font-bold text-[36px] md:text-[40px] text-text-strong mb-2">
             {t('contact.where.title')}
           </h2>
@@ -386,7 +386,7 @@ export default function ContactPage() {
         </section>
 
         {/* Quick answers (FAQs) */}
-        <section className="max-w-7xl mx-auto px-6 py-20 border-t border-black/5">
+        <section className="section max-w-7xl mx-auto border-t border-black/5">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             
             {/* Left side text */}

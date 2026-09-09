@@ -26,8 +26,8 @@ export default function ProjectsFaq() {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
-    <section className="section bg-white w-full py-20 border-t border-black/5">
-      <div className="max-w-7xl mx-auto w-full px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
+    <section className="section bg-base-white w-full border-t border-black/5">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16">
         
         {/* Left Side: Text and CTA */}
         <div className="flex flex-col items-start">

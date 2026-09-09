@@ -24,8 +24,8 @@ export default function CommunitySustainabilityPlans() {
   }));
 
   return (
-    <section className="section bg-white w-full py-16 border-t border-black/5">
-      <div className="max-w-7xl mx-auto w-full px-6">
+    <section className="section bg-base-white w-full border-t border-black/5">
+      <div className="max-w-7xl mx-auto w-full">
         
         <div className="mb-12">
           <h2 className="font-alt font-bold text-[32px] md:text-[40px] text-text-strong mb-4">

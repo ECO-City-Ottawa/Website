@@ -59,7 +59,7 @@ export default function OurBoard() {
 
   return (
     <section className="section bg-base-white w-full border-t border-black/5">
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto w-full">
 
         {/* Section header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">

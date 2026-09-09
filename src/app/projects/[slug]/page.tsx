@@ -79,7 +79,7 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
         ]} />
 
         {/* ── Section 1 · Project detail card ─────────── */}
-        <section className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <section className="section max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
 
           {/* Left col */}
           <div>
@@ -185,7 +185,7 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
 
         {/* ── Section 3 · Overview (Problem / Action / Outcome) */}
         {project.overview && (
-          <section className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-5 gap-12">
+          <section className="section max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-12">
             <div className="md:col-span-2">
               <h2 className="font-alt font-bold text-[32px] md:text-[40px] text-text-strong">
                 {t('projectDetail.overview')}
@@ -208,8 +208,8 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
 
         {/* ── Section 4 · Photos & documents ──────────── */}
         {project.gallery && project.gallery.length > 0 && (
-          <section className="border-t border-black/5 py-12">
-            <div className="max-w-7xl mx-auto px-6">
+          <section className="section border-t border-black/5">
+            <div className="max-w-7xl mx-auto">
               <h2 className="font-alt font-bold text-[28px] md:text-[36px] text-text-strong mb-8 text-center">
                 {t('projectDetail.photosDocs')}
               </h2>
@@ -225,8 +225,8 @@ export default function SingleProjectPage({ params }: { params: Promise<{ slug: 
         )}
 
         {/* ── Section 5 · Related projects ─────────────── */}
-        <section className="border-t border-black/5 py-16">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="section border-t border-black/5">
+          <div className="max-w-7xl mx-auto">
             <h2 className="font-alt font-bold text-[28px] md:text-[36px] text-text-strong mb-10">
               {t('projectDetail.related')}
             </h2>

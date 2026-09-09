@@ -56,8 +56,8 @@ export default function NewsPage() {
         />
 
         {/* News Grid */}
-        <section className="section py-16">
-          <div className="max-w-7xl mx-auto w-full px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section className="section">
+          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {mockNews.map((article) => (
               <Link
                 key={article.id}

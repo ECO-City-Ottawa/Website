@@ -40,7 +40,7 @@ export default function PrivacyPageClient() {
           ]}
         />
 
-        <section className="max-w-7xl mx-auto px-6 py-20">
+        <section className="section max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto">
             <p className="text-sm text-text-normal mb-12">{t('privacy.updated')}</p>
 

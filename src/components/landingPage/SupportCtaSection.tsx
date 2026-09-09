@@ -13,7 +13,7 @@ export default function SupportCtaSection() {
 
   return (
     <div className='p-4'>
-      <section className="section bg-gray-100 w-full flex flex-col items-center text-center relative overflow-hidden rounded-[64px] max-w-7xl mx-auto min-h-[400px] justify-center py-20">
+      <section className="section bg-gray-100 w-full flex flex-col items-center text-center relative overflow-hidden rounded-[64px] max-w-7xl mx-auto min-h-[400px] justify-center">
         <div className="absolute z-0 bg-gray-50  top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px]" />
         <div className="absolute z-0 bg-gray-50 bottom-0 left-1/2 transform -translate-x-1/2 w-[200px] h-[200px] rounded-full blur-[100px]" />
         <div className="absolute z-0 bg-gray-50 top-0 left-0 w-[200px] h-[200px] rounded-full blur-[80px]" />

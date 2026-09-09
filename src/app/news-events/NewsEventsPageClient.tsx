@@ -139,7 +139,7 @@ export default function NewsEventsPage() {
         />
 
         {/* Main Section */}
-        <section className="max-w-7xl mx-auto px-6 py-12">
+        <section className="section max-w-7xl mx-auto">
           
           {/* Controls Bar */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8 border-b border-black/10 pb-4">

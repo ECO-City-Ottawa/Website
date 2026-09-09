@@ -115,7 +115,7 @@ export default function ResourcesPage() {
         />
 
         {/* Main Section */}
-        <section id="explore" className="max-w-7xl mx-auto px-6 py-12">
+        <section id="explore" className="section max-w-7xl mx-auto">
           
           <h2 className="font-alt font-bold text-[36px] md:text-[40px] text-text-strong mb-6">
             {t('resources.main.title')}

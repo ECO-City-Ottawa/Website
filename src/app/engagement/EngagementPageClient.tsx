@@ -309,7 +309,7 @@ export default function EngagementPage() {
         />
 
         {/* ── Section 1: Ways to Participate ─────────── */}
-        <section className="max-w-7xl mx-auto px-6 py-20">
+        <section className="section max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-xs bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
               #Participate
@@ -333,7 +333,7 @@ export default function EngagementPage() {
         </section>
 
         {/* ── Section 2: Volunteer form ──────────────── */}
-        <section id="volunteer" className="max-w-7xl mx-auto px-6 py-20 border-t border-black/5">
+        <section id="volunteer" className="section max-w-7xl mx-auto border-t border-black/5">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             
             {/* Left Col Info */}
@@ -664,7 +664,7 @@ export default function EngagementPage() {
         </section>
 
         {/* ── Section 4: PAL ─────────────────────────── */}
-        <section id="pal" className="max-w-7xl mx-auto px-6 py-20 border-b border-black/5">
+        <section id="pal" className="section max-w-7xl mx-auto border-b border-black/5">
           <div className="mb-16">
             <span className="text-xs bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
               #pal
@@ -706,7 +706,7 @@ export default function EngagementPage() {
         </section>
 
         {/* ── Section 5: CSP ─────────────────────────── */}
-        <section id="plan" className="max-w-7xl mx-auto px-6 py-20">
+        <section id="plan" className="section max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             
             {/* Left side Image */}
@@ -760,7 +760,7 @@ export default function EngagementPage() {
         <section id="partner" className="section bg-brand-green/10 w-full relative overflow-hidden">
           <Sprout className="w-96 h-96 text-white absolute -bottom-16 -left-20 z-0" />
           <Sprout className="w-96 h-96 text-white absolute top-0 -right-20 rotate-270 z-0" />
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 ">
               
               {/* Left Side */}
@@ -809,7 +809,7 @@ export default function EngagementPage() {
         </section>
 
         {/* ── Section 7: FAQs ─────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-6 py-20 border-b border-black/5">
+        <section className="section max-w-7xl mx-auto border-b border-black/5">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             
             {/* Left side text */}

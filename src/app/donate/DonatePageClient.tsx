@@ -62,7 +62,7 @@ export default function DonatePage() {
         />
 
         {/* ── Section 1: Your donation puts sustainability into action ─ */}
-        <section className="max-w-7xl mx-auto px-6 py-20 text-center">
+        <section className="section max-w-7xl mx-auto text-center">
           <div className="mb-16">
             <span className="text-xs bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
               #Why It Matters
@@ -89,8 +89,8 @@ export default function DonatePage() {
         </section>
 
         {/* ── Section 2: See what your gift makes possible ────────── */}
-        <section className="bg-gray-50 py-20 border-t border-b border-black/5">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="section bg-gray-50 border-t border-b border-black/5">
+          <div className="max-w-7xl mx-auto">
 
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
               <div>
@@ -131,7 +131,7 @@ export default function DonatePage() {
         <section id="how-to-give" className="section bg-brand-green/10 w-full relative overflow-hidden">
           <Sprout className="w-96 h-96 text-white absolute -bottom-16 -left-20 z-0" />
           <Sprout className="w-96 h-96 text-white absolute top-0 -right-20 rotate-270 z-0" />
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-7xl mx-auto relative z-10">
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
 
@@ -204,9 +204,9 @@ export default function DonatePage() {
         </section>
 
         {/* ── Section 4: Final Call to Action ──────────────── */}
-        <section className=" py-24 text-center relative ">
+        <section className="section text-center relative">
           <Image src="/homepage/heroBG.png" alt="" fill className='object-contain -z-10' />
-          <div className="max-w-4xl mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
             <h2 className="font-alt font-bold text-[36px] md:text-[56px] leading-[1.1] text-text-strong  mb-8">
               {t('donate.footer.title')}
             </h2>

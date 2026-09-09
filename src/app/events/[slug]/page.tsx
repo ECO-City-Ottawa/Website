@@ -38,7 +38,7 @@ export default function SingleEventPage({ params }: { params: Promise<{ slug: st
         />
 
         {/* Content Section */}
-        <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="section max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           
           {/* Main Event Details */}
           <div className="lg:col-span-2">
@@ -151,8 +151,8 @@ export default function SingleEventPage({ params }: { params: Promise<{ slug: st
 
         {/* Related Events Section */}
         {relatedEvents.length > 0 && (
-          <section className="border-t border-black/5 py-16 bg-gray-50/50">
-            <div className="max-w-7xl mx-auto px-6">
+          <section className="section border-t border-black/5 bg-gray-50/50">
+            <div className="max-w-7xl mx-auto">
               <h2 className="font-alt font-bold text-[28px] md:text-[36px] text-text-strong mb-10">
                 {t('event.detail.relatedTitle')}
               </h2>

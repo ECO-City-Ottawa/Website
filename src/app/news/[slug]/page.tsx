@@ -68,7 +68,7 @@ export default function SingleNewsPage({ params }: { params: Promise<{ slug: str
         />
 
         {/* Content Section */}
-        <article className="max-w-7xl mx-auto px-6 py-12">
+        <article className="section max-w-7xl mx-auto">
           
           {/* Back button */}
           <Link
@@ -124,8 +124,8 @@ export default function SingleNewsPage({ params }: { params: Promise<{ slug: str
 
         {/* Related News Section */}
         {relatedNews.length > 0 && (
-          <section className="border-t border-black/5 py-16 bg-gray-50/50">
-            <div className="max-w-7xl mx-auto px-6">
+          <section className="section border-t border-black/5 bg-gray-50/50">
+            <div className="max-w-7xl mx-auto">
               <h2 className="font-alt font-bold text-[28px] md:text-[36px] text-text-strong mb-10">
                 {t('news.detail.relatedTitle')}
               </h2>

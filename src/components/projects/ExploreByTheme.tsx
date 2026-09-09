@@ -38,8 +38,8 @@ export default function ExploreByTheme() {
   }));
 
   return (
-    <section className="section bg-white w-full py-16">
-      <div className="max-w-7xl mx-auto w-full px-6">
+    <section className="section bg-base-white w-full">
+      <div className="max-w-7xl mx-auto w-full">
         
         <div className="text-center mb-12">
           <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
