@@ -30,8 +30,8 @@ export default function Home() {
         <CommunityLedSection />
         <CommunityActionSection />
         <ProjectsSection />
-        <NewsEventsSection />
-        <TestimonialsSection />
+        {/* <NewsEventsSection /> */}
+        {/* <TestimonialsSection /> */}
         <PartnersSection />
         <SupportCtaSection />
         <JoinMissionSection />
