@@ -8,7 +8,7 @@ import {
   ArrowRight,
   BookOpen,
   HeartHandshake,
-  Newspaper,
+  // Newspaper,
 } from 'lucide-react'
 import Image from 'next/image'
 import {
@@ -37,12 +37,12 @@ const DROPDOWN_ACTIVE_HREFS = [
 ]
 
 const FEATURED_DROPDOWN_ITEMS = [
-  {
-    href: '/news-events',
-    labelKey: 'nav.newsEvents',
-    descriptionKey: 'newsEvents.subtitle',
-    icon: Newspaper,
-  },
+  // {
+  //   href: '/news-events',
+  //   labelKey: 'nav.newsEvents',
+  //   descriptionKey: 'newsEvents.subtitle',
+  //   icon: Newspaper,
+  // },
   {
     href: '/engagement',
     labelKey: 'nav.engagement',
@@ -62,7 +62,7 @@ const MOBILE_NAV_ITEMS = [
   { href: '/about', labelKey: 'nav.about' },
   { href: '/why-how', labelKey: 'nav.whyHow' },
   { href: '/projects', labelKey: 'nav.projects' },
-  { href: '/news-events', labelKey: 'nav.newsEvents' },
+  // { href: '/news-events', labelKey: 'nav.newsEvents' },
   { href: '/engagement', labelKey: 'nav.engagement' },
   { href: '/resources', labelKey: 'nav.resources' },
   { href: '/contact', labelKey: 'nav.contact' },
