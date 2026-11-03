@@ -12,9 +12,6 @@ export default function OrgStructure() {
       <div className="max-w-7xl mx-auto w-full">
         
         <div className="mb-16 max-w-[700px]">
-          <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-            {t('orgStructure.subtitle')}
-          </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-4">
             {t('orgStructure.title')}
           </h2>

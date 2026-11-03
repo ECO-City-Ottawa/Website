@@ -12,9 +12,6 @@ export default function OurApproach() {
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
         {/* Left Content */}
         <div className="flex flex-col">
-          <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-            {t('ourApproach.subtitle')}
-          </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-6 leading-tight">
             {t('ourApproach.title')}
           </h2>

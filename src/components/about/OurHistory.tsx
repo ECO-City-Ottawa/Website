@@ -31,9 +31,6 @@ export default function OurHistory() {
         {/* Top Text Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div className="col-span-1">
-            <span className="text-xs font-semibold text-text-strong mb-2 uppercase tracking-wide block">
-              {t('ourHistory.subtitle')}
-            </span>
             <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong">
               {t('ourHistory.title')}
             </h2>

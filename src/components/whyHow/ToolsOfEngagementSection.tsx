@@ -58,9 +58,6 @@ export default function ToolsOfEngagementSection() {
         
         {/* Main Title Section */}
         <div className="text-center max-w-[700px] mx-auto mb-20 pt-16">
-          <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-            {t('toolsOfEngagement.subtitle')}
-          </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-6 leading-tight">
             {t('toolsOfEngagement.title')}
           </h2>
@@ -72,9 +69,6 @@ export default function ToolsOfEngagementSection() {
         {/* Public Action Labs Section */}
         <div className="mb-28">
           <div className="mb-10 max-w-[700px]">
-            <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-              {t('toolsOfEngagement.pal.subtitle')}
-            </span>
             <h3 className="font-alt font-bold text-3xl text-text-strong mb-6">
               {t('toolsOfEngagement.pal.title')}
             </h3>
@@ -132,9 +126,6 @@ export default function ToolsOfEngagementSection() {
           <div className="flex flex-col lg:flex-row justify-between items-start mb-12 gap-6">
             <div className="max-w-x flex flex-col lg:flex-row justify-between items-start w-full">
               <div className=' flex flex-col'>
-                <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-                {t('toolsOfEngagement.library.subtitle')}
-              </span>
               <h3 className="font-alt font-bold text-[32px] text-text-strong">
                 {t('toolsOfEngagement.library.title')}
               </h3>
@@ -183,9 +174,6 @@ export default function ToolsOfEngagementSection() {
         <div>
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
              <div>
-                <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-                  {t('toolsOfEngagement.demo.subtitle')}
-                </span>
                 <h3 className="font-alt font-bold text-[32px] text-text-strong mb-6 leading-tight">
                   {t('toolsOfEngagement.demo.title')}
                 </h3>

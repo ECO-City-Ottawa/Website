@@ -25,9 +25,6 @@ export default function Volunteers() {
       <div className="max-w-7xl mx-auto w-full flex flex-col items-center text-center">
         
         <div className="mb-16 max-w-[700px] mx-auto">
-          <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-            {t('volunteers.subtitle')}
-          </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-6">
             {t('volunteers.title')}
           </h2>

@@ -27,9 +27,6 @@ export default function MissionVisionValues() {
       <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
         
         <div className="text-center max-w-[700px] mx-auto mb-16">
-          <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-            {t('missionVisionValues.subtitle')}
-          </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong">
             {t('missionVisionValues.title')}
           </h2>

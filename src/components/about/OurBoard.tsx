@@ -63,9 +63,6 @@ export default function OurBoard() {
 
         {/* Section header */}
         <div className="text-center mb-16 max-w-[700px] mx-auto">
-          <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-            {t('ourBoard.subtitle')}
-          </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-6">
             {t('ourBoard.title')}
           </h2>

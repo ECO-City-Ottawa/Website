@@ -37,9 +37,6 @@ export default function Objectives() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         
         <div className="mb-12 max-w-[700px]">
-          <span className="text-xs font-semibold text-text-strong/80 mb-4 uppercase tracking-wide block">
-            {t('objectives.subtitle')}
-          </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong/90 mb-4">
             {t('objectives.title')}
           </h2>

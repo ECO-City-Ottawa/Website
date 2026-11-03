@@ -13,9 +13,6 @@ export default function WhyAndHowSplit() {
         
         {/* Left Column: Why we act */}
         <div className="flex flex-col">
-          <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-            {t('whyAndHowSplit.why.subtitle')}
-          </span>
           <h2 className="font-alt font-bold text-[32px] md:text-[40px] text-text-strong mb-6 leading-tight">
             {t('whyAndHowSplit.why.title')}
           </h2>
@@ -32,9 +29,6 @@ export default function WhyAndHowSplit() {
 
         {/* Right Column: How we turn ideas into action */}
         <div className="flex flex-col">
-          <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-            {t('whyAndHowSplit.how.subtitle')}
-          </span>
           <h2 className="font-alt font-bold text-[32px] md:text-[40px] text-text-strong mb-6 leading-tight">
             {t('whyAndHowSplit.how.title')}
           </h2>

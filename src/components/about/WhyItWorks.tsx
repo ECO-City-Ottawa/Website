@@ -49,9 +49,6 @@ export default function WhyItWorks() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         
         <div className="text-center mb-16 max-w-[700px] mx-auto relative z-10">
-          <span className="text-xs font-semibold text-text-strong mb-4 uppercase tracking-wide block">
-            {t('whyItWorks.subtitle')}
-          </span>
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-6">
             {renderWithBreaks(t('whyItWorks.title'))}
           </h2>

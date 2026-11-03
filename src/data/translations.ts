@@ -255,8 +255,6 @@ export const translations = {
     'aboutHero.title': 'About OBEC',
     'aboutHero.headline': 'Engaging with you for a sustainable Ottawa',
     'aboutHero.paragraph': 'This page covers our history, mission, how we work, the people behind EcoCity Ottawa, and how you can get involved.',
-
-    'ourHistory.subtitle': '{#Our Story}',
     'ourHistory.title': 'Our History',
     'ourHistory.paragraph1': 'EcoCity Ottawa is the new name for Ottawa Biosphere Eco-City (OBEC), established in March 2009 as a registered Canadian charity. We are a small, grassroots non-profit built on the belief that communities have the power to lead their own sustainability journey.',
     'ourHistory.paragraph2': 'Our early work was guided by the Biosphere Eco-City (BEC) model, a framework built around Ten Themes of Sustainability: transportation, energy, design, habitat, food, natural capital, waste, health, recreation, and sense of place. We created a Database of Sustainability Projects to help groups learn from each other, and developed tools like Community Sustainability Plans to turn ideas into action.',
@@ -265,8 +263,6 @@ export const translations = {
     'ourHistory.timeline.2013': 'Unveiled the Ottawa Sustainability Tour with Mayor Jim Watson: a self-guided tour of ten exceptional sites, built by 60+ volunteers.',
     'ourHistory.timeline.2016': 'Rebranded as EcoCity Ottawa, refocusing on Public Action Labs and our growing Project Library.',
     'ourHistory.bottom': 'Now in 2026, we operate as EcoCityOttawa.ca, concentrating on Public Action Labs and the EcoCity Project Library as our two primary programs for community-led sustainability action.',
-
-    'missionVisionValues.subtitle': '{#What Drives Us}',
     'missionVisionValues.title': 'Mission · Vision · Values',
     'missionVisionValues.mission.title': 'Mission',
     'missionVisionValues.mission.text': 'To advance education by providing structured educational programs, and preparing and publishing course materials, on sustainability principles and practices.',
@@ -274,8 +270,6 @@ export const translations = {
     'missionVisionValues.vision.text': 'A city where every community is empowered to create our sustainable future rooted in conversations, innovation, and shared responsibility.',
     'missionVisionValues.values.title': 'Values',
     'missionVisionValues.values.text': 'Sustainability - community engagement - Knowledge Sharing - Inclusivity - Connection to place - Action orientation Teamwork',
-
-    'objectives.subtitle': '{#What We Do}',
     'objectives.title': 'OBEC Objectives',
     'objectives.paragraph': "Here's how we put that mission into action:",
     'objectives.card1.title': 'Promote Sustainability',
@@ -291,13 +285,9 @@ export const translations = {
     'objectives.cta.title': 'Start a Project in Your Community',
     'objectives.cta.desc': 'Have an idea for a local sustainability initiative? We can help you shape it, support it, and share it',
     'objectives.cta.link': 'Apply for project consideration →',
-
-    'ourApproach.subtitle': '{#Our Approach}',
     'ourApproach.title': 'BEC Bridge',
     'ourApproach.paragraph': 'Our work is built on the Biosphere Eco-City (BEC) model: a community-based framework that blends ecological awareness with local action. It gives communities a shared language and practical tools to turn ideas into real change.',
     'ourApproach.cta': 'Learn how it works',
-
-    'framework.subtitle': '{# Our Framework}',
     'framework.title': 'How the BEC model works',
     'framework.paragraph': 'A shared language for community-led sustainability action.',
     'framework.card.features': 'Features',
@@ -320,8 +310,6 @@ export const translations = {
     'framework.card6.title': 'Ottawa First',
     'framework.card6.desc': 'Ottawa was the first city in the world to apply this model, pioneering a new way to build greener, connected cities.',
     'framework.card6.link': 'About OBEC',
-
-    'whyItWorks.subtitle': '{#Why It Works}',
     'whyItWorks.title': 'Real change starts<br/>in the community',
     'whyItWorks.paragraph': 'BECs bridge the gap between environmental ideals and everyday urban life, turning neighborhoods into living examples of sustainability.',
     'whyItWorks.card1.title': 'Community-Driven Sustainability',
@@ -336,8 +324,6 @@ export const translations = {
     'whyItWorks.card5.desc': 'Cross-sector problem-solving between residents, businesses, schools, and government.',
     'whyItWorks.card6.title': 'Health & Wellbeing',
     'whyItWorks.card6.desc': 'Green spaces, clean energy, and active lifestyles improve both physical and mental health.',
-
-    'orgStructure.subtitle': "{#How We're Organized}",
     'orgStructure.title': 'Organizational Structure',
     'orgStructure.paragraph': 'OBEC promotes sustainability through accessible community-driven methods that encourage learning, sharing, and action:',
     'orgStructure.col1.title': 'Board of Directors',
@@ -350,8 +336,6 @@ export const translations = {
     'orgStructure.left.desc': 'We believe in inclusive engagement. Community members and stakeholders are encouraged to co-develop projects and share knowledge across the network. Decentralized action, central support. We provide coordination, tools, and mentorship; the action happens in the community.',
     'orgStructure.right.title': 'Full charitable transparency.',
     'orgStructure.right.desc': 'EcoCity Ottawa publishes project reports, hosts public meetings, and maintains an online database of sustainability initiatives, operating with full charitable transparency.',
-
-    'ourBoard.subtitle': '{#Modal}',
     'ourBoard.title': 'Our Board',
     'ourBoard.paragraph': 'They bring experience, vision, and commitment to help shape strategy, support volunteers, and strengthen community connections, ensuring we stay focused on building a more sustainable Ottawa.',
     'ourBoard.member.role.chair': 'Chair',
@@ -366,8 +350,6 @@ export const translations = {
     'ourBoard.member.desc.prasanna': 'Prasanna Siva is a community-driven professional committed to sustainability and civic participation in Ottawa. With experience in project management and stakeholder engagement, she brings analytical thinking and a collaborative spirit to the OBEC board. Prasanna is motivated by the belief that practical, community-led action is the most effective and enduring path to meaningful environmental change.',
     'ourBoard.cta': 'Full Description',
     'ourBoard.ctaClose': 'Show less',
-
-    'volunteers.subtitle': '{#Modal}',
     'volunteers.title': 'Volunteers',
     'volunteers.paragraph': 'Volunteers are the heart of OBEC. They bring their time, skills, and energy to help turn ideas into action: whether supporting events, leading projects, or building community connections. Volunteering with OBEC is about learning, sharing, and working together to create a more sustainable Ottawa.',
     'volunteers.member.role.web': 'Web & Database Lead',
@@ -378,17 +360,12 @@ export const translations = {
     'whyHowHero.paragraph': 'We believe the most effective solutions come from conversations that bring people together, and we have built the tools to make that happen.',
     'whyHowHero.cta1': 'Explore Our Tools',
     'whyHowHero.cta2': 'Get Involved',
-
-    'whyAndHowSplit.why.subtitle': '{#why}',
     'whyAndHowSplit.why.title': 'Why we act',
     'whyAndHowSplit.why.paragraph1': 'The biosphere is under increasing pressure from human activity. We believe the most effective (and the most energizing) solutions come from conversations that bring neighbours together to produce good local change.',
     'whyAndHowSplit.why.paragraph2': 'EcoCity Ottawa empowers ordinary people through community groups, businesses, schools, and local clubs. When you work together with the people, will, and energy in the room, magic happens. You can build a more sustainable future, right where you live.',
-    'whyAndHowSplit.how.subtitle': '{#how}',
     'whyAndHowSplit.how.title': 'How we turn ideas into action',
     'whyAndHowSplit.how.paragraph1': 'We provide a space to create trust, talk openly, break out of silos, and get fresh input, turning ideas into action.',
     'whyAndHowSplit.how.paragraph2': 'Our two tools of engagement are the Public Action Lab (PAL) and the EcoCity Project Library, designed to inspire people to try, adapt, and learn from community-led sustainability projects.',
-
-    'tenThemes.subtitle': '{#themes}',
     'tenThemes.title': '10 Themes of Sustainability',
     'tenThemes.paragraph': 'These Themes divide sustainability into understandable areas of action to help people work within their interest to identify issues, products and services and develop solution',
     'tenThemes.theme1.title': 'Transportation',
@@ -411,8 +388,6 @@ export const translations = {
     'tenThemes.theme9.desc': 'Build healthy communities through clean air, water, green spaces, and active lifestyles.',
     'tenThemes.theme10.title': 'Sense of Place',
     'tenThemes.theme10.desc': 'Feel proud of where you live, and strengthen community bonds by protecting local spaces.',
-
-    'driversOfChange.subtitle': '{#Drivers of Change}',
     'driversOfChange.title': 'Three Drivers of Change',
     'driversOfChange.paragraph': "The drivers provide the foundation for how communities organize, collaborate, and keep efforts moving forward. Your main interest might be in one of OBEC's themes, but the drivers help turn that interest into lasting community impact.",
     'driversOfChange.driver1.title': 'Social Capital',
@@ -421,11 +396,8 @@ export const translations = {
     'driversOfChange.driver2.desc': 'How decisions are made matters. Good governance means everyone has a voice: decisions are fair, open, and made together. When people feel included, communities plan better, act faster, and create lasting change.',
     'driversOfChange.driver3.title': 'Sustainable Economy',
     'driversOfChange.driver3.desc': 'A healthy community needs an economy that works for people, local businesses, and the planet. A local, fair, and circular economy supports clean energy, local food, waste reduction, and thriving small enterprises, sharing opportunities fairly.',
-
-    'toolsOfEngagement.subtitle': '{#Our Tools}',
     'toolsOfEngagement.title': 'Tools of Engagement',
     'toolsOfEngagement.paragraph': 'EcoCity Ottawa offers two core tools to support community-led sustainability facilitating teamwork, learning, and action.',
-    'toolsOfEngagement.pal.subtitle': '{#pal}',
     'toolsOfEngagement.pal.title': 'Public Action Labs',
     'toolsOfEngagement.pal.paragraph': "A space where grassroots community champions come together to turn conversations into action with fresh perspectives, good facilitation, and practical tools to co-create projects and see what's actually doable.",
     'toolsOfEngagement.pal.card1.sub': 'Small',
@@ -434,7 +406,6 @@ export const translations = {
     'toolsOfEngagement.pal.card2.desc': 'For doing bigger projects than you can do on your own. 3–5 sessions, in-person and virtual · 10–20 people Includes: My Sustainable Business Path and Independent Community & Business Improvement Group formats.',
     'toolsOfEngagement.pal.card3.sub': 'Large',
     'toolsOfEngagement.pal.card3.desc': 'Empowering neighbourhoods, schools, and large groups to turn sustainability goals into real-world outcomes. 1+ follow-up sessions · 15+ people Develops a Community Sustainability Plan (CSP): a locally grounded plan that builds a culture of sustainability.',
-    'toolsOfEngagement.library.subtitle': '{#Project Library}',
     'toolsOfEngagement.library.title': 'EcoCity Project Library',
     'toolsOfEngagement.library.paragraph': "A growing collection of real projects from Ottawa and other communities, organized around BEC's 10 Themes of Sustainability. The library is designed to inspire people to try, adapt, and learn from what others have already done.",
     'toolsOfEngagement.library.tags.habitat': 'Habitat',
@@ -446,7 +417,6 @@ export const translations = {
     'toolsOfEngagement.library.tags.cooperation': 'Cooperation',
     'toolsOfEngagement.library.viewProject': 'View project',
     'toolsOfEngagement.library.viewAll': 'View all projects',
-    'toolsOfEngagement.demo.subtitle': '{#Demonstration Projects}',
     'toolsOfEngagement.demo.title': 'Pop-Up Demonstration Events',
     'toolsOfEngagement.demo.paragraph1': 'These are real projects opened to the public to demonstrate practical approaches to sustainability. Any organization willing to share its methods and results can develop a Demonstration Project.',
     'toolsOfEngagement.demo.paragraph2': 'Demonstration Projects motivate others by showing what can actually be done, complementing the effects of Community Sustainability Plans and the Project Library.',
@@ -514,8 +484,6 @@ export const translations = {
     'projects.csp.subtitle': 'Locally grounded plans for real outcomes.',
     'projects.csp.exploreAll': 'Explore all community projects',
     'projects.csp.viewAllBtn': 'View all',
-
-    'projects.exploreByTheme.subtitle': '{#themes}',
     'projects.exploreByTheme.title': 'Explore by Theme',
     'projects.exploreByTheme.description': 'Ten clear focus areas for local action.',
     'projects.exploreByTheme.projectsLabel': 'Projects',
@@ -1138,8 +1106,6 @@ export const translations = {
     'aboutHero.title': 'À propos de l’OBEC',
     'aboutHero.headline': 'S’engager avec vous pour un Ottawa durable',
     'aboutHero.paragraph': 'Cette page présente notre histoire, notre mission, notre mode de fonctionnement, les personnes qui soutiennent EcoCity Ottawa et la façon dont vous pouvez vous impliquer.',
-
-    'ourHistory.subtitle': '{#Notre histoire}',
     'ourHistory.title': 'Notre histoire',
     'ourHistory.paragraph1': 'EcoCity Ottawa est le nouveau nom d’Ottawa Biosphere Eco-City (OBEC), établi en mars 2009 en tant qu’organisme de bienfaisance canadien enregistré. Nous sommes un petit organisme sans but lucratif local fondé sur la conviction que les communautés ont le pouvoir de mener leur propre parcours vers la durabilité.',
     'ourHistory.paragraph2': 'Nos premiers travaux ont été guidés par le modèle de la Biosphère Cité Écologique (BCE), un cadre structuré autour de dix thèmes de durabilité : le transport, l’énergie, l’aménagement, l’habitat, l’alimentation, le capital naturel, les déchets, la santé, les loisirs et le sentiment d’appartenance. Nous avons créé une base de données de projets de durabilité pour s’inspirer les uns les autres, et développé des outils comme les Plans de durabilité communautaire pour concrétiser les idées.',
@@ -1148,8 +1114,6 @@ export const translations = {
     'ourHistory.timeline.2013': 'Dévoilement de la Visite de durabilité d’Ottawa avec le maire Jim Watson : une visite autoguidée de dix sites exceptionnels, réalisée par plus de 60 bénévoles.',
     'ourHistory.timeline.2016': 'Redéfinition de l’image de marque sous le nom d’EcoCity Ottawa, recentrant les activités sur les Labos d’action publique et notre bibliothèque de projets en pleine croissance.',
     'ourHistory.bottom': 'Aujourd’hui, en 2026, nous opérons sous le nom de EcoCityOttawa.ca, en nous concentrant sur les Labos d’action publique et la Bibliothèque de projets EcoCity comme nos deux programmes principaux pour l’action de durabilité menée par la communauté.',
-
-    'missionVisionValues.subtitle': '{#Ce qui nous motive}',
     'missionVisionValues.title': 'Mission · Vision · Valeurs',
     'missionVisionValues.mission.title': 'Mission',
     'missionVisionValues.mission.text': 'Faire progresser l’éducation en fournissant des programmes éducatifs structurés, et en préparant et publiant du matériel pédagogique, sur les principes et pratiques de durabilité.',
@@ -1157,8 +1121,6 @@ export const translations = {
     'missionVisionValues.vision.text': 'Une ville où chaque communauté est habilitée à créer notre avenir durable enraciné dans les conversations, l’innovation et la responsabilité partagée.',
     'missionVisionValues.values.title': 'Valeurs',
     'missionVisionValues.values.text': 'Durabilité - engagement communautaire - partage des connaissances - inclusivité - lien avec le lieu - orientation vers l’action - travail d’équipe',
-
-    'objectives.subtitle': '{#Ce que nous faisons}',
     'objectives.title': 'Objectifs de l’OBEC',
     'objectives.paragraph': 'Voici comment nous mettons cette mission en action :',
     'objectives.card1.title': 'Promouvoir la durabilité',
@@ -1174,13 +1136,9 @@ export const translations = {
     'objectives.cta.title': 'Lancer un projet dans votre communauté',
     'objectives.cta.desc': 'Vous avez une idée pour une initiative locale de durabilité ? Nous pouvons vous aider à la façonner, à la soutenir et à la partager.',
     'objectives.cta.link': 'Soumettre un projet pour examen →',
-
-    'ourApproach.subtitle': '{#Notre approche}',
     'ourApproach.title': 'Le pont BCE (BEC Bridge)',
     'ourApproach.paragraph': 'Nos travaux reposent sur le modèle de la Biosphère Cité Écologique (BCE) : un cadre communautaire qui allie la sensibilisation écologique à l’action locale. Il donne aux communautés un langage commun et des outils pratiques pour transformer les idées en changements réels.',
     'ourApproach.cta': 'Découvrir comment ça fonctionne',
-
-    'framework.subtitle': '{# Notre structure}',
     'framework.title': 'Comment fonctionne le modèle BCE',
     'framework.paragraph': 'Un langage commun pour l’action de durabilité menée par la communauté.',
     'framework.card.features': 'Caractéristiques',
@@ -1203,8 +1161,6 @@ export const translations = {
     'framework.card6.title': 'Ottawa en premier',
     'framework.card6.desc': 'Ottawa a été la première ville au monde à appliquer ce modèle, pionnière d’une nouvelle façon de construire des villes plus vertes et connectées.',
     'framework.card6.link': 'À propos de l’OBEC',
-
-    'whyItWorks.subtitle': '{#Pourquoi ça fonctionne}',
     'whyItWorks.title': 'Le vrai changement commence<br/>dans la communauté',
     'whyItWorks.paragraph': 'Les cités écologiques de la biosphère (BCE) comblent le fossé entre les idéaux environnementaux et la vie urbaine quotidienne, transformant les quartiers en exemples vivants de durabilité.',
     'whyItWorks.card1.title': 'Durabilité axée sur la communauté',
@@ -1219,8 +1175,6 @@ export const translations = {
     'whyItWorks.card5.desc': 'Résolution de problèmes intersectorielle entre résidents, entreprises, écoles et gouvernement.',
     'whyItWorks.card6.title': 'Santé et bien-être',
     'whyItWorks.card6.desc': 'Les espaces verts, l’énergie propre et les modes de vie actifs améliorent la santé physique et mentale.',
-
-    'orgStructure.subtitle': '{#Comment nous sommes organisés}',
     'orgStructure.title': 'Structure organisationnelle',
     'orgStructure.paragraph': 'L’OBEC favorise la durabilité grâce à des méthodes accessibles et axées sur la communauté qui encouragent l’apprentissage, le partage et l’action :',
     'orgStructure.col1.title': 'Conseil d’administration',
@@ -1233,8 +1187,6 @@ export const translations = {
     'orgStructure.left.desc': 'Nous croyons en un engagement inclusif. Les membres de la communauté et les parties prenantes sont encouragés à co-développer des projets et à partager leurs connaissances au sein du réseau. Une action décentralisée, un soutien centralisé. Nous fournissons la coordination, les outils et le mentorat; l’action se déroule dans la communauté.',
     'orgStructure.right.title': 'Transparence caritative totale.',
     'orgStructure.right.desc': 'EcoCity Ottawa publie des rapports de projet, organise des réunions publiques et maintient une base de données en ligne d’initiatives de durabilité, fonctionnant en toute transparence caritative.',
-
-    'ourBoard.subtitle': '{#Conseil}',
     'ourBoard.title': 'Notre conseil d’administration',
     'ourBoard.paragraph': 'Ils apportent leur expérience, leur vision et leur engagement pour aider à façonner la stratégie, soutenir les bénévoles et renforcer les liens communautaires, garantissant que nous restons concentrés sur la construction d’un Ottawa plus durable.',
     'ourBoard.member.role.chair': 'Présidente',
@@ -1249,8 +1201,6 @@ export const translations = {
     'ourBoard.member.desc.prasanna': "Prasanna Siva est une professionnelle engag\u00e9e en faveur de la durabilit\u00e9 et de la participation civique \u00e0 Ottawa. Forte d\u2019une exp\u00e9rience en gestion de projet et en mobilisation des parties prenantes, elle apporte une pens\u00e9e analytique et un esprit collaboratif au conseil de l\u2019OBEC. Elle est convaincue que l\u2019action pratique men\u00e9e par la communaut\u00e9 est la voie la plus efficace vers un changement environnemental concret.",
     'ourBoard.cta': 'Description complète',
     'ourBoard.ctaClose': 'Voir moins',
-
-    'volunteers.subtitle': '{#Bénévoles}',
     'volunteers.title': 'Bénévoles',
     'volunteers.paragraph': 'Les bénévoles sont le cœur de l’OBEC. Ils apportent leur temps, leurs compétences et leur énergie pour aider à transformer les idées en actions : qu’il s’agisse de soutenir des événements, de mener des projets ou de renforcer les liens communautaires. Le bénévolat avec l’OBEC est une question d’apprentissage, de partage et de travail en commun pour créer un Ottawa plus durable.',
     'volunteers.member.role.web': 'Responsable Web & Base de données',
@@ -1261,17 +1211,12 @@ export const translations = {
     'whyHowHero.paragraph': 'Nous pensons que les solutions les plus efficaces naissent de conversations qui rassemblent les gens, et nous avons conçu les outils pour y parvenir.',
     'whyHowHero.cta1': 'Explorer nos outils',
     'whyHowHero.cta2': 'S’impliquer',
-
-    'whyAndHowSplit.why.subtitle': '{#pourquoi}',
     'whyAndHowSplit.why.title': 'Pourquoi nous agissons',
     'whyAndHowSplit.why.paragraph1': 'La biosphère est soumise à une pression croissante de l’activité humaine. Nous pensons que les solutions les plus efficaces (et les plus stimulantes) naissent de conversations qui rassemblent les voisins pour produire des changements locaux positifs.',
     'whyAndHowSplit.why.paragraph2': 'EcoCity Ottawa donne les moyens d’agir aux gens ordinaires par l’intermédiaire de groupes communautaires, d’entreprises, d’écoles et de clubs locaux. Lorsque vous travaillez avec les personnes, la volonté et l’énergie présentes, la magie opère. Vous pouvez bâtir un avenir plus durable, là même où vous vivez.',
-    'whyAndHowSplit.how.subtitle': '{#comment}',
     'whyAndHowSplit.how.title': 'Comment nous transformons les idées en actions',
     'whyAndHowSplit.how.paragraph1': 'Nous offrons un espace pour instaurer la confiance, parler ouvertement, briser les silos et obtenir de nouvelles idées, en transformant les idées en actions.',
     'whyAndHowSplit.how.paragraph2': 'Nos deux outils d’engagement sont le Labo d’action publique (PAL) et la Bibliothèque de projets EcoCity, conçus pour inspirer les gens à essayer, adapter et apprendre des projets de durabilité menés par la communauté.',
-
-    'tenThemes.subtitle': '{#thèmes}',
     'tenThemes.title': '10 thèmes de durabilité',
     'tenThemes.paragraph': 'Ces thèmes divisent la durabilité en domaines d’action compréhensibles pour aider les gens à travailler selon leurs intérêts afin d’identifier les enjeux, les produits et services, et de développer des solutions.',
     'tenThemes.theme1.title': 'Transport',
@@ -1294,8 +1239,6 @@ export const translations = {
     'tenThemes.theme9.desc': 'Bâtir des communautés saines grâce à un air et une eau propres, des espaces verts et des modes de vie actifs.',
     'tenThemes.theme10.title': 'Sentiment d’appartenance',
     'tenThemes.theme10.desc': 'Se sentir fier de l’endroit où l’on vit, et renforcer les liens communautaires en protégeant les espaces locaux.',
-
-    'driversOfChange.subtitle': '{#Moteurs de changement}',
     'driversOfChange.title': 'Trois moteurs de changement',
     'driversOfChange.paragraph': 'Les moteurs constituent le fondement de la manière dont les communautés s’organisent, collaborent et maintiennent les efforts en mouvement. Votre intérêt principal réside peut-être dans l’un des thèmes de l’OBEC, mais les moteurs aident à transformer cet intérêt en un impact communautaire durable.',
     'driversOfChange.driver1.title': 'Capital social',
@@ -1304,11 +1247,8 @@ export const translations = {
     'driversOfChange.driver2.desc': 'La façon dont décisions sont prises est importante. Une bonne gouvernance signifie que tout le monde a voix au chapitre : les décisions sont justes, ouvertes et prises ensemble. Lorsque les gens se sentent inclus, les communautés planifient mieux, actuels plus vite et créent des changements durables.',
     'driversOfChange.driver3.title': 'Économie durable',
     'driversOfChange.driver3.desc': 'Une communauté saine a besoin d’une économie qui fonctionne pour les gens, les entreprises locales et la planète. Une économie locale, équitable et circulaire soutient l’énergie propre, l’alimentation locale, la réduction des déchets et les petites entreprises prospères, en partageant équitablement les opportunités.',
-
-    'toolsOfEngagement.subtitle': '{#Nos outils}',
     'toolsOfEngagement.title': 'Outils d’engagement',
     'toolsOfEngagement.paragraph': 'EcoCity Ottawa propose deux outils fondamentaux pour soutenir la durabilité menée par la communauté en facilitant le travail d’équipe, l’apprentissage et l’action.',
-    'toolsOfEngagement.pal.subtitle': '{#pal}',
     'toolsOfEngagement.pal.title': 'Labos d’action publique (PAL)',
     'toolsOfEngagement.pal.paragraph': 'Un espace où les leaders locaux se réunissent pour transformer les conversations en actions grâce à de nouvelles perspectives, une facilitation de qualité et des outils pratiques pour co-créer des projets et voir ce qui est réalisable.',
     'toolsOfEngagement.pal.card1.sub': 'Petit',
@@ -1317,7 +1257,6 @@ export const translations = {
     'toolsOfEngagement.pal.card2.desc': 'Pour réaliser des projets plus importants que ceux que vous pouvez mener seul. 3 à 5 sessions, en personne et virtuelles · 10 à 20 personnes. Comprend : les formats Mon parcours d’entreprise durable et les groupes indépendants d’amélioration communautaire et commerciale.',
     'toolsOfEngagement.pal.card3.sub': 'Grand',
     'toolsOfEngagement.pal.card3.desc': 'Donner aux quartiers, aux écoles et aux grands groupes les moyens de transformer leurs objectifs de durabilité en résultats concrétes. Plus d’une session de suivi · 15+ personnes. Élabore un Plan de durabilité communautaire (CSP) : un plan local qui développe une culture de la durabilité.',
-    'toolsOfEngagement.library.subtitle': '{#Bibliothèque de projets}',
     'toolsOfEngagement.library.title': 'Bibliothèque de projets EcoCity',
     'toolsOfEngagement.library.paragraph': 'Une collection croissante de projets réels d’Ottawa et d’autres communautés, organisée autour des 10 thèmes de durabilité de la BCE. La bibliothèque est conçue pour inspirer les gens à essayer, adapter et apprendre de ce que d’autres ont déjà réalisé.',
     'toolsOfEngagement.library.tags.habitat': 'Habitat',
@@ -1329,7 +1268,6 @@ export const translations = {
     'toolsOfEngagement.library.tags.cooperation': 'Coopération',
     'toolsOfEngagement.library.viewProject': 'Voir le projet',
     'toolsOfEngagement.library.viewAll': 'Voir tous les projets',
-    'toolsOfEngagement.demo.subtitle': '{#Projets de démonstration}',
     'toolsOfEngagement.demo.title': 'Événements de démonstration éphémères',
     'toolsOfEngagement.demo.paragraph1': 'Ce sont des projets réels ouverts au public pour démontrer des approches pratiques de la durabilité. Toute organisation disposée à partager ses méthodes et ses résultats peut développer un projet de démonstration.',
     'toolsOfEngagement.demo.paragraph2': 'Les projets de démonstration motivent les autres en montrant ce qui peut réellement être fait, complétant ainsi les effets des Plans de durabilité communautaire et de la Bibliothèque de projets.',
@@ -1397,8 +1335,6 @@ export const translations = {
     'projects.csp.subtitle': 'Des plans ancrés localement pour des résultats réels.',
     'projects.csp.exploreAll': 'Explorer tous les projets communautaires',
     'projects.csp.viewAllBtn': 'Tout voir',
-
-    'projects.exploreByTheme.subtitle': '{#thèmes}',
     'projects.exploreByTheme.title': 'Explorer par thème',
     'projects.exploreByTheme.description': 'Dix domaines d’action clairs pour des interventions locales.',
     'projects.exploreByTheme.projectsLabel': 'Projets',

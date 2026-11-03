@@ -30,9 +30,6 @@ export default function DriversOfChange() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-16">
           <div className="flex flex-col">
-            <span className="text-xs font-semibold text-text-strong/80 mb-4 uppercase tracking-wide block">
-              {t('driversOfChange.subtitle')}
-            </span>
             <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong/90 leading-tight">
               {t('driversOfChange.title')}
             </h2>
