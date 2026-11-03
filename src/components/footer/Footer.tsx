@@ -67,7 +67,6 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-4">
             <Link href="/privacy" className="hover:text-text-strong">{t('footer.privacyPolicy')}</Link>
             <Link href="/terms" className="hover:text-text-strong">{t('footer.termsOfService')}</Link>
-            <button className="hover:text-text-strong">{t('footer.cookieSettings')}</button>
           </div>
         </div>
       </div>

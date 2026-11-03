@@ -15,15 +15,9 @@ export default function OurApproach() {
           <h2 className="font-alt font-bold text-[40px] md:text-[48px] text-text-strong mb-6 leading-tight">
             {t('ourApproach.title')}
           </h2>
-          <p className="text-text-normal md:text-[18px] leading-[1.6] mb-8">
+          <p className="text-text-normal md:text-[18px] leading-[1.6]">
             {t('ourApproach.paragraph')}
           </p>
-          <div>
-            {/* TODO: add target route when this CTA destination is confirmed. */}
-            <span className="bg-brand-green hover:opacity-90 text-white rounded-lg px-6 py-3 font-medium transition-colors inline-block text-sm">
-              {t('ourApproach.cta')}
-            </span>
-          </div>
         </div>
 
         {/* Right Image */}

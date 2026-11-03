@@ -62,15 +62,9 @@ export default function Objectives() {
             <h3 className="font-alt font-bold text-[24px] text-brand-green mb-4 leading-tight">
               {t('objectives.cta.title')}
             </h3>
-            <p className="text-text-normal leading-relaxed mb-6">
+            <p className="text-text-normal leading-relaxed">
               {t('objectives.cta.desc')}
             </p>
-            <div className="mt-auto">
-              {/* TODO: add target route when this CTA destination is confirmed. */}
-              <span className="inline-flex items-center gap-1 text-brand-green font-medium text-sm hover:underline underline-offset-4">
-                {t('objectives.cta.link')}
-              </span>
-            </div>
           </div>
         </div>
 

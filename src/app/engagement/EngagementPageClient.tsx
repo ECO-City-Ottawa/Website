@@ -184,7 +184,6 @@ export default function EngagementPage() {
     { title: t('engagement.participate.card3.title'), desc: t('engagement.participate.card3.desc'), linkText: t('engagement.participate.card3.linkText'), href: '#pal' },
     { title: t('engagement.participate.card4.title'), desc: t('engagement.participate.card4.desc'), linkText: t('engagement.participate.card4.linkText'), href: '#plan' },
     { title: t('engagement.participate.card5.title'), desc: t('engagement.participate.card5.desc'), linkText: t('engagement.participate.card5.linkText'), href: '#partner' },
-    { title: t('engagement.participate.card6.title'), desc: t('engagement.participate.card6.desc'), linkText: t('engagement.participate.card6.linkText'), href: '#subscribe-section' },
   ];
 
   const membershipTiers = [
@@ -849,17 +848,15 @@ export default function EngagementPage() {
         </section>
 
         {/* ── Section 8: Final CTA ───────────────────── */}
-        <div id="subscribe-section">
-          <JoinMissionCta
-            title={t('engagement.ready.title')}
-            description={t('engagement.ready.subtitle')}
-            buttons={[
-              { label: t('engagement.ready.btn1'), href: '#volunteer', variant: 'primary' },
-              { label: t('engagement.ready.btn2'), href: '#membership', variant: 'secondary' },
-              { label: t('engagement.ready.btn3'), href: '/donate', variant: 'link', icon: <ArrowRight className="w-4 h-4" /> }
-            ]}
-          />
-        </div>
+        <JoinMissionCta
+          title={t('engagement.ready.title')}
+          description={t('engagement.ready.subtitle')}
+          buttons={[
+            { label: t('engagement.ready.btn1'), href: '#volunteer', variant: 'primary' },
+            { label: t('engagement.ready.btn2'), href: '#membership', variant: 'secondary' },
+            { label: t('engagement.ready.btn3'), href: '/donate', variant: 'link', icon: <ArrowRight className="w-4 h-4" /> }
+          ]}
+        />
 
       </main>
       <Footer />
