@@ -375,6 +375,7 @@ export default function ContactPage() {
                 <MapPin className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-text-strong text-base">{t('contact.where.hub')}</p>
+                  {/* TODO: replace with the full postal address once confirmed - edit 'contact.where.location' in translations.ts */}
                   <p className="text-text-normal text-sm mt-1">{t('contact.where.location')}</p>
                 </div>
               </div>

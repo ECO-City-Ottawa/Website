@@ -27,7 +27,8 @@ export const translations = {
     'footer.aboutObec': 'About OBEC',
     'footer.contactTitle': 'Contact',
    
-    'footer.address': 'Address: 108 Equestrian Drive Ottawa Ontario, Canada K2M 1H6',
+    // TODO: replace with the real postal address once confirmed by the board (see docs/launch-open-items.md).
+    'footer.address': 'Ottawa, Ontario, Canada',
     'footer.contactUs': 'Contact us',
     'footer.copyright': '© {year} Ottawa Biosphere Eco-City (OBEC). All rights reserved.',
     'footer.privacyPolicy': 'Privacy policy',
@@ -870,7 +871,8 @@ export const translations = {
     'footer.learn': 'En savoir plus',
     'footer.aboutObec': 'À propos de l’OBEC',
     'footer.contactTitle': 'Contact',
-    'footer.address': 'Adresse : 170 Tunney’s Pasture, Ottawa',
+    // TODO: replace with the real postal address once confirmed by the board (keep in sync with the English string).
+    'footer.address': 'Ottawa, Ontario, Canada',
     'footer.contactUs': 'Nous contacter',
     'footer.copyright': '© {year} Ottawa Biosphere Eco-City (OBEC). Tous droits réservés.',
     'footer.privacyPolicy': 'Politique de confidentialité',
