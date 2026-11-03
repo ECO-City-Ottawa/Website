@@ -8,6 +8,7 @@ import Footer from '@/components/footer/Footer';
 import PageHero from '@/components/ui/PageHero';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import JoinMissionCta from '@/components/about/JoinMissionCta';
+import HoneypotField from '@/components/ui/HoneypotField';
 import { useLanguage } from '@/context/LanguageContext';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -35,7 +36,8 @@ export default function ContactPage() {
     city: 'Ottawa',
     language: 'English',
     message: '',
-    consent: false
+    consent: false,
+    companyWebsite: '' // honeypot: must stay empty
   });
 
   const faqs = [
@@ -164,6 +166,10 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-6">
+                  <HoneypotField
+                    value={formData.companyWebsite}
+                    onChange={v => setFormData(prev => ({ ...prev, companyWebsite: v }))}
+                  />
 
                   {/* Row 1 */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -172,7 +178,7 @@ export default function ContactPage() {
                         {t('contact.form.fullName')}
                       </label>
                       <input
-                        id="contact-full-name"
+                        id="contact-full-name" maxLength={100}
                         type="text"
                         placeholder={t('contact.form.fullNamePlaceholder')}
                         value={formData.fullName}
@@ -190,7 +196,7 @@ export default function ContactPage() {
                         {t('contact.form.email')}
                       </label>
                       <input
-                        id="contact-email"
+                        id="contact-email" maxLength={254}
                         type="email"
                         placeholder={t('contact.form.emailPlaceholder')}
                         value={formData.email}
@@ -212,7 +218,7 @@ export default function ContactPage() {
                         {t('contact.form.phone')}
                       </label>
                       <input
-                        id="contact-phone"
+                        id="contact-phone" maxLength={40}
                         type="tel"
                         placeholder={t('contact.form.phonePlaceholder')}
                         value={formData.phone}
@@ -245,7 +251,7 @@ export default function ContactPage() {
                         {t('contact.form.ward')}
                       </label>
                       <input
-                        id="contact-ward"
+                        id="contact-ward" maxLength={100}
                         type="text"
                         placeholder={t('contact.form.wardPlaceholder')}
                         value={formData.ward}
@@ -294,7 +300,7 @@ export default function ContactPage() {
                       {t('contact.form.message')}
                     </label>
                     <textarea
-                      id="contact-message"
+                      id="contact-message" maxLength={5000}
                       placeholder={t('contact.form.messagePlaceholder')}
                       rows={5}
                       value={formData.message}

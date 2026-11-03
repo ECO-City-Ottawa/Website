@@ -20,6 +20,7 @@ import Footer from '@/components/footer/Footer';
 import PageHero from '@/components/ui/PageHero';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import JoinMissionCta from '@/components/about/JoinMissionCta';
+import HoneypotField from '@/components/ui/HoneypotField';
 import { useLanguage } from '@/context/LanguageContext';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -49,6 +50,7 @@ export default function EngagementPage() {
     roles: [] as string[],
     skills: '',
     consent: false,
+    companyWebsite: '', // honeypot: must stay empty
   });
 
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -356,13 +358,17 @@ export default function EngagementPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-6">
+                  <HoneypotField
+                    value={formData.companyWebsite}
+                    onChange={v => setFormData(prev => ({ ...prev, companyWebsite: v }))}
+                  />
 
                   {/* Row 1 */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="volunteer-full-name" className="block text-base font-semibold text-text-strong mb-2">{t('engagement.volunteer.fullName')}</label>
                       <input
-                        id="volunteer-full-name"
+                        id="volunteer-full-name" maxLength={100}
                         type="text"
                         placeholder={t('engagement.volunteer.fullNamePlaceholder')}
                         value={formData.fullName}
@@ -378,7 +384,7 @@ export default function EngagementPage() {
                     <div>
                       <label htmlFor="volunteer-email" className="block text-base font-semibold text-text-strong mb-2">{t('engagement.volunteer.email')}</label>
                       <input
-                        id="volunteer-email"
+                        id="volunteer-email" maxLength={254}
                         type="email"
                         placeholder={t('engagement.volunteer.emailPlaceholder')}
                         value={formData.email}
@@ -398,7 +404,7 @@ export default function EngagementPage() {
                     <div>
                       <label htmlFor="volunteer-phone" className="block text-base font-semibold text-text-strong mb-2">{t('engagement.volunteer.phone')}</label>
                       <input
-                        id="volunteer-phone"
+                        id="volunteer-phone" maxLength={40}
                         type="tel"
                         placeholder={t('engagement.volunteer.phonePlaceholder')}
                         value={formData.phone}
@@ -426,7 +432,7 @@ export default function EngagementPage() {
                     <div>
                       <label htmlFor="volunteer-ward" className="block text-base font-semibold text-text-strong mb-2">{t('engagement.volunteer.ward')}</label>
                       <input
-                        id="volunteer-ward"
+                        id="volunteer-ward" maxLength={100}
                         type="text"
                         placeholder={t('engagement.volunteer.wardPlaceholder')}
                         value={formData.ward}
@@ -512,7 +518,7 @@ export default function EngagementPage() {
                   <div>
                     <label htmlFor="volunteer-skills" className="block text-base font-semibold text-text-strong mb-2">{t('engagement.volunteer.skills')}</label>
                     <textarea
-                      id="volunteer-skills"
+                      id="volunteer-skills" maxLength={2000}
                       placeholder={t('engagement.volunteer.skillsPlaceholder')}
                       rows={4}
                       value={formData.skills}
