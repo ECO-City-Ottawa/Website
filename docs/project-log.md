@@ -53,6 +53,9 @@ The board reviewed the live Vercel preview. Feedback came back through Guy (who'
 - Confirmed `info@ecocityottawa.ca` as the contact-form recipient address per Guy (see the Vercel env-var gotcha above — not fully live yet).
 - Drafted and sent replies to Guy (content list + Vercel access fix) and Esther (scheduling a call).
 
+### Phase 6 — Pre-launch cleanup: ship only honest content (2026-11-03)
+Goal: remove everything fake or without real data. Done as small separate commits on this branch (nothing pushed): removed the unverified phone number and "Call us" button; deleted `/news`, `/events`, `/news-events` and `/resources` plus their links, sitemap entries and mock data; hid the About page's Volunteers and OurBoard sections (component files kept); removed dead homepage imports; stripped the literal `{#...}` eyebrow labels; replaced "Content coming soon." and other placeholder copy; trimmed Partners to named partners; removed dead CTAs (button-styled spans, Subscribe card, Cookie settings); forced English via `FORCE_ENGLISH` (French kept for later); generalised the footer address to "Ottawa, Ontario, Canada" with TODOs; added honeypot + server-side validation to the contact/volunteer endpoints; SEO fixes (no doubled brand in titles, OG/Twitter tags, `not-found.tsx`, `notFound()` for unknown `/projects/theme|type|status` slugs); deleted three orphan project components and added `.kilo` to the ESLint ignores. Anything restored later is listed in `launch-open-items.md`.
+
 ## Branches
 
 `feat/about-page` was checked (2026-09-10) and found to be a stale checkpoint branch — fully contained as an ancestor of `feature/seo-metadata-improvements`, nothing unique to merge. Safe to ignore or delete.
