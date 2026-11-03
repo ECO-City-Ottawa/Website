@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ProjectsPageClient from "./ProjectsPageClient";
 
 export const metadata: Metadata = {
-  title: "Projects | OBEC",
+  title: "Projects",
   description: "Explore OBEC's community-led sustainability projects by theme, tool, status, and location.",
 };
 

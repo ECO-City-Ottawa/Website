@@ -33,7 +33,30 @@ export const metadata: Metadata = {
   publisher: 'EcoCity Ottawa',
   icons: {
     icon: '/favicon.ico',
-  }
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'EcoCity Ottawa',
+    locale: 'en_CA',
+    url: '/',
+    title: 'EcoCity Ottawa | Community-Led Sustainability',
+    description: 'A community-led grassroots charity established in 2009, bringing together neighbourhoods, schools, and organizations to develop practical sustainability projects in Ottawa.',
+    images: [
+      {
+        // TODO: replace with a dedicated 1200x630 branded share image when one exists.
+        url: '/homepage/hero1.jpg',
+        width: 1440,
+        height: 1080,
+        alt: 'Ottawa residents working together at a community sustainability workshop',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'EcoCity Ottawa | Community-Led Sustainability',
+    description: 'A community-led grassroots charity bringing Ottawa neighbourhoods together on practical sustainability projects.',
+    images: ['/homepage/hero1.jpg'],
+  },
 }
 
 

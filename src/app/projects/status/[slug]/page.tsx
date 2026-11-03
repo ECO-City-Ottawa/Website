@@ -1,6 +1,7 @@
 'use client'
 
 import React, { use } from 'react';
+import { notFound } from 'next/navigation';
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import PageHero from "@/components/ui/PageHero";
@@ -47,7 +48,8 @@ export default function StatusProjectsPage({ params }: { params: Promise<{ slug:
   const { slug } = use(params);
   const { t, language } = useLanguage();
 
-  const statusValue = STATUS_FILTER_MAP[slug.toLowerCase()] ?? slug;
+  if (!Object.prototype.hasOwnProperty.call(STATUS_FILTER_MAP, slug.toLowerCase())) notFound();
+  const statusValue = STATUS_FILTER_MAP[slug.toLowerCase()];
   
   const displayTitle = language === 'fr'
     ? (STATUS_DISPLAY_MAP_FR[slug.toLowerCase()] ?? slug.replace(/-/g, " "))

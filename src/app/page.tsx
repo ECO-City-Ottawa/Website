@@ -13,7 +13,6 @@ import HeroSection from "@/components/landingPage/Hero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home | OBEC",
   description: "Learn how OBEC supports community-led sustainability projects and civic engagement across Ottawa.",
 };
 

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { use } from 'react';
+import { notFound } from 'next/navigation';
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import PageHero from "@/components/ui/PageHero";
@@ -20,7 +21,8 @@ export default function ThemeProjectsPage({ params }: { params: Promise<{ slug: 
   const matchedTheme = THEMES.find(
     (t) => t.title.toLowerCase().replace(/\s+/g, "-") === slug
   );
-  const originalTitle = matchedTheme ? matchedTheme.title : slug.replace(/-/g, " ");
+  if (!matchedTheme) notFound();
+  const originalTitle = matchedTheme.title;
 
   const getLocalizedTheme = (themeTitle: string) => {
     switch (themeTitle.toLowerCase()) {

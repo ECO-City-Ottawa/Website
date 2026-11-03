@@ -1,6 +1,7 @@
 'use client'
 
 import React, { use } from 'react';
+import { notFound } from 'next/navigation';
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import PageHero from "@/components/ui/PageHero";
@@ -55,7 +56,8 @@ export default function TypeProjectsPage({ params }: { params: Promise<{ slug: s
   const { slug } = use(params);
   const { t, language } = useLanguage();
 
-  const displayTitle = TYPES_MAP[slug.toLowerCase()] ?? slug;
+  if (!Object.prototype.hasOwnProperty.call(TYPES_MAP, slug.toLowerCase())) notFound();
+  const displayTitle = TYPES_MAP[slug.toLowerCase()];
   
   const heroTitle = language === 'fr' 
     ? (HERO_TITLES_FR[displayTitle] ?? displayTitle)
