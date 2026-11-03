@@ -436,8 +436,7 @@ export default function ContactPage() {
           title={t('contact.prefer.title')}
           description={t('contact.prefer.subtitle')}
           buttons={[
-            { label: t('contact.prefer.email'), href: 'mailto:info@ecocityottawa.ca', variant: 'primary' },
-            { label: t('contact.prefer.call'), href: 'tel:+16135550199', variant: 'secondary' }
+            { label: t('contact.prefer.email'), href: 'mailto:info@ecocityottawa.ca', variant: 'primary' }
           ]}
         />
 

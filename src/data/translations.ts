@@ -600,10 +600,9 @@ export const translations = {
     'contact.faq.a3': 'You can sign up directly on our Engagement page or check the box below in the contact form, and we will contact you.',
     'contact.faq.q4': 'Can organizations partner on a project?',
     'contact.faq.a4': 'Yes, we co-create programs, share resources, and provide structural facilitation for multi-sector projects.',
-    'contact.prefer.title': 'Prefer email or a call?',
+    'contact.prefer.title': 'Prefer to write us directly?',
     'contact.prefer.subtitle': 'Share a template, add a report, or request a guide for your community.',
     'contact.prefer.email': 'Email us',
-    'contact.prefer.call': 'Call us',
 
     // Donate Page (English)
     'donate.hero.title': 'Help build a more sustainable Ottawa',
@@ -934,7 +933,6 @@ export const translations = {
     'footer.aboutObec': 'À propos de l’OBEC',
     'footer.resourcesTools': 'Ressources et outils',
     'footer.contactTitle': 'Contact',
-    'footer.phone': 'Téléphone : 613-663-2542',
     'footer.address': 'Adresse : 170 Tunney’s Pasture, Ottawa',
     'footer.contactUs': 'Nous contacter',
     'footer.copyright': '© {year} Ottawa Biosphere Eco-City (OBEC). Tous droits réservés.',
@@ -1560,10 +1558,9 @@ export const translations = {
     'contact.faq.a3': 'Vous pouvez vous inscrire directement sur notre page Engagement ou cocher la case ci-dessous dans le formulaire de contact, et nous vous contacterons.',
     'contact.faq.q4': 'Les organisations peuvent-elles collaborer sur un projet ?',
     'contact.faq.a4': 'Oui, nous co-créons des programmes, partageons des ressources et fournissons une facilitation structurelle pour des projets multi-sectoriels.',
-    'contact.prefer.title': 'Vous préférez un courriel ou un appel ?',
+    'contact.prefer.title': 'Vous préférez nous écrire directement ?',
     'contact.prefer.subtitle': 'Partagez un modèle, ajoutez un rapport ou demandez un guide pour votre communauté.',
     'contact.prefer.email': 'Envoyez-nous un courriel',
-    'contact.prefer.call': 'Appelez-nous',
 
     // Donate Page (French)
     'donate.hero.title': 'Aidez à bâtir un Ottawa plus durable',
