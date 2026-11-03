@@ -13,29 +13,47 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+// The French translations are kept in src/data/translations.ts, but the site ships
+// English-only until the French copy is reviewed. While this is true, the language
+// is always 'en': any saved 'fr' preference is ignored and cleared, and
+// setLanguage() cannot switch away from English. Set to false to restore bilingual mode.
+const FORCE_ENGLISH = true;
+
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>('en');
 
   useEffect(() => {
-    const savedLang = localStorage.getItem('language') as Language;
+    if (FORCE_ENGLISH) {
+      try {
+        localStorage.removeItem('language');
+      } catch {
+        // storage unavailable (e.g. private mode): nothing to clear
+      }
+      document.documentElement.lang = 'en';
+      return;
+    }
+    const savedLang = localStorage.getItem('language');
     if (savedLang === 'en' || savedLang === 'fr') {
-      setLanguage(savedLang);
+      setLanguageState(savedLang);
       document.documentElement.lang = savedLang;
     }
   }, []);
 
   const handleSetLanguage = (lang: Language) => {
-    setLanguage(lang);
+    if (FORCE_ENGLISH) return;
+    setLanguageState(lang);
     localStorage.setItem('language', lang);
     document.documentElement.lang = lang;
   };
 
+  const activeLanguage: Language = FORCE_ENGLISH ? 'en' : language;
+
   const t = (key: string) => {
-    return translations[language][key as keyof typeof translations['en']] || key;
+    return translations[activeLanguage][key as keyof typeof translations['en']] || key;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
+    <LanguageContext.Provider value={{ language: activeLanguage, setLanguage: handleSetLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
