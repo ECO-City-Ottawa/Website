@@ -55,7 +55,7 @@ export default function Navbar() {
   const [navPill, setNavPill] = useState({ left: 0, width: 0, opacity: 0 })
   const navListRef = useRef<HTMLUListElement>(null)
   const navPillTargets = useRef<Record<string, HTMLElement | null>>({})
-  const { language, setLanguage, t } = useLanguage()
+  const { language, t } = useLanguage()
   const pathname = usePathname()
 
   // true when this nav item's route matches the current page (or a sub-route)

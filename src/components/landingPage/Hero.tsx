@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRightIcon, Sprout } from 'lucide-react'
+import { ArrowRightIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'

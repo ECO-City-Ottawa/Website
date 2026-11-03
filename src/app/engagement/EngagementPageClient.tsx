@@ -234,7 +234,6 @@ export default function EngagementPage() {
   ];
 
   const supporterTier = membershipTiers[0];
-  const SupporterIcon = supporterTier.icon;
   const paidMembershipTiers = membershipTiers.slice(1);
 
   const palSteps = [
@@ -628,7 +627,6 @@ export default function EngagementPage() {
               </div>
 
               {paidMembershipTiers.map((tier, idx) => {
-                const Icon = tier.icon;
                 const placement = idx === 0 ? 'lg:col-start-1 lg:row-start-2' : 'lg:col-start-1 lg:row-start-3';
                 return (
                   <div key={tier.title} className={`group flex  flex-col justify-between rounded-2xl  border-gray-200 bg-gray-50   transition-all duration-300 hover:-translate-y-1  p-8 lg:col-span-5 ${placement}`}>

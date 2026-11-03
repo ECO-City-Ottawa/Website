@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter, Urbanist, Geist } from 'next/font/google'
+import { Urbanist, Geist } from 'next/font/google'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { cn } from "@/lib/utils";
 

@@ -41,7 +41,6 @@ export function isHoneypotTripped(body: Record<string, unknown>): boolean {
 function cleanText(value: string, multiline: boolean): string {
   // Strip control characters. Single-line fields (which can end up in mail headers
   // such as the subject) also lose newlines/tabs, and have whitespace collapsed.
-  // eslint-disable-next-line no-control-regex
   const stripped = value.replace(multiline ? /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g : /[\u0000-\u001F\u007F]/g, ' ');
   return (multiline ? stripped : stripped.replace(/\s+/g, ' ')).trim();
 }
