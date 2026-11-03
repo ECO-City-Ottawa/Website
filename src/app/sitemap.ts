@@ -10,7 +10,6 @@ const routes = [
   "/engagement",
   "/projects",
   "/projects/browse",
-  "/resources",
   "/why-how",
   "/privacy",
   "/terms",

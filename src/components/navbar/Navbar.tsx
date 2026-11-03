@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation'
 import { useLanguage } from '@/context/LanguageContext'
 import {
   ArrowRight,
-  BookOpen,
   HeartHandshake,
 } from 'lucide-react'
 import Image from 'next/image'
@@ -29,7 +28,6 @@ const PRIMARY_NAV_ITEMS = [
 
 const DROPDOWN_ACTIVE_HREFS = [
   '/engagement',
-  '/resources',
 ]
 
 const FEATURED_DROPDOWN_ITEMS = [
@@ -39,12 +37,6 @@ const FEATURED_DROPDOWN_ITEMS = [
     descriptionKey: 'engagement.hero.description',
     icon: HeartHandshake,
   },
-  {
-    href: '/resources',
-    labelKey: 'nav.resources',
-    descriptionKey: 'resources.hero.description',
-    icon: BookOpen,
-  },
 ]
 
 const MOBILE_NAV_ITEMS = [
@@ -53,7 +45,6 @@ const MOBILE_NAV_ITEMS = [
   { href: '/why-how', labelKey: 'nav.whyHow' },
   { href: '/projects', labelKey: 'nav.projects' },
   { href: '/engagement', labelKey: 'nav.engagement' },
-  { href: '/resources', labelKey: 'nav.resources' },
   { href: '/contact', labelKey: 'nav.contact' },
 ]
 
