@@ -136,10 +136,7 @@ export default function ContactPage() {
             
             {/* Left Column Info */}
             <div className="lg:col-span-2">
-              <span className="text-xs bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
-                #form
-              </span>
-              <h2 className="font-alt font-bold text-[36px] md:text-[48px] text-text-strong mt-4 mb-6">
+              <h2 className="font-alt font-bold text-[36px] md:text-[48px] text-text-strong mb-6">
                 {t('contact.form.title')}
               </h2>
               <p className="text-text-normal text-base leading-relaxed">
@@ -391,10 +388,7 @@ export default function ContactPage() {
             
             {/* Left side text */}
             <div className="lg:col-span-2">
-              <span className="text-xs bg-brand-green/10 text-brand-green font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
-                #faq
-              </span>
-              <h2 className="font-alt font-bold text-[36px] md:text-[48px] text-text-strong mt-4 mb-6">
+              <h2 className="font-alt font-bold text-[36px] md:text-[48px] text-text-strong mb-6">
                 {t('contact.faq.title')}
               </h2>
               <p className="text-text-normal text-base leading-relaxed mb-8">

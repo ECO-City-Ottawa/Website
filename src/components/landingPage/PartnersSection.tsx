@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Leaf, Globe, Building2, Users, Sprout } from 'lucide-react';
+import { Leaf, Globe, Users } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function PartnersSection() {
@@ -11,9 +11,7 @@ export default function PartnersSection() {
   const partners = [
     { name: t('partners.partner1'), icon: Leaf },
     { name: t('partners.partner2'), icon: Globe },
-    { name: t('partners.partner3'), icon: Building2 },
-    { name: t('partners.partner4'), icon: Users },
-    { name: t('partners.partner5'), icon: Sprout }
+    { name: t('partners.partner4'), icon: Users }
   ];
 
   return (

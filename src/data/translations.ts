@@ -225,9 +225,7 @@ export const translations = {
     'partners.cta': 'Interested in partnering',
     'partners.partner1': 'CAFES Ottawa',
     'partners.partner2': 'Biosphere Eco-Cities Canada',
-    'partners.partner3': 'Schools / hospitals / small business partners',
     'partners.partner4': 'Local community associations (e.g., Manor Park)',
-    'partners.partner5': 'Local Government & Policy Makers',
 
     // Support CTA Section
     'supportCta.headline': 'Your support powers local action',
@@ -567,7 +565,7 @@ export const translations = {
     'contact.faq.q4': 'Can organizations partner on a project?',
     'contact.faq.a4': 'Yes, we co-create programs, share resources, and provide structural facilitation for multi-sector projects.',
     'contact.prefer.title': 'Prefer to write us directly?',
-    'contact.prefer.subtitle': 'Share a template, add a report, or request a guide for your community.',
+    'contact.prefer.subtitle': 'Questions, ideas, or want to get involved? Write to us and we’ll get back to you.',
     'contact.prefer.email': 'Email us',
 
     // Donate Page (English)
@@ -644,7 +642,7 @@ export const translations = {
     'engagement.volunteer.title': 'Volunteer with OBEC',
     'engagement.volunteer.subtitle': 'Tell us how you’d like to help we’ll match you with opportunities across Ottawa (and the BEC network).',
     'engagement.volunteer.formTitle': 'Volunteer sign-up',
-    'engagement.volunteer.formSubtitle': 'Content coming soon.',
+    'engagement.volunteer.formSubtitle': 'Share a few details and how you’d like to help. We’ll be in touch by email.',
     'engagement.volunteer.successTitle': 'Thank you for signing up!',
     'engagement.volunteer.successText': 'We have received your application and will get back to you shortly to match you with active opportunities.',
     'engagement.volunteer.fullName': 'Full name*',
@@ -718,7 +716,7 @@ export const translations = {
     'engagement.partner.card2.title': 'Joint project development with your organization',
     'engagement.partner.card2.btn': 'Learn more',
     'engagement.faq.title': 'FAQs',
-    'engagement.faq.subtitle': 'Content coming soon.',
+    'engagement.faq.subtitle': 'Answers to common questions about volunteering, Public Action Labs, and partnering with us.',
     'engagement.faq.contactUs': 'Contact Us',
     'engagement.faq.q1': 'How much time does volunteering take?',
     'engagement.faq.a1': 'As little as a single event, or ongoing if you like: choose what fits your schedule.',
@@ -1076,9 +1074,7 @@ export const translations = {
     'partners.cta': 'Intéressé par un partenariat',
     'partners.partner1': 'CAFES Ottawa',
     'partners.partner2': 'Cités écologiques de la biosphère Canada',
-    'partners.partner3': 'Écoles / hôpitaux / petites entreprises partenaires',
     'partners.partner4': 'Associations communautaires locales (ex. Manor Park)',
-    'partners.partner5': 'Gouvernement local et décideurs politiques',
 
     // Support CTA Section
     'supportCta.headline': 'Votre soutien propulse l’action locale',
@@ -1472,7 +1468,7 @@ export const translations = {
     'contact.faq.q4': 'Les organisations peuvent-elles collaborer sur un projet ?',
     'contact.faq.a4': 'Oui, nous co-créons des programmes, partageons des ressources et fournissons une facilitation structurelle pour des projets multi-sectoriels.',
     'contact.prefer.title': 'Vous préférez nous écrire directement ?',
-    'contact.prefer.subtitle': 'Partagez un modèle, ajoutez un rapport ou demandez un guide pour votre communauté.',
+    'contact.prefer.subtitle': 'Des questions, des idées ou l’envie de vous impliquer ? Écrivez-nous et nous vous répondrons.',
     'contact.prefer.email': 'Envoyez-nous un courriel',
 
     // Donate Page (French)
@@ -1549,7 +1545,7 @@ export const translations = {
     'engagement.volunteer.title': 'Faire du bénévolat avec l’OBEC',
     'engagement.volunteer.subtitle': 'Dites-nous comment vous aimeriez aider, nous vous jumellerons avec des opportunités à Ottawa (et dans le réseau BCE).',
     'engagement.volunteer.formTitle': 'Inscription au bénévolat',
-    'engagement.volunteer.formSubtitle': 'Contenu à venir.',
+    'engagement.volunteer.formSubtitle': 'Partagez quelques détails et la façon dont vous aimeriez aider. Nous communiquerons avec vous par courriel.',
     'engagement.volunteer.successTitle': 'Merci pour votre inscription !',
     'engagement.volunteer.successText': 'Nous avons bien reçu votre candidature et nous vous contacterons sous peu pour vous proposer des opportunités actives.',
     'engagement.volunteer.fullName': 'Nom complet*',
@@ -1623,7 +1619,7 @@ export const translations = {
     'engagement.partner.card2.title': 'Développement de projet conjoint avec votre organisation',
     'engagement.partner.card2.btn': 'En savoir plus',
     'engagement.faq.title': 'FAQ',
-    'engagement.faq.subtitle': 'Contenu à venir.',
+    'engagement.faq.subtitle': 'Réponses aux questions courantes sur le bénévolat, les Labos d’action publique et les partenariats.',
     'engagement.faq.contactUs': 'Contactez-nous',
     'engagement.faq.q1': 'Combien de temps prend le bénévolat ?',
     'engagement.faq.a1': 'Aussi peu qu’un seul événement, ou de manière continue si vous le souhaitez : choisissez ce qui convient à votre horaire.',
