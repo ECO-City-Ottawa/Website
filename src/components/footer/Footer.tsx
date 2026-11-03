@@ -47,7 +47,6 @@ export default function Footer() {
             <li><Link href="/about" className="hover:text-text-strong">{t('footer.aboutObec')}</Link></li>
             <li><Link href="/why-how" className="hover:text-text-strong">{t('nav.whyHow')}</Link></li>
             <li><Link href="/projects" className="hover:text-text-strong">{t('nav.projects')}</Link></li>
-            <li><Link href="/news-events" className="hover:text-text-strong">{t('nav.newsEvents')}</Link></li>
             <li><Link href="/resources" className="hover:text-text-strong">{t('footer.resourcesTools')}</Link></li>
           </ul>
         </div>

@@ -260,12 +260,6 @@ export default function EngagementPage() {
       image: 'https://images.unsplash.com/photo-1509391366360-1f9509ce158a?auto=format&fit=crop&q=80',
       href: '/contact',
       linkText: t('engagement.partner.card2.btn')
-    },
-    {
-      title: t('engagement.partner.card3.title'),
-      image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&q=80',
-      href: '/news-events',
-      linkText: t('engagement.partner.card3.btn')
     }
   ];
 
@@ -796,7 +790,7 @@ export default function EngagementPage() {
                     </div>
                   </div>
                 ))}
-                <div className="bg-brand-green rounded-2xl p-6 flex flex-col justify-end min-h-[260px] h-full">
+                <div className="bg-brand-green rounded-2xl p-6 flex flex-col justify-end min-h-[260px] h-full sm:col-span-2">
                   <h4 className="font-alt font-bold text-2xl text-white mb-6">{partnerProjectsCard.title}</h4>
                   <Link href={partnerProjectsCard.href} className="inline-flex items-center gap-1 text-white font-bold text-base hover:underline">
                     {partnerProjectsCard.linkText} <ArrowRight className="w-4 h-4" />
