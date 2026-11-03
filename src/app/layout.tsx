@@ -38,9 +38,6 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EcoCity Ottawa',
     locale: 'en_CA',
-    url: '/',
-    title: 'EcoCity Ottawa | Community-Led Sustainability',
-    description: 'A community-led grassroots charity established in 2009, bringing together neighbourhoods, schools, and organizations to develop practical sustainability projects in Ottawa.',
     images: [
       {
         // TODO: replace with a dedicated 1200x630 branded share image when one exists.
@@ -53,8 +50,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EcoCity Ottawa | Community-Led Sustainability',
-    description: 'A community-led grassroots charity bringing Ottawa neighbourhoods together on practical sustainability projects.',
     images: ['/homepage/hero1.jpg'],
   },
 }
